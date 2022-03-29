@@ -12,10 +12,10 @@ class TeamsTableSeeder extends Seeder
     public function run()
     {
         $team = new \App\Team([
-            'id' => 1,
-            'name' => '76ers',
-            'abname' => 'PHI',
-            'state_name' => 'philadelphia'
+            'id' => 2,
+            'name' => 'Bucks',
+            'abname' => 'MIL',
+            'state_name' => 'Milwaukee'
             ]);
             $team->save();
     }

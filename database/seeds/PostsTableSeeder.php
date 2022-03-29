@@ -12,10 +12,11 @@ class PostsTableSeeder extends Seeder
     public function run()
     {
         $post = new \App\Post([
-            'id' => 1,
-            'content' => 'He is the best SG player Ive ever seen',
-            'review' => 5,
-            'player_id' => 1,
+            'id' => 2,
+            'content' => 'He is the best PF player Ive ever seen',
+            'offense_review' => 95,
+            'defense_review' => 93,
+            'player_id' => 2,
             'user_id' => 1
             ]);
             $post->save();

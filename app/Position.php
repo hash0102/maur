@@ -10,4 +10,9 @@ class Position extends Model
         'id',
         'name'
         ];
+        
+         public function players()   
+    {
+    return $this->hasMany('App\Player');
+    }
 }

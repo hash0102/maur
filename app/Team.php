@@ -12,4 +12,9 @@ class Team extends Model
         'abname',
         'state_name'
         ];
+
+    public function players()   
+    {
+    return $this->hasMany('App\Player');
+    }
 }

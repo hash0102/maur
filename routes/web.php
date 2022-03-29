@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PostController@index');
+//Route::get('/', 'PostController@team');
+
+Route::post('/posts', 'PostController@store');
+Route::get('/posts/create', 'PostController@create');
+Route::get('/posts/{post}', 'PostController@show');
+Route::get('/posts', 'PostController@playerTeam');
+
+
+Route::get('/players', 'PlayerController@index');
+Route::get('/players/create', 'PlayerController@create');
+Route::post('/players', 'PlayerController@store');
