@@ -17,4 +17,9 @@ class Team extends Model
     {
     return $this->hasMany('App\Player');
     }
+
+    public function Posts()
+    {
+        return $this->hasMany('App\Post');
+    }
 }

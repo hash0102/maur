@@ -12,8 +12,8 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $user = new \App\User([
-            'name' => 'Shota',
-            'email' => 'maur@yahoo.co.jp',
+            'name' => 'SampleUser1',
+            'email' => 'sammple1@yahoo.co.jp',
             'password' => 'abcdefg'
             ]);
         $user->save();

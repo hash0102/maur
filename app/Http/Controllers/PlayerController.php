@@ -33,7 +33,7 @@ class PlayerController extends Controller
     {
         $input = $request['player'];
         $player->fill($input)->save();
-        return redirect('/players' . $player->id);
+        return redirect('/players');
     }   
 }
 

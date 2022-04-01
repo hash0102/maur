@@ -17,6 +17,7 @@ class CreateTeamsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name',30);
             $table->string('abname',3);
+            $table->string('state_name', 20);
             $table->timestamps();
         });
     }

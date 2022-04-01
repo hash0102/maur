@@ -17,6 +17,14 @@
                     @endforeach
                 </select>
             </div>
+              <div class = users>
+                <p>チーム</p>
+                <select name = "post[team_id]">
+                @foreach($teams as $team)
+                <option value = "{{$team->id}}">{{ $team->abname }}</option>
+                @endforeach
+                </select>
+            </div>
             <div class = users>
                 <p>ユーザー</p>
                 <select name = "post[user_id]">

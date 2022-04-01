@@ -18,8 +18,9 @@ class CreatePostsTable extends Migration
             $table->string('content',400);
             $table->integer('offense_review')->length(100);
             $table->integer('defense_review')->length(100);
-            $table->integer('user_id')->length(100);
-            $table->integer('player_id')->length(100);
+            $table->integer('user_id')->unsigned();
+            $table->integer('player_id')->unsigned();
+            $table->integer('team_id')->unsigned();
             $table->timestamps();
         });
     }

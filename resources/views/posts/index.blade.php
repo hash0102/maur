@@ -6,6 +6,7 @@
         <title>NBA MAUR</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src = "{{ mix('js/jQuery.js') }}" defer></script>
+        <link rel="stylesheet" href="{{ asset('css/maurIndex.css') }}">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
@@ -18,21 +19,23 @@
                 <button><a href = '/players'>選手詳細</a></button>
                 <button><a href = 'posts/create'>投稿登録</a></button>
             </div>
+            <div class ="team_Name"></div>
+            <p>チーム名</p>
             <select id = "team">
+                <option value = "" class = 'option'>チームを選択してください</option>
                 @foreach($teams as $team)
-                <option value="{{ $team->id }}">{{ $team->abname }}</option>
+                <option  class = 'team_name' value="{{ $team->id }}">{{ $team->abname }}</option>
                 @endforeach
             </select>
-            
             </div>
+        </div>
         </div>
     </fotter>
         <h1>最新の投稿</h1>
-       
-
         <div class='posts'>
-            @foreach ($posts as $post)
-            @if($post->user_id == '1')
+        </div>
+        <div class = 'posts2'>
+        @foreach ($posts as $post)
             <p>投稿者：{{$post->user->name }}</p>
             <p>選手名：{{ $post->player->first_name }} {{ $post->player->last_name}}</p>
             <p>チーム：{{$post->player->team->state_name }} {{$post->player->team->name }}</p>
@@ -40,25 +43,9 @@
             <p>オフェンス評価：{{ $post->offense_review }}</p>
             <p>ディフェンス評価：{{ $post->defense_review }}</p>
             <p>評価理由：{{$post->content}} </p>
-            <div class = 'Button'>
-                <button><a href = 'posts/{{$post->player->id }}'>詳細</a></button>
-            </div>
-            @if($post->player->id == 2)
-            <img src = "{{$post->player->image}}" width="25%" height="25%">
-            @else
-            <img src = "{{$post->player->image}}" width="30%" height="50%">
-            @endif
-            <ul>今シーズンのスタッツ</ul>
-            <li>PPG：{{ $post->player->PPG }}</li>
-            <li>RPG：{{ $post->player->RPG }}</li>
-            <li>APG：{{ $post->player->APG }}</li>
-            <li>MPG：{{ $post->player->MPG }} 分</li>
-            <li>FG：{{ $post->player->FG }}％</li>
-            <li>3P：{{ $post->player->three_point }}％</li>
-            <li>FT：{{ $post->player->FT }}%</li>
+            <p class = 'image'><img src = '{{ $post->player->image }}'></p>
             <hr>
-            @endif
-            @endforeach
+        @endforeach
         </div>
         
         <div class='paginate'>

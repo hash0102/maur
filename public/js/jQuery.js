@@ -93,35 +93,33 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-//$(function(){
-//$('#team').change(function(){
-//$.ajax({
-//url:'/',
-//type:'GET',
-//}).done(function(json){
-//   alert(json['post']);
-//}).fail(function(json){
-//alert('ajax失敗');
-// });
-// });
-//});
 $("#team").on('change', function () {
-  $.ajax({
-    type: "get",
-    //HTTP通信の種類
-    url: "/",
-    dataType: "json"
-  }) //通信が成功したとき
-  .done(function (res) {
-    // resの部分にコントローラーから返ってきた値 $users が入る
-    $.each(res, function (index, value) {
-      html = "\n                      <tr class=\"posts\">\n                          <td class=\"col-xs-2\">\u30E6\u30FC\u30B6\u30FC\u540D\uFF1A".concat(value.contents, "</td>\n                      </tr>\n         ");
-      $(".posts").append(html); //できあがったテンプレートを user-tableクラスの中に追加
+  var teamId = $("#team").val();
+
+  if (teamId == "") {
+    $('.posts2').show();
+    $('.paginate').show();
+    $('.posts').hide();
+  } else {
+    $('.posts2').hide();
+    $('.paginate').hide();
+    $.ajax({
+      type: "get",
+      url: "teams/" + teamId,
+      dataType: "json"
+    }).done(function (res) {
+      $.each(res, function (index, value) {
+        $('.posts').empty();
+
+        for (var i = 0; i < value.length; i++) {
+          var user = "\n          <p>\u6295\u7A3F\u8005\uFF1A".concat(res.player_info[i].user.name, " </p>\n          <p>\u9078\u624B\u540D\uFF1A ").concat(res.player_info[i].player.first_name, " ").concat(res.player_info[i].player.last_name, "</p>\n          <p>\u30C1\u30FC\u30E0\uFF1A").concat(res.player_info[i].team.state_name, " ").concat(res.player_info[i].team.name, " </p>\n          <p>\u30DD\u30B8\u30B7\u30E7\u30F3: ").concat(res.player_info[i].player.position.name, " </p>\n          <p> \u30AA\u30D5\u30A7\u30F3\u30B9\u8A55\u4FA1\uFF1A").concat(res.player_info[i].offense_review, " </p>\n          <p> \u30C7\u30A3\u30D5\u30A7\u30F3\u30B9\u8A55\u4FA1\uFF1A").concat(res.player_info[i].defense_review, " </p>\n          <p> \u8A55\u4FA1\u7406\u7531\uFF1A").concat(res.player_info[i].content, " </p>\n          <p><img src = ").concat(res.player_info[i].player.image, " ></p>\n          <hr>\n          ");
+          $(".posts").append(user);
+        }
+      });
+    }).fail(function (error) {
+      alert(error.statusText);
     });
-  }) //通信が失敗したとき
-  .fail(function (error) {
-    console.log(error.statusText);
-  });
+  }
 });
 
 /***/ }),

@@ -12,7 +12,7 @@ class PlayersTableSeeder extends Seeder
     public function run()
     {
         $player = new \App\Player([
-        'id' => 2,
+        'id' => 1,
         'height' => 211.0,
         'weight' => 110.0,
         'PPG'=> 29.8,
@@ -27,7 +27,7 @@ class PlayersTableSeeder extends Seeder
         'first_name' => 'Giannis',
         'last_name' => 'Antetokounmpo',
         'age' => 27,
-        'image' => 'Giannis_Antetokounmpo.jpg'
+        'image' => 'https://player-image.s3.amazonaws.com/Giannis_Antetokounmpo.jpg'
         ]);
             $player->save();
     }

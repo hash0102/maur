@@ -15,7 +15,6 @@ class CreatePlayersTable extends Migration
     {
         Schema::create('players', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 50);
             $table->double('height', 4, 1);
             $table->double('weight', 4, 1);
             $table->double('PPG', 3, 1);
@@ -23,8 +22,15 @@ class CreatePlayersTable extends Migration
             $table->double('APG', 3, 1);
             $table->double('MPG', 3, 1);
             $table->double('FG', 3, 1);
-            $table->double('3P', 3, 1);
+            $table->double('three_point', 3, 1);
             $table->double('FT', 3, 1);
+            $table->integer('team_id')->unsigned();
+            $table->integer('position_id')->unsigned();
+            $table->string('first_name', 50);
+            $table->string('middle_name', 50)->nullable();
+            $table->string('last_name', 50);
+            $table->integer('age');
+            $table->string('image', 100);
             $table->timestamps();
         });
     }

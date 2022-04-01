@@ -12,7 +12,8 @@ class Post extends Model
         'offense_review',
         'defense_review',
         'player_id',
-        'user_id'
+        'user_id',
+        'team_id'
         ];
         
     public function getPaginateByLimit(int $limit_count = 5)
@@ -25,8 +26,13 @@ class Post extends Model
         return $this->belongsTo('App\Player'); 
     }
     
-       public function user()   
+   public function user()
     {
         return $this->belongsTo('App\User'); 
+    }
+
+    public function team()
+    {
+        return $this->belongsTo('App\Team');
     }
 }
