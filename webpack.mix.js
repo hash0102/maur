@@ -11,9 +11,9 @@ const mix = require('laravel-mix');
  |
  */
 
-//mix.js('resources/js/app.js', 'public/js')
-   //.sass('resources/sass/app.scss', 'public/css');
-   
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/jQuery.js', 'public/js')
-    .sass('resources/sass/app.scss','public/css');
+    .js('resources/js/jQueryPlayer.js', 'public/js')
+    .js('resources/js/jQueryUser.js', 'public/js')
+   .sass('resources/sass/app.scss', 'public/css');
+

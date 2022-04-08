@@ -26,6 +26,12 @@ class Player extends Model
         'team_id',
         'position_id'
     ];
+    
+    public function getPlayerPaginateByLimit(int $limit_count = 5)
+    {
+        // updated_atで降順に並べたあと、limitで件数制限をかける
+        return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
         public function posts()   
     {
         return $this->hasMany('App\Post');  

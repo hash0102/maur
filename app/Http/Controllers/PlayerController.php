@@ -9,24 +9,22 @@ use App\Position;
 
 class PlayerController extends Controller
 {
-    //public function index(Player $player)
-    //{
-        //return view('player.index')->with(['posts' => $player->get()]);
-    //}   
     
-    public function PlayerTeam(Player $player) 
+    public function PlayerInfo($teamId , Team $team , Player $player)
     {
-        $PostTeam = App\Player::where('team_id', $player)->get();
-        return $PostTeam;
+        $players_info = Player::with('position', 'team')->where('team_id' , $teamId)->paginate();
+        return response()->json(['players_info' => $players_info]);
     }
     
     public function index(Player $player, Team $team)
     {
-        return view('players.index')->with(['players' => $player->get() , 'teams' => $team->get()]);
+        return view('players.index')->with(['players' => $player->getPlayerPaginateByLimit() , 'teams' => $team->get()]);
     }
     
     public function create(Team $team , Position $position) {
+        // if(\Auth::user()->id == 1){
         return view('players/create')->with(['teams' => $team->get(), 'positions' => $position->get()]);
+        // }
     }
     
     public function store(Request $request, Player $player)

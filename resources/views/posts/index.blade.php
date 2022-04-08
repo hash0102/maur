@@ -1,4 +1,5 @@
-
+@extends('layouts.app')
+@section('content')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -14,8 +15,7 @@
     <fotter>
         <div class = 'footer'>
             <div class = 'button'>
-                <button><a href='/users/index'></a>USER</button>
-                <button class = 'login'>LOGIN</button> 
+                <button><a href='/users'>自分の投稿</a></button>
                 <button><a href = '/players'>選手詳細</a></button>
                 <button><a href = 'posts/create'>投稿登録</a></button>
             </div>
@@ -32,8 +32,13 @@
         </div>
     </fotter>
         <h1>最新の投稿</h1>
+        <hr>
         <div class='posts'>
         </div>
+        
+        <div class='paginate2'>
+        </div>
+            
         <div class = 'posts2'>
         @foreach ($posts as $post)
             <p>投稿者：{{$post->user->name }}</p>
@@ -42,8 +47,18 @@
             <p>ポシション： {{ $post->player->position->name }}</p>
             <p>オフェンス評価：{{ $post->offense_review }}</p>
             <p>ディフェンス評価：{{ $post->defense_review }}</p>
-            <p>評価理由：{{$post->content}} </p>
             <p class = 'image'><img src = '{{ $post->player->image }}'></p>
+            <p>いいね数：{{ $post->likes->count() }}</p>
+            <p>投稿日付：{{$post->created_at}}</p>
+            <button><a href="/posts/{{ $post->id }}">投稿詳細</a></button>
+            <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+                    @csrf
+                    @method('DELETE')
+                    @if($post->user_id === \Auth::user()->id)
+                    <input type ="submit" style = "display:none">
+                    <button class = 'delete'><span onclick = "return deletePost(this);">削除</span></button>
+                    @endif
+            </form>
             <hr>
         @endforeach
         </div>
@@ -53,3 +68,4 @@
         </div>
     </body>
 </html>
+@endsection

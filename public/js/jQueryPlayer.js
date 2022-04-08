@@ -81,20 +81,20 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/jQuery.js":
-/*!********************************!*\
-  !*** ./resources/js/jQuery.js ***!
-  \********************************/
+/***/ "./resources/js/jQueryPlayer.js":
+/*!**************************************!*\
+  !*** ./resources/js/jQueryPlayer.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$("#team").on('change', function () {
-  var teamId = $("#team").val();
+$("#teams").on('change', function () {
+  var teamId = $("#teams").val();
 
   if (teamId == "") {
     $('.posts2').show();
@@ -106,55 +106,31 @@ $("#team").on('change', function () {
     $('.posts').show();
     $.ajax({
       type: "get",
-      url: "teams/" + teamId,
+      url: "players/teams/" + teamId,
       dataType: "json"
     }).done(function (res) {
       $('.posts').empty();
-      $.each(res.player_info.data, function (index, value) {
-        console.log(value);
-        var user = "\n              <p>\u6295\u7A3F\u8005\uFF1A".concat(value.user.name, " </p>\n              <p>\u9078\u624B\u540D\uFF1A ").concat(value.player.first_name, " ").concat(value.player.last_name, "</p>\n              <p>\u30C1\u30FC\u30E0\uFF1A").concat(value.team.state_name, " ").concat(value.team.name, " </p>\n              <p>\u30DD\u30B8\u30B7\u30E7\u30F3: ").concat(value.player.position.name, " </p>\n              <p> \u30AA\u30D5\u30A7\u30F3\u30B9\u8A55\u4FA1\uFF1A").concat(value.offense_review, " </p>\n              <p> \u30C7\u30A3\u30D5\u30A7\u30F3\u30B9\u8A55\u4FA1\uFF1A").concat(value.defense_review, " </p>\n              <p><img src = ").concat(value.player.image, " ></p>\n              <p>\u6295\u7A3F\u65E5\u4ED8\uFF1A").concat(value.created_at, "</p>\n              <button><a href=\"/posts/").concat(value.id, "\">\u6295\u7A3F\u8A73\u7D30</a></button>\n                  <hr>");
-        $(".posts").append(user);
+      $.each(res.players_info.data, function (index, value) {
+        console.log(index);
+        var players_content = "\n              <p> \u9078\u624B\u540D\uFF1A".concat(value.first_name, " ").concat(value.last_name, " </p>\n              <p>\u30C1\u30FC\u30E0\uFF1A").concat(value.team.state_name, " ").concat(value.team.name, " </p>\n              <p>\u30DD\u30B8\u30B7\u30E7\u30F3: ").concat(value.position.name, " </p>\n              <p>\u5E74\u9F62\uFF1A").concat(value.age, " \u6B73</p>\n              <p><img src = ").concat(value.image, " ></p>\n              <ul>\u4ECA\u30B7\u30FC\u30BA\u30F3\u306E\u30B9\u30BF\u30C3\u30C4</ul>\n              <li>PPG\uFF1A").concat(value.PPG, "</li>\n              <li>RPG\uFF1A").concat(value.RPG, "</li>\n              <li>APG\uFF1A").concat(value.APG, "</li>\n              <li>MPG\uFF1A").concat(value.MPG, " \u5206</li>\n              <li>FG\uFF1A").concat(value.FG, "\uFF05</li>\n              <li>3P\uFF1A").concat(value.three_point, "\uFF05</li>\n              <li>FT\uFF1A").concat(value.FT, "%</li>\n              <hr>\n              ");
+        $('.posts').append(players_content);
       });
     }).fail(function (error) {
       alert(error.statusText);
     });
   }
-}); //$('.posts').empty();
-// for(let i = 0; i< value.length; i ++) {
-//     var user = `
-//     <p>投稿者：${value.user.name} </p>
-//     <p>選手名： ${res.player_info[i].player.first_name} ${res.player_info[i].player.last_name}</p>
-//     <p>チーム：${res.player_info[i].team.state_name} ${res.player_info[i].team.name } </p>
-//     <p>ポジション: ${res.player_info[i].player.position.name } </p>
-//     <p> オフェンス評価：${res.player_info[i].offense_review } </p>
-//     <p> ディフェンス評価：${res.player_info[i].defense_review } </p>
-//     <p> 評価理由：${res.player_info[i].content } </p>
-//     <p><img src = ${res.player_info[i].player.image } ></p>
-//     <p>投稿日付：${res.player_info[i].created_at}</p>
-//     <button><a href="/posts/${res.player_info[i].id}">投稿詳細</a></button>
-//     <hr>
-//     `;
-//     $(".posts").append(user);
-// }
-
-function deletePost(e) {
-  "use strict";
-
-  if (confirm('削除すると復元できません。\n 本当に削除しますか？')) {
-    document.getElementById('form_delete').submit();
-  }
-}
+});
 
 /***/ }),
 
-/***/ 1:
-/*!**************************************!*\
-  !*** multi ./resources/js/jQuery.js ***!
-  \**************************************/
+/***/ 2:
+/*!********************************************!*\
+  !*** multi ./resources/js/jQueryPlayer.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/ec2-user/environment/maur/resources/js/jQuery.js */"./resources/js/jQuery.js");
+module.exports = __webpack_require__(/*! /home/ec2-user/environment/maur/resources/js/jQueryPlayer.js */"./resources/js/jQueryPlayer.js");
 
 
 /***/ })

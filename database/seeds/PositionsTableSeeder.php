@@ -12,8 +12,8 @@ class PositionsTableSeeder extends Seeder
     public function run()
     {
         $position = new \App\Position([
-            'id' => 1,
-            'name' => 'PG'
+            'id' => 5,
+            'name' => 'C'
             ]);
             $position->save();
     }
