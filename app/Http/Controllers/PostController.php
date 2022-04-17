@@ -14,7 +14,13 @@ use Storage;
 
 class PostController extends Controller
 {
-    public function index(Post $post, Team $team)
+        public function __construct()
+    {
+        $this->middleware('auth')->only(['create', 'store', 'edit', 'update', 'delete']);
+        $this->middleware('can:update,article')->only(['edit', 'update']);
+        $this->middleware('verified')->only('create');
+    }
+    public function index(Post $post, Team $team, User $user)
     {
         return view('posts/index')->with(['posts' => $post->getPaginateByLimit(), 'teams' => $team->get()]);
     }
@@ -31,8 +37,8 @@ class PostController extends Controller
         return response()->json(['player_infom' => $player_infom_by_team]);
     }
     
-    public function latestPostAjax(Post $post, $teamId, User $user , Team $team, Like $like)
-    {
+    public function latestPostAjax(Post $post, $teamId, User $user , Team $team)
+    { 
         $player_info_by_team = Post::with('player.position', 'team', 'user')->where('team_id' , $teamId)->paginate();
         return response()->json(['player_info' => $player_info_by_team]);
     }
@@ -60,35 +66,5 @@ class PostController extends Controller
         return redirect('/');
     }
     
-    
-    public function __construct()
-    {
-        $this->middleware('auth')->only(['create', 'store', 'edit', 'update', 'delete']);
-        $this->middleware('can:update,article')->only(['edit', 'update']);
-        $this->middleware('verified')->only('create');
-        $this->middleware(['auth', 'verified'])->only(['like', 'unlike']);
-    }
-  
-    public function like($id)
-    {
-        Like::create([
-          'post_id' => $id,
-          'user_id' => \Auth::user()->id
-        ]);
-        
-        session()->flash('success', 'You Liked the Reply.');
-    
-        return redirect()->back();
-    }
-      
-      
-    public function unlike($id)
-    {
-        $like = Like::where('post_id', $id)->where('user_id', \Auth::user()->id)->first();
-        $like->delete();
-    
-        session()->flash('success', 'You Unliked the Reply.');
-        return redirect()->back();
-    }
-}
+} 
 

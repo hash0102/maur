@@ -12,7 +12,7 @@ class PlayerController extends Controller
     
     public function PlayerInfo($teamId , Team $team , Player $player)
     {
-        $players_info = Player::with('position', 'team')->where('team_id' , $teamId)->paginate();
+        $players_info = Player::with('team')->where('team_id' , $teamId)->paginate();
         return response()->json(['players_info' => $players_info]);
     }
     
@@ -33,6 +33,10 @@ class PlayerController extends Controller
         $player->fill($input)->save();
         return redirect('/players');
     }   
+    
+    public function basketapi(Player $player){
+        
+        $player_api = $player->basketapi();
+    }
+
 }
-
-

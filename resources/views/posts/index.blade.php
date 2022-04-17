@@ -8,23 +8,24 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src = "{{ mix('js/jQuery.js') }}" defer></script>
         <link rel="stylesheet" href="{{ asset('css/maurIndex.css') }}">
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
     <fotter>
-        <div class = 'footer'>
-            <div class = 'button'>
+        <div class='footer'>
+            <div class='button'>
                 <button><a href='/users'>自分の投稿</a></button>
-                <button><a href = '/players'>選手詳細</a></button>
-                <button><a href = 'posts/create'>投稿登録</a></button>
+                <button><a href='/players'>選手詳細</a></button>
+                <button><a href='posts/create'>投稿登録</a></button>
             </div>
             <div class ="team_Name"></div>
             <p>チーム名</p>
             <select id = "team">
                 <option value = "" class = 'option'>チームを選択してください</option>
                 @foreach($teams as $team)
-                <option  class = 'team_name' value="{{ $team->id }}">{{ $team->abname }}</option>
+                    <option  class = 'team_name' value="{{ $team->id }}">{{ $team->abname }}</option>
                 @endforeach
             </select>
             </div>
@@ -48,17 +49,12 @@
             <p>オフェンス評価：{{ $post->offense_review }}</p>
             <p>ディフェンス評価：{{ $post->defense_review }}</p>
             <p class = 'image'><img src = '{{ $post->player->image }}'></p>
-            <p>いいね数：{{ $post->likes->count() }}</p>
             <p>投稿日付：{{$post->created_at}}</p>
+            <div class="favorite_counts">いいね！
+<span class="" aria-hidden="true">{{$post->favorite_users()->count()}}</span>
+            </div>
+
             <button><a href="/posts/{{ $post->id }}">投稿詳細</a></button>
-            <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
-                    @csrf
-                    @method('DELETE')
-                    @if($post->user_id === \Auth::user()->id)
-                    <input type ="submit" style = "display:none">
-                    <button class = 'delete'><span onclick = "return deletePost(this);">削除</span></button>
-                    @endif
-            </form>
             <hr>
         @endforeach
         </div>
@@ -66,6 +62,7 @@
         <div class='paginate'>
             {{ $posts->links() }}
         </div>
+    
     </body>
 </html>
 @endsection

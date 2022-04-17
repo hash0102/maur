@@ -10,6 +10,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet"href="/css/app.css">
+        <link rel="stylesheet"href="{{ asset('/css/app.css') }}" >
     </head>
     <body>
         <div class="content">
@@ -23,16 +24,38 @@
                 <p class = "updated_at">{{$post->updated_at}}</p>
             </div>
         </div>
-        <div>
-          @if($post->is_liked_by_auth_user())
-            <a href="{{ route('post.unlike', ['id' => $post->id])}}" class="btn btn-success btn-sm">いいね<span class="badge">{{ $post->likes()->count() }}</span></a>
-          @else
-            <a href="{{ route('post.like', ['id' => $post->id])}}" class="btn btn-secondary btn-sm">いいね<span class="badge">{{ $post->likes()->count() }}</span></a>
-          @endif
+        
+        <div class = "favorite">
+            @if (\Auth::user()->id != $post->user_id)
+
+            @if (\Auth::user()->is_favorite($post->id))
+    
+            {!! Form::open(['route' => ['favorites.unfavorite', $post->id], 'method' => 'delete']) !!}
+                {!! Form::submit('good', ['class' => "button btn btn-success"]) !!}
+            {!! Form::close() !!}
+    
+            @else
+    
+            {!! Form::open(['route' => ['favorites.favorite', $post->id]]) !!}
+                {!! Form::submit('good', ['class' => " bi bi-heart-fill btn-secondary"]) !!}
+            {!! Form::close() !!}
+    
+            @endif
+            @endif
         </div>
+        
+        
         <div class="footer">
             <button><a href="/">戻る</a></button>
             <hr>
+            <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+                    @csrf
+                    @method('DELETE')
+                    @if($post->user_id === \Auth::user()->id)
+                    <input type ="submit" style = "display:none">
+                    <button class = 'delete'><span onclick = "return deletePost(this);">削除</span></button>
+                    @endif
+            </form>
             <h3>コメント</h3>
             @foreach($comments as $comment)
             @if($comment->post_id === $post->id)
@@ -42,13 +65,15 @@
             @endif
             @endforeach
             <button><a href = '/posts/{{$post->id}}/comments'>コメントを全て見る</a></button>
-            <!--<form action = "/posts/{{$post->id}}" id= "form_delete" method= "POST">-->
-            <!--    @csrf-->
-            <!--    @method('DELETE')-->
-            <!--    <input type ="submit" style = "display:none">-->
-            <!--    <button class = 'delete'><span onclick = "return deletePost(this);">削除</span></button>-->
-            <!--</form>-->
         </div>
+        <script>
+        function deletePost(e) {
+                 "use strict";
+                 if(confirm('削除すると復元できません。\n 本当に削除しますか？')) {
+                     document.getElementById('form_delete').submit();
+                 }
+        </script>
+        
     </body>
 </html>
 @endsection

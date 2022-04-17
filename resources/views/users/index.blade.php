@@ -44,6 +44,14 @@
             <p>評価理由：{{$post->content}} </p>
             <p><img src = "{{$post->player->image }}"></p>
             <button><a href="/users/{{ $post->id }}">投稿詳細</a></button>
+            <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+                @csrf
+                @method('DELETE')
+                @if($post->user_id === \Auth::user()->id)
+                <input type ="submit" style = "display:none">
+                <button class = 'delete'><span onclick = "return deletePost(this);">削除</span></button>
+                @endif
+            </form>
             <hr>
             @endforeach
         </div>

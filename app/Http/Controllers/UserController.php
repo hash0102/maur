@@ -14,7 +14,6 @@ class UserController extends Controller
     public function index(Post $post, Team $team, Comment $Comment)
     {
       $post =  $post->getUserPaginateByLimit();
-
         return view('users/index')->with(['posts' => $post, 'teams' => $team->get()]);
     }
     
@@ -34,4 +33,12 @@ class UserController extends Controller
     {
         return view('users/show')->with(['post' => $post]);
     }
+    
+    public function delete(Post $post)
+    {
+        $post->delete();
+        return redirect('/users');
+    }
+    
+
 }

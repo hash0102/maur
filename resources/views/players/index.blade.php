@@ -40,17 +40,22 @@
             @foreach ($players as $player)
             <p>選手名：{{ $player->first_name }} {{ $player->last_name}}</p>
             <p>チーム：{{$player->team->state_name }} {{$player->team->name }}</p>
-            <p>ポシション： {{ $player->position->name }}</p>
-            <p>年齢：{{$player->age }} 歳</p>
-            <img src = "{{$player->image}}" width="30%" height="50%">
-            <ul>今シーズンのスタッツ</ul>
-            <li>PPG：{{ $player->PPG }}</li>
-            <li>RPG：{{ $player->RPG }}</li>
-            <li>APG：{{ $player->APG }}</li>
-            <li>MPG：{{ $player->MPG }} 分</li>
-            <li>FG：{{ $player->FG }}％</li>
-            <li>3P：{{ $player->three_point }}％</li>
-            <li>FT：{{ $player->FT }}%</li>
+            <p><img src = "{{$player->team->image}}"></p>
+            <p>No.： {{ $player->jersey }}</p>
+            <p>身長：{{$player->height}} feet</p>
+            <p>体重：{{$player->weight}} lb</p>
+            <p>ポジション：{{$player->position}}</p>
+            <p>誕生日：{{$player->birthday}}</p>
+            <p>出身国：{{$player->birthcountry}}</p>
+            <p>出身：{{$player->birthcity}}</p>
+            @if($player->highschool == 'No Data')
+            <p>大学：{{$player->college}} 大学</p>
+            @else
+            <p>高校：{{$player->highschool}}　高校</p>
+            @endif
+            <p>プロ歴：{{$player->experience}} 年</p>
+            <p>年俸：{{$player->salary}} ドル</p>
+            <img src = "{{$player->image}}">
             <hr>
             @endforeach
         </div>

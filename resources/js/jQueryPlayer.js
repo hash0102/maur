@@ -21,17 +21,19 @@ $("#teams").on('change',function () {
           var players_content = `
               <p> 選手名：${ value.first_name } ${value.last_name} </p>
               <p>チーム：${value.team.state_name} ${value.team.name } </p>
-              <p>ポジション: ${value.position.name } </p>
-              <p>年齢：${value.age } 歳</p>
-              <p><img src = ${value.image } ></p>
-              <ul>今シーズンのスタッツ</ul>
-              <li>PPG：${value.PPG }</li>
-              <li>RPG：${value.RPG}</li>
-              <li>APG：${value.APG}</li>
-              <li>MPG：${value.MPG} 分</li>
-              <li>FG：${value.FG}％</li>
-              <li>3P：${value.three_point}％</li>
-              <li>FT：${value.FT}%</li>
+              <p><img src = ${value.team.image}></p>
+              <p>No.： ${value.jersey}</p>
+            <p>身長：${value.height}feet</p>
+            <p>体重：${value.weight} lb</p>
+            <p>ポジション：${value.position}</p>
+            <p>誕生日：${value.birthday}</p>
+            <p>出身国：${value.birthcountry}</p>
+            <p>出身：${value.birthcity}</p>
+            <p>大学：${value.college} 大学</p>
+            <p>高校：${value.highschool} 高校</p>
+            <p>プロ歴：${value.experience} 年</p>
+            <p>年俸：${value.salary} ドル</p>
+            <p><img src = "${value.image}"><p>
               <hr>
               `;
                $('.posts').append(players_content);

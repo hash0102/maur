@@ -47,12 +47,41 @@ class User extends Authenticatable
         return $this->hasMany('App\Comment');  
     }
     
-    public function likes()   
+    //いいね機能
+    public function favorites() //PostとUserの中間テーブル
     {
-        return $this->hasMany('App\Like');  
+        return $this->belongsToMany('App\Post');
     }
     
-    
+    public function is_favorite($postId) //いいねがあるか確認
+    {
+        return $this->favorites()->where('post_id',$postId)->exists();
+    }
+
+    public function favorite($postId) //いいねをつける機能
+    {
+        $exist = $this->is_favorite($postId);
+
+        if($exist){
+            return false;
+        }else{
+            $this->favorites()->attach($postId);
+            return true;
+        }
+    }
+
+    public function unfavorite($postId) //いいねを外す機能
+    {
+        $exist = $this->is_favorite($postId);
+
+        if($exist){
+            $this->favorites()->detach($postId);
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //ここまで
 }
 
 
