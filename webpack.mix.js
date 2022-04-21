@@ -15,5 +15,9 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/jQuery.js', 'public/js')
     .js('resources/js/jQueryPlayer.js', 'public/js')
     .js('resources/js/jQueryUser.js', 'public/js')
+    .js('resources/js/jQueryCreatePost.js', 'public/js')
+    .js('resources/js/jQueryLike.js', 'public/js')
+    .js('resources/js/jQueryCommentLike.js', 'public/js')
+    
    .sass('resources/sass/app.scss', 'public/css');
 

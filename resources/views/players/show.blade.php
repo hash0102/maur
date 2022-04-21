@@ -11,34 +11,8 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-    <fotter>
-        <div class = 'footer'>
-            <div class = 'button'>
-                <button><a href='/users'><i class="fa-solid fa-user-pen"></i>   自分の投稿</a></button>
-                @if(Auth::user()->id === 1)
-                <button class = 'player_create'><a href = '/players/create'>選手登録</a></button>
-                @endif
-                <button><a href = '/'><i class="fa-solid fa-house"></i>    HOME</a></button>
-            </div>
-            <div class ="team_Name">
-                <p>チーム名</p>
-                <select id = "teams">
-                    <option value = "">チームを選択する</option>
-                    @foreach($teams as $team)
-                    <option value="{{ $team->id }}">{{ $team->abname }}</option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
-    </fotter>
-        <h1>選手一覧</h1>
-        <hr>
-        <div class='posts'>
-        </div>
-
-        <div class='posts2'>
-            @foreach ($players as $player)
-            <p>選手名：{{ $player->first_name }} {{ $player->last_name}}</p>
+        <p>選手名：{{ $player->first_name }} {{ $player->last_name}}</p>
+            <img src = "{{$player->image}}" width = 10%>
             <p>チーム：<img src = "{{$player->team->image}}" width = 1.25% height= 10%>    {{$player->team->state_name }} {{$player->team->name }}</p>
             <p>No.： {{ $player->jersey }}</p>
             <p>身長：{{$player->height}} cm</p>
@@ -54,14 +28,7 @@
             @endif
             <p>プロ歴：{{$player->experience}} 年</p>
             <p>年俸：{{$player->salary}} ドル</p>
-            <img src = "{{$player->image}}" width = 10%>
-            <hr>
-            @endforeach
-        </div>
-        <div class='paginate'>
-            {{ $players->links() }}
-        </div>
-        </div>
     </body>
+    <button><a href = "/"><i class="fa-solid fa-arrow-right-to-bracket"></i>  戻る</a></button>
 </html>
 @endsection

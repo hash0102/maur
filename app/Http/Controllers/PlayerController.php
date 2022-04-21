@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Player;
 use App\Team;
 use App\Position;
+use App\Post;
 
 class PlayerController extends Controller
 {
@@ -21,10 +22,14 @@ class PlayerController extends Controller
         return view('players.index')->with(['players' => $player->getPlayerPaginateByLimit() , 'teams' => $team->get()]);
     }
     
-    public function create(Team $team , Position $position) {
-        // if(\Auth::user()->id == 1){
+    public function show(Player $player)
+    {
+        return view('players/show')->with(['player' => $player]);
+    }
+
+    public function create(Team $team , Position $position)
+    {
         return view('players/create')->with(['teams' => $team->get(), 'positions' => $position->get()]);
-        // }
     }
     
     public function store(Request $request, Player $player)
@@ -34,8 +39,8 @@ class PlayerController extends Controller
         return redirect('/players');
     }   
     
-    public function basketapi(Player $player){
-        
+    public function basketapi(Player $player)
+    {
         $player_api = $player->basketapi();
     }
 

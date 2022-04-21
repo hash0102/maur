@@ -29,11 +29,10 @@ class Post extends Model
     }
     
     public function getUserPaginateByLimit(int $limit_count = 5){
-        return $this->orderBy('updated_at', 'DESC')->where('user_id', \Auth::user()->id )
+        return $this->withCount('likes')->orderBy('updated_at', 'DESC')->where('user_id', \Auth::user()->id)
         ->paginate($limit_count);
     }
-    
-    
+
     public function player()
     {
         return $this->belongsTo('App\Player'); 
@@ -54,10 +53,14 @@ class Post extends Model
         return $this->hasMany('App\Comment');  
     }
 
-    public function favorite_users() //PostとUserの中間テーブル
+    public function likes()
     {
-        return $this->belongsToMany('App\User');
+        return $this->hasMany('App\Like');
+    }
 
+    public function isLikedBy($user): bool
+    {
+        return Like::where('user_id', $user->id)->where('post_id', $this->id)->first() !==null;
     }
 
 }

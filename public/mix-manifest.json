@@ -2,6 +2,9 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/js/jQuery.js": "/js/jQuery.js",
+    "/js/jQueryCommentLike.js": "/js/jQueryCommentLike.js",
+    "/js/jQueryCreatePost.js": "/js/jQueryCreatePost.js",
+    "/js/jQueryLike.js": "/js/jQueryLike.js",
     "/js/jQueryPlayer.js": "/js/jQueryPlayer.js",
     "/js/jQueryUser.js": "/js/jQueryUser.js"
 }

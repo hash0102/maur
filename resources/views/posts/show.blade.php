@@ -25,30 +25,10 @@
             </div>
         </div>
         
-        <div class = "favorite">
-            @if (\Auth::user()->id != $post->user_id)
-
-            @if (\Auth::user()->is_favorite($post->id))
-    
-            {!! Form::open(['route' => ['favorites.unfavorite', $post->id], 'method' => 'delete']) !!}
-                {!! Form::submit('good', ['class' => "button btn btn-success"]) !!}
-            {!! Form::close() !!}
-    
-            @else
-    
-            {!! Form::open(['route' => ['favorites.favorite', $post->id]]) !!}
-                {!! Form::submit('good', ['class' => " bi bi-heart-fill btn-secondary"]) !!}
-            {!! Form::close() !!}
-    
-            @endif
-            @endif
-        </div>
-        
         
         <div class="footer">
-            <button><a href="/">戻る</a></button>
-            <hr>
-            <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+            <button><a href="/"><i class="fa-solid fa-arrow-right-to-bracket"></i>    戻る</a></button>
+                        <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
                     @csrf
                     @method('DELETE')
                     @if($post->user_id === \Auth::user()->id)
@@ -56,6 +36,7 @@
                     <button class = 'delete'><span onclick = "return deletePost(this);">削除</span></button>
                     @endif
             </form>
+            <hr>
             <h3>コメント</h3>
             @foreach($comments as $comment)
             @if($comment->post_id === $post->id)
@@ -64,7 +45,7 @@
                 <p>コメント内容：{{$comment->contents}}</p>
             @endif
             @endforeach
-            <button><a href = '/posts/{{$post->id}}/comments'>コメントを全て見る</a></button>
+            <button><a href = '/posts/{{$post->id}}/comments'><i class="fa-solid fa-comments"></i>コメントを全て見る</a></button>
         </div>
         <script>
         function deletePost(e) {

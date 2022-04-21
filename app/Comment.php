@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Post;
 
 class Comment extends Model
 {
@@ -13,7 +14,13 @@ class Comment extends Model
         'post_id'
         ];
         
-        public function post()
+    public function getCommentPaginateByLimit($id)
+    {
+        return $this->withCount('commentlikes')->orderBy('updated_at', 'DESC')->where('post_id', $id)
+        ->paginate(5);
+    }
+
+    public function post()
     {
         return $this->belongsTo('App\Post');
     }
@@ -23,4 +30,13 @@ class Comment extends Model
         return $this->belongsTo('App\User');
     }
     
+    public function commentlikes()
+    {
+        return $this->hasMany('App\CommentLike');
+    }
+
+    public function isCommentLikedBy($user): bool
+    {
+        return CommentLike::where('user_id', $user->id)->where('comment_id', $this->id)->first() !==null;
+    }
 }
