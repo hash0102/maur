@@ -4,7 +4,9 @@
     "/js/jQuery.js": "/js/jQuery.js",
     "/js/jQueryCommentLike.js": "/js/jQueryCommentLike.js",
     "/js/jQueryCreatePost.js": "/js/jQueryCreatePost.js",
+    "/js/jQueryCreateRanking.js": "/js/jQueryCreateRanking.js",
     "/js/jQueryLike.js": "/js/jQueryLike.js",
     "/js/jQueryPlayer.js": "/js/jQueryPlayer.js",
+    "/js/jQueryRankingLike.js": "/js/jQueryRankingLike.js",
     "/js/jQueryUser.js": "/js/jQueryUser.js"
 }

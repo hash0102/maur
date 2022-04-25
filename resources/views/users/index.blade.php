@@ -18,6 +18,7 @@
                 <button><a href = '/'><i class="fa-solid fa-house"></i>    HOME</a></button>
                 <button><a href = '/players'><i class="fa-solid fa-people-group"></i>    選手詳細</a></button>
                 <button><a href = '/posts/create'><i class="fa-solid fa-circle-plus"></i>    投稿登録</a></button>
+                <button><a href = '/ranking'><i class="fa-solid fa-ranking-star"></i>  ランキング</a></button>
             </div>
             <div class ="team_Name"></div>
             <p>チーム名</p>

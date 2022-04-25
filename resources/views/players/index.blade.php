@@ -19,20 +19,21 @@
                 <button class = 'player_create'><a href = '/players/create'>選手登録</a></button>
                 @endif
                 <button><a href = '/'><i class="fa-solid fa-house"></i>    HOME</a></button>
-            </div>
-            <div class ="team_Name">
-                <p>チーム名</p>
-                <select id = "teams">
-                    <option value = "">チームを選択する</option>
-                    @foreach($teams as $team)
-                    <option value="{{ $team->id }}">{{ $team->abname }}</option>
-                    @endforeach
-                </select>
+                <button><a href = '/ranking'><i class="fa-solid fa-ranking-star"></i>  ランキング</a></button>
             </div>
         </div>
     </fotter>
         <h1>選手一覧</h1>
         <hr>
+         <div class ="team_Name">
+                <p>チーム名</p>
+                <select id = "teams">
+                    <option value = "">チームを選択する</option>
+                    @foreach($teams as $team)
+                    <option value="{{ $team->id }}">{{ $team->abname }} ({{$team->name}})</option>
+                    @endforeach
+                </select>
+            </div>
         <div class='posts'>
         </div>
 

@@ -27,6 +27,9 @@ $("#team").on('change',function () {
               <p> オフェンス評価：${value.offense_review } </p>
               <p> ディフェンス評価：${value.defense_review } </p>
               <p><img src = ${value.player.image } ></p>
+              <div class = "reason">
+              <p>評価理由：${value.content}</p>
+              </div>
               <p>投稿日付：${value.created_at}</p>
               <button><a href="/posts/${value.id}">投稿詳細</a></button>
               <button><a href="/players/${ value.player_id }"><i class="fa-solid fa-angles-right"></i>    選手詳細</a></button>

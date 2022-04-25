@@ -20,20 +20,21 @@
                 <button><a href='/users'><i class="fa-solid fa-user-pen"></i>    自分の投稿</a></button>
                 <button><a href='/players'><i class="fa-solid fa-people-group"></i>    選手詳細</a></button>
                 <button><a href='posts/create'><i class="fa-solid fa-circle-plus"></i>    投稿登録</a></button>
-            </div>
-            <div class ="team_Name">
-            <p>チーム名</p>
-            <select id = "team">
-                <option value = "" class = 'option'>チームを選択する</option>
-                @foreach($teams as $team)
-                    <option  class = 'team_name' value="{{ $team->id }}">{{ $team->abname }}</option>
-                @endforeach
-            </select>
+                <button><a href = '/ranking'><i class="fa-solid fa-ranking-star"></i>  ランキング</a></button>
             </div>
         </div>
         </div>
     </fotter>
         <h1>最新の投稿</h1>
+        <div class ="team_Name">
+            <p>チーム名</p>
+            <select id = "team">
+                <option value = "" class = 'option'>チームを選択する</option>
+                @foreach($teams as $team)
+                    <option  class = 'team_name' value="{{ $team->id }}">{{ $team->abname }} ({{$team->name}})</option>
+                @endforeach
+            </select>
+            </div>
         <hr>
         <div class='posts'>
         </div>
@@ -46,13 +47,15 @@
             <p>現在投稿はございません。</p>
             @else
         @foreach ($posts as $post)
-            <p>選手名：{{ $post->player->first_name }} {{ $post->player->last_name}}</p>
+            <p class="name">選手名：{{ $post->player->first_name }} {{ $post->player->last_name}}</p>
             <p class = 'image'><img src = '{{ $post->player->image }}'></p>
             <p>チーム：<img src = "{{$post->player->team->image}}" width = 1.25% height= 10%>  {{$post->player->team->state_name }} {{$post->player->team->name }}</p>
             <p>ポシション： {{ $post->player->position }}</p>
             <p>オフェンス評価：{{ $post->offense_review }}</p>
             <p>ディフェンス評価：{{ $post->defense_review }}</p>
+            <div class = "reason">
             <p>評価理由：{{$post->content}}</p>
+            </div>
             <p>投稿者：{{$post->user->name }}</p>
             <p>投稿日付：{{$post->created_at}}</p>
               @auth

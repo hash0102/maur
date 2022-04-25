@@ -45,6 +45,11 @@ class Player extends Model
         return $this->belongsTo('App\Position');  
     }
     
+    public function rankings()
+    {
+        return $this->belongsToMany('App\Ranking');
+    }
+    
     public function basketapi()
     {
        $teamName = array('WAS','CHA','ATL','MIA','ORL','NY','PHI','BKN','BOS','TOR',

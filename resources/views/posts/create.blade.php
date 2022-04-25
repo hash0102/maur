@@ -26,7 +26,6 @@
                 <div class = "player_name">
                 <h2>選手</h2>
                 <select name="post[player_id]">
-                    <option>選手名</option>
                     @foreach($players as $player)
                     <option value="{{ $player->id }}">{{ $player->first_name ." ". $player->last_name}}</option>
                     @endforeach
