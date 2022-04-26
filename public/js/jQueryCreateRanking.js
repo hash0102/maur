@@ -127,6 +127,7 @@ $("#sg_team_select").on('change', function () {
       url: "/ranking/create/sg/teams/" + sgTeamSelectId,
       dataType: "json"
     }).done(function (res) {
+      $('.sg_player_team3').empty();
       $.each(res.sg_player_select, function (index, value) {
         var sg_player_by_team = "\n         \n         <option value=\"".concat(value.id, "\">").concat(value.first_name, " ").concat(value.last_name, "</option>\n         ");
         $(".sg_player_team3").append(sg_player_by_team);

@@ -39,6 +39,7 @@ $("#sg_team_select").on('change',function () {
       dataType: "json",
       })
       .done(function(res)  {
+          $('.sg_player_team3').empty();
         $.each(res.sg_player_select, function (index, value) {
          var sg_player_by_team = `
          
