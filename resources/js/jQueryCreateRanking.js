@@ -1,4 +1,3 @@
-let num = 0;
 $("#pg_team_select").on('change',function () {
   let pgTeamSelectId  = $("#pg_team_select").val();
   if(pgTeamSelectId == "") {
@@ -13,10 +12,6 @@ $("#pg_team_select").on('change',function () {
       .done(function(res)  {
         //console.log(res);
         $('.pg_player_team3').empty();
-         var  select_tag = `
-         <option value = "">選手を選択してください</option>
-         `;
-         $(".pg_player_team3").html(select_tag);
         $.each(res.pg_player_select, function (index, value) {
          
          var pg_player_by_team = `
@@ -31,32 +26,6 @@ $("#pg_team_select").on('change',function () {
     });
   }
 });
-$("#pg_player_id").on('change',function () {
-   let SelectId  = $("#pg_player_id").val();
-    $.ajax({
-      type: "get",       
-      url: "/ranking/create/pg/players/" + SelectId,
-      dataType: "json",
-      })
-      .done(function(res)  {
-        $.each(res.pg_player_select_by_id, function (index, value) {
-         console.log(value);
-         var pg_player_by_id = `
-         
-         <input type="hidden" name="positions_array[]" value="${value.position}">
-         `;
-         $(".pg_player_team3").append(pg_player_by_id);
-          
-          
-        });
-      
-    })
-    .fail((error) => {
-     // alert(error.statusText);
-    });
-});
-
-
 
 $("#sg_team_select").on('change',function () {
   let sgTeamSelectId  = $("#sg_team_select").val();
@@ -70,11 +39,6 @@ $("#sg_team_select").on('change',function () {
       dataType: "json",
       })
       .done(function(res)  {
-        $('.sg_player_team3').empty();
-         var  select_tag = `
-         <option value = "">選手を選択してください</option>
-         `;
-         $(".sg_player_team3").html(select_tag);
         $.each(res.sg_player_select, function (index, value) {
          var sg_player_by_team = `
          
@@ -91,31 +55,6 @@ $("#sg_team_select").on('change',function () {
   }
 });
 
-$("#sg_player_id").on('change',function () {
-   let SelectId  = $("#sg_player_id").val();
-    $.ajax({
-      type: "get",       
-      url: "/ranking/create/sg/players/" + SelectId,
-      dataType: "json",
-      })
-      .done(function(res)  {
-        $.each(res.sg_player_select_by_id, function (index, value) {
-         console.log(value);
-         var sg_player_by_id = `
-         
-         <input type="hidden" name="positions_array[]" value="${value.position}">
-         `;
-         $(".sg_player_team3").append(sg_player_by_id);
-          
-          
-        });
-      
-    })
-    .fail((error) => {
-     // alert(error.statusText);
-    });
-});
-
 $("#sf_team_select").on('change',function () {
   let sfTeamSelectId  = $("#sf_team_select").val();
   if(sfTeamSelectId == "") {
@@ -129,10 +68,6 @@ $("#sf_team_select").on('change',function () {
       })
       .done(function(res)  {
         $('.sf_player_team3').empty();
-         var  select_tag = `
-         <option value = "">選手を選択してください</option>
-         `;
-         $(".sf_player_team3").html(select_tag);
         $.each(res.sf_player_select, function (index, value) {
          var sf_player_by_team = `
          
@@ -149,32 +84,6 @@ $("#sf_team_select").on('change',function () {
   }
 });
 
-$("#sf_player_id").on('change',function () {
-   let SelectId  = $("#sf_player_id").val();
-    $.ajax({
-      type: "get",       
-      url: "/ranking/create/sf/players/" + SelectId,
-      dataType: "json",
-      })
-      .done(function(res)  {
-        $.each(res.sf_player_select_by_id, function (index, value) {
-         console.log(value);
-         var sf_player_by_id = `
-         
-         <input type="hidden" name="positions_array[]" value="${value.position}">
-         `;
-         $(".sf_player_team3").append(sf_player_by_id);
-          
-          
-        });
-      
-    })
-    .fail((error) => {
-     // alert(error.statusText);
-    });
-});
-
-
 $("#pf_team_select").on('change',function () {
   let pfTeamSelectId  = $("#pf_team_select").val();
   if(pfTeamSelectId == "") {
@@ -188,10 +97,6 @@ $("#pf_team_select").on('change',function () {
       })
       .done(function(res)  {
         $('.pf_player_team3').empty();
-         var  select_tag = `
-         <option value = "">選手を選択してください</option>
-         `;
-         $(".pf_player_team3").html(select_tag);
         $.each(res.pf_player_select, function (index, value) {
          var pf_player_by_team = `
          
@@ -208,31 +113,6 @@ $("#pf_team_select").on('change',function () {
   }
 });
 
-$("#pf_player_id").on('change',function () {
-   let SelectId  = $("#pf_player_id").val();
-    $.ajax({
-      type: "get",       
-      url: "/ranking/create/pf/players/" + SelectId,
-      dataType: "json",
-      })
-      .done(function(res)  {
-        $.each(res.pf_player_select_by_id, function (index, value) {
-         console.log(value);
-         var pf_player_by_id = `
-         
-         <input type="hidden" name="positions_array[]" value="${value.position}">
-         `;
-         $(".pf_player_team3").append(pf_player_by_id);
-          
-          
-        });
-      
-    })
-    .fail((error) => {
-     // alert(error.statusText);
-    });
-});
-
 $("#c_team_select").on('change',function () {
   let pfTeamSelectId  = $("#c_team_select").val();
   if(pfTeamSelectId == "") {
@@ -246,10 +126,6 @@ $("#c_team_select").on('change',function () {
       })
       .done(function(res)  {
         $('.c_player_team3').empty();
-         var  select_tag = `
-         <option value = "">選手を選択してください</option>
-         `;
-         $(".c_player_team3").html(select_tag);
         $.each(res.c_player_select, function (index, value) {
          var c_player_by_team = `
          
@@ -264,29 +140,4 @@ $("#c_team_select").on('change',function () {
      // alert(error.statusText);
     });
   }
-});
-
-$("#c_player_id").on('change',function () {
-   let SelectId  = $("#c_player_id").val();
-    $.ajax({
-      type: "get",       
-      url: "/ranking/create/c/players/" + SelectId,
-      dataType: "json",
-      })
-      .done(function(res)  {
-        $.each(res.c_player_select_by_id, function (index, value) {
-         console.log(value);
-         var c_player_by_id = `
-         
-         <input type="hidden" name="positions_array[]" value="${value.position}">
-         `;
-         $(".c_player_team3").append(c_player_by_id);
-          
-          
-        });
-      
-    })
-    .fail((error) => {
-     // alert(error.statusText);
-    });
 });

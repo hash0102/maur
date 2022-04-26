@@ -93,7 +93,6 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var num = 0;
 $("#pg_team_select").on('change', function () {
   var pgTeamSelectId = $("#pg_team_select").val();
 
@@ -108,8 +107,6 @@ $("#pg_team_select").on('change', function () {
     }).done(function (res) {
       //console.log(res);
       $('.pg_player_team3').empty();
-      var select_tag = "\n         <option value = \"\">\u9078\u624B\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044</option>\n         ";
-      $(".pg_player_team3").html(select_tag);
       $.each(res.pg_player_select, function (index, value) {
         var pg_player_by_team = "\n         <option value=\"".concat(value.id, "\">").concat(value.first_name, " ").concat(value.last_name, "</option>\n         ");
         $(".pg_player_team3").append(pg_player_by_team);
@@ -117,21 +114,6 @@ $("#pg_team_select").on('change', function () {
     }).fail(function (error) {// alert(error.statusText);
     });
   }
-});
-$("#pg_player_id").on('change', function () {
-  var SelectId = $("#pg_player_id").val();
-  $.ajax({
-    type: "get",
-    url: "/ranking/create/pg/players/" + SelectId,
-    dataType: "json"
-  }).done(function (res) {
-    $.each(res.pg_player_select_by_id, function (index, value) {
-      console.log(value);
-      var pg_player_by_id = "\n         \n         <input type=\"hidden\" name=\"positions_array[]\" value=\"".concat(value.position, "\">\n         ");
-      $(".pg_player_team3").append(pg_player_by_id);
-    });
-  }).fail(function (error) {// alert(error.statusText);
-  });
 });
 $("#sg_team_select").on('change', function () {
   var sgTeamSelectId = $("#sg_team_select").val();
@@ -145,9 +127,6 @@ $("#sg_team_select").on('change', function () {
       url: "/ranking/create/sg/teams/" + sgTeamSelectId,
       dataType: "json"
     }).done(function (res) {
-      $('.sg_player_team3').empty();
-      var select_tag = "\n         <option value = \"\">\u9078\u624B\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044</option>\n         ";
-      $(".sg_player_team3").html(select_tag);
       $.each(res.sg_player_select, function (index, value) {
         var sg_player_by_team = "\n         \n         <option value=\"".concat(value.id, "\">").concat(value.first_name, " ").concat(value.last_name, "</option>\n         ");
         $(".sg_player_team3").append(sg_player_by_team);
@@ -155,21 +134,6 @@ $("#sg_team_select").on('change', function () {
     }).fail(function (error) {// alert(error.statusText);
     });
   }
-});
-$("#sg_player_id").on('change', function () {
-  var SelectId = $("#sg_player_id").val();
-  $.ajax({
-    type: "get",
-    url: "/ranking/create/sg/players/" + SelectId,
-    dataType: "json"
-  }).done(function (res) {
-    $.each(res.sg_player_select_by_id, function (index, value) {
-      console.log(value);
-      var sg_player_by_id = "\n         \n         <input type=\"hidden\" name=\"positions_array[]\" value=\"".concat(value.position, "\">\n         ");
-      $(".sg_player_team3").append(sg_player_by_id);
-    });
-  }).fail(function (error) {// alert(error.statusText);
-  });
 });
 $("#sf_team_select").on('change', function () {
   var sfTeamSelectId = $("#sf_team_select").val();
@@ -184,8 +148,6 @@ $("#sf_team_select").on('change', function () {
       dataType: "json"
     }).done(function (res) {
       $('.sf_player_team3').empty();
-      var select_tag = "\n         <option value = \"\">\u9078\u624B\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044</option>\n         ";
-      $(".sf_player_team3").html(select_tag);
       $.each(res.sf_player_select, function (index, value) {
         var sf_player_by_team = "\n         \n         <option value=\"".concat(value.id, "\">").concat(value.first_name, " ").concat(value.last_name, "</option>\n         ");
         $(".sf_player_team3").append(sf_player_by_team);
@@ -193,21 +155,6 @@ $("#sf_team_select").on('change', function () {
     }).fail(function (error) {// alert(error.statusText);
     });
   }
-});
-$("#sf_player_id").on('change', function () {
-  var SelectId = $("#sf_player_id").val();
-  $.ajax({
-    type: "get",
-    url: "/ranking/create/sf/players/" + SelectId,
-    dataType: "json"
-  }).done(function (res) {
-    $.each(res.sf_player_select_by_id, function (index, value) {
-      console.log(value);
-      var sf_player_by_id = "\n         \n         <input type=\"hidden\" name=\"positions_array[]\" value=\"".concat(value.position, "\">\n         ");
-      $(".sf_player_team3").append(sf_player_by_id);
-    });
-  }).fail(function (error) {// alert(error.statusText);
-  });
 });
 $("#pf_team_select").on('change', function () {
   var pfTeamSelectId = $("#pf_team_select").val();
@@ -222,8 +169,6 @@ $("#pf_team_select").on('change', function () {
       dataType: "json"
     }).done(function (res) {
       $('.pf_player_team3').empty();
-      var select_tag = "\n         <option value = \"\">\u9078\u624B\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044</option>\n         ";
-      $(".pf_player_team3").html(select_tag);
       $.each(res.pf_player_select, function (index, value) {
         var pf_player_by_team = "\n         \n         <option value=\"".concat(value.id, "\">").concat(value.first_name, " ").concat(value.last_name, "</option>\n         ");
         $(".pf_player_team3").append(pf_player_by_team);
@@ -231,21 +176,6 @@ $("#pf_team_select").on('change', function () {
     }).fail(function (error) {// alert(error.statusText);
     });
   }
-});
-$("#pf_player_id").on('change', function () {
-  var SelectId = $("#pf_player_id").val();
-  $.ajax({
-    type: "get",
-    url: "/ranking/create/pf/players/" + SelectId,
-    dataType: "json"
-  }).done(function (res) {
-    $.each(res.pf_player_select_by_id, function (index, value) {
-      console.log(value);
-      var pf_player_by_id = "\n         \n         <input type=\"hidden\" name=\"positions_array[]\" value=\"".concat(value.position, "\">\n         ");
-      $(".pf_player_team3").append(pf_player_by_id);
-    });
-  }).fail(function (error) {// alert(error.statusText);
-  });
 });
 $("#c_team_select").on('change', function () {
   var pfTeamSelectId = $("#c_team_select").val();
@@ -260,8 +190,6 @@ $("#c_team_select").on('change', function () {
       dataType: "json"
     }).done(function (res) {
       $('.c_player_team3').empty();
-      var select_tag = "\n         <option value = \"\">\u9078\u624B\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044</option>\n         ";
-      $(".c_player_team3").html(select_tag);
       $.each(res.c_player_select, function (index, value) {
         var c_player_by_team = "\n         \n         <option value=\"".concat(value.id, "\">").concat(value.first_name, " ").concat(value.last_name, "</option>\n         ");
         $(".c_player_team3").append(c_player_by_team);
@@ -269,21 +197,6 @@ $("#c_team_select").on('change', function () {
     }).fail(function (error) {// alert(error.statusText);
     });
   }
-});
-$("#c_player_id").on('change', function () {
-  var SelectId = $("#c_player_id").val();
-  $.ajax({
-    type: "get",
-    url: "/ranking/create/c/players/" + SelectId,
-    dataType: "json"
-  }).done(function (res) {
-    $.each(res.c_player_select_by_id, function (index, value) {
-      console.log(value);
-      var c_player_by_id = "\n         \n         <input type=\"hidden\" name=\"positions_array[]\" value=\"".concat(value.position, "\">\n         ");
-      $(".c_player_team3").append(c_player_by_id);
-    });
-  }).fail(function (error) {// alert(error.statusText);
-  });
 });
 
 /***/ }),

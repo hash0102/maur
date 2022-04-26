@@ -40,9 +40,7 @@ class RankingController extends Controller
     {
         $input_ranking = $request['ranking'];
         $input_players = $request->players_array;
-        $input_positions = $request->positions_array;
         $ranking->fill($input_ranking)->save();
-        
         $ranking->players()->attach($input_players);
         return redirect('/ranking');
     }

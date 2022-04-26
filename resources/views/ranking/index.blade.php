@@ -27,61 +27,24 @@
         @foreach($rankings as $ranking)
         <p>投稿者名：{{$ranking->user->name}}</p>
         @foreach($ranking->players as $player)
-        @if($player->position==='PG')
-            <p>PG：{{$player->first_name}} {{$player->last_name}}</p>
+            <p>{{$player->position}}：{{$player->first_name}} {{$player->last_name}}</p>
             <img src = "{{$player->image}}">
             <p>所属チーム：<img src = "{{$player->team->image}}" width = 1.25% height= 10%> {{$player->team->state_name }}  {{$player->team->name}}</p>
             <button><a href="/players/{{ $player->id }}"><i class="fa-solid fa-user"></i>   選手詳細</a></button>
-        @endif
-        @endforeach
-        
-        @foreach($ranking->players as $player)
-        @if($player->position==='SG')
-            <p>SG：{{$player->first_name}} {{$player->last_name}}</p>
-            <img src = "{{$player->image}}">
-            <p>所属チーム：<img src = "{{$player->team->image}}" width = 1.25% height= 10%> {{$player->team->state_name }}  {{$player->team->name}}</p>
-            <button><a href="/players/{{ $player->id }}"><i class="fa-solid fa-user"></i>   選手詳細</a></button>
-        @endif
-        @endforeach
-        
-        @foreach($ranking->players as $player)
-        @if($player->position==='SF')
-            <p>SF：{{$player->first_name}} {{$player->last_name}}</p>
-            <img src = "{{$player->image}}">
-            <p>所属チーム：<img src = "{{$player->team->image}}" width = 1.25% height= 10%> {{$player->team->state_name }}  {{$player->team->name}}</p>
-            <button><a href="/players/{{ $player->id }}"><i class="fa-solid fa-user"></i>   選手詳細</a></button>
-        @endif
-        @endforeach
-        
-        @foreach($ranking->players as $player)
-        @if($player->position==='PF')
-            <p>PF：{{$player->first_name}} {{$player->last_name}}</p>
-            <img src = "{{$player->image}}">
-            <p>所属チーム：<img src = "{{$player->team->image}}" width = 1.25% height= 10%> {{$player->team->state_name }}  {{$player->team->name}}</p>
-            <button><a href="/players/{{ $player->id }}"><i class="fa-solid fa-user"></i>   選手詳細</a></button>
-        @endif
-        @endforeach
-        
-        @foreach($ranking->players as $player)
-        @if($player->position==='C')
-            <p>C：{{$player->first_name}} {{$player->last_name}}</p>
-            <img src = "{{$player->image}}">
-            <p>所属チーム：<img src = "{{$player->team->image}}" width = 1.25% height= 10%> {{$player->team->state_name }}  {{$player->team->name}}</p>
-            <button><a href="/players/{{ $player->id }}"><i class="fa-solid fa-user"></i>   選手詳細</a></button>
-        @endif
         @endforeach
         <div class = "reason">
         <p>ランキング理由：{{$ranking->contents}}</p>
          <form action="/ranking/{{ $ranking->id }}" id="form_{{ $ranking->id }}" method="post" style="display:inline">
         </div>
         <p>投稿日付：{{$ranking->created_at}}</p>
+        
                 @csrf
                 @method('DELTE')
                 @if($ranking->user_id === \Auth::user()->id)
                 <input type ="submit" style = "display:none">
                 <button class = 'delete'><span onclick = "return deletePost(this);"><i class="fa-solid fa-delete-left"></i>    削除</span></button>
                 @endif
-            </form>
+                </form>
         
         @auth
               @if (!$ranking->isRankingLikedBy(Auth::user()))
