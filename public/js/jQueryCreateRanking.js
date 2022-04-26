@@ -199,6 +199,22 @@ $("#c_team_select").on('change', function () {
     });
   }
 });
+$(function () {
+  $("textarea").on('keydown keyup keypress change', function () {
+    var count = $(this).val().length;
+    var limit = 500 - count;
+
+    if (limit <= 500) {
+      $("#num").text(limit);
+      $("input[type='submit']").prop('disabled', false).removeClass('disabled');
+
+      if (limit <= 0) {
+        $("#num").text('0');
+        $("input[type='submit']").prop('disabled', true).addClass('disabled');
+      }
+    }
+  });
+});
 
 /***/ }),
 

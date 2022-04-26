@@ -3,6 +3,7 @@
     "/css/app.css": "/css/app.css",
     "/js/jQuery.js": "/js/jQuery.js",
     "/js/jQueryCommentLike.js": "/js/jQueryCommentLike.js",
+    "/js/jQueryCreateComment.js": "/js/jQueryCreateComment.js",
     "/js/jQueryCreatePost.js": "/js/jQueryCreatePost.js",
     "/js/jQueryCreateRanking.js": "/js/jQueryCreateRanking.js",
     "/js/jQueryLike.js": "/js/jQueryLike.js",

@@ -81,48 +81,24 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/jQueryCreatePost.js":
-/*!******************************************!*\
-  !*** ./resources/js/jQueryCreatePost.js ***!
-  \******************************************/
+/***/ "./resources/js/jQueryCreateComment.js":
+/*!*********************************************!*\
+  !*** ./resources/js/jQueryCreateComment.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$("#team_select").on('change', function () {
-  var teamSelectId = $("#team_select").val();
-
-  if (teamSelectId == "") {
-    $('.player_name').show();
-    $('.player_name2').hide();
-  } else {
-    $('.player_name').hide();
-    $('.player_name2').show();
-    $.ajax({
-      type: "get",
-      url: "/posts/create/teams/" + teamSelectId,
-      dataType: "json"
-    }).done(function (res) {
-      //console.log(res);
-      $('.player_team3').empty();
-      $.each(res.player_select, function (index, value) {
-        var player_by_team = "\n         \n         <option value=\"".concat(value.id, "\">").concat(value.first_name, " ").concat(value.last_name, "</option>\n         ");
-        $(".player_team3").append(player_by_team);
-      });
-    }).fail(function (error) {// alert(error.statusText);
-    });
-  }
-});
 $(function () {
   $("textarea").on('keydown keyup keypress change', function () {
     var count = $(this).val().length;
-    var limit = 400 - count;
+    var limit = 200 - count;
 
-    if (limit <= 400) {
+    if (limit <= 200) {
       $("#num").text(limit);
       $("input[type='submit']").prop('disabled', false).removeClass('disabled');
 
@@ -136,14 +112,14 @@ $(function () {
 
 /***/ }),
 
-/***/ 4:
-/*!************************************************!*\
-  !*** multi ./resources/js/jQueryCreatePost.js ***!
-  \************************************************/
+/***/ 10:
+/*!***************************************************!*\
+  !*** multi ./resources/js/jQueryCreateComment.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/ec2-user/environment/maur/resources/js/jQueryCreatePost.js */"./resources/js/jQueryCreatePost.js");
+module.exports = __webpack_require__(/*! /home/ec2-user/environment/maur/resources/js/jQueryCreateComment.js */"./resources/js/jQueryCreateComment.js");
 
 
 /***/ })

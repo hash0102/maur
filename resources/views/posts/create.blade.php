@@ -38,6 +38,7 @@
                 <input type="number" name="post[defense_review]" min="0" max="100"></input>
                 <h2>評価理由</h2>
                 <textarea name="post[content]" placeholder="評価理由"></textarea>
+                <p id="count">あと<span id="num"></span>文字</p>
             </div>
            
             <input type="submit" value="投稿する"/>
