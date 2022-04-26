@@ -1,11 +1,14 @@
+$("input[type='submit']").prop('disabled', true).addClass('disabled');
 $("#team_select").on('change',function () {
   let teamSelectId  = $("#team_select").val();
   if(teamSelectId == "") {
     $('.player_name').show();
     $('.player_name2').hide();
+     $("input[type='submit']").prop('disabled', true).addClass('disabled');
   } else {
     $('.player_name').hide();
     $('.player_name2').show();
+    $("input[type='submit']").prop('disabled', false).removeClass('disabled');
     $.ajax({
       type: "get",       
       url: "/posts/create/teams/" + teamSelectId,
