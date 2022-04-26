@@ -57,21 +57,10 @@ class RankingController extends Controller
         return response()->json(['pg_player_select' => $pg_player_by_team]);
     }
     
-    public function pgSelectAjax(Player $player, $pgSelectId)
-    {
-        $pg_player_by_id = Player::where('id',$pgSelectId)->get();
-        return response()->json(['pg_player_select_by_id' => $pg_player_by_id]);
-    }
     public function sgTeamSelectAjax(player $player, $sgTeamSelectId)
     {
         $sg_player_by_team = Player::where('position', 'SG')->where('team_id', $sgTeamSelectId)->get();
         return response()->json(['sg_player_select' => $sg_player_by_team]);
-    }
-    
-    public function sgSelectAjax(Player $player, $sgSelectId)
-    {
-        $sg_player_by_id = Player::where('id',$sgSelectId)->get();
-        return response()->json(['sg_player_select_by_id' => $sg_player_by_id]);
     }
     
     public function sfTeamSelectAjax(player $player, $sfTeamSelectId)
@@ -80,22 +69,10 @@ class RankingController extends Controller
         return response()->json(['sf_player_select' => $sf_player_by_team]);
     }
     
-    public function sfSelectAjax(Player $player, $sfSelectId)
-    {
-        $sf_player_by_id = Player::where('id',$sfSelectId)->get();
-        return response()->json(['sf_player_select_by_id' => $sf_player_by_id]);
-    }
-    
     public function pfTeamSelectAjax(player $player, $pfTeamSelectId)
     {
         $pf_player_by_team = Player::where('position', 'PF')->where('team_id', $pfTeamSelectId)->get();
         return response()->json(['pf_player_select' => $pf_player_by_team]);
-    }
-    
-    public function pfSelectAjax(Player $player, $pfSelectId)
-    {
-        $pf_player_by_id = Player::where('id',$pfSelectId)->get();
-        return response()->json(['pf_player_select_by_id' => $pf_player_by_id]);
     }
     
     public function cTeamSelectAjax(player $player, $cTeamSelectId)
@@ -104,13 +81,7 @@ class RankingController extends Controller
         return response()->json(['c_player_select' => $c_player_by_team]);
     }
     
-    public function cSelectAjax(Player $player, $cSelectId)
-    {
-        $c_player_by_id = Player::where('id',$cSelectId)->get();
-        return response()->json(['c_player_select_by_id' => $c_player_by_id]);
-    }
-    
-      public function like(Request $request)
+    public function like(Request $request)
     {
         $user_id = \Auth::user()->id;
         $ranking_id = $request->ranking_id;

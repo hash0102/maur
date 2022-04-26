@@ -19,14 +19,13 @@
             <p>現在コメントはございません。</p>
             @else
         @foreach($comments as $comment)
-        @if($comment)
+
           <p>投稿内容：{{$comment->post->content}}</p>
           <p>投稿者名：{{$comment->post->user->name}}</p>
           <p>ユーザー名：{{$comment->user->name}}</p>
           <p>コメント内容：{{$comment->contents}}</p>
           <p>コメント日付：{{$comment->created_at}}</p>
-        @else
-        <p>コメントはございません。</p>
+
            @auth
               @if (!$comment->isCommentLikedBy(Auth::user()))
                      <span class="likes">
@@ -48,7 +47,7 @@
                @endguest
           <hr>
         @endforeach
-        @endif
+         @endif
         </div>
         
         <div class="footer">

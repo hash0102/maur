@@ -45,7 +45,16 @@
                     <span class="like-counter">{{$comment->commentlikes_count}}</span>
                 </span>
                @endguest
-               <hr>
+               
+           <form action="/comments/{{ $comment->id }}" id="form_{{ $comment->id }}" method="post" style="display:inline">
+                @csrf
+                @method('DELETE')
+                @if($comment->user_id === \Auth::user()->id)
+                <input type ="submit" style = "display:none">
+                <button class = 'delete'>削除</span></button>
+                @endif
+            </form>
+            <hr>
         @endforeach
         @endif
         </div>

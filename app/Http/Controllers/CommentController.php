@@ -38,6 +38,12 @@ class CommentController extends Controller
         $comment->fill($input)->save();
         return redirect('/');
     }
+    
+    public function delete(Comment $comment)
+    {
+        $comment->delete();
+        return redirect('/');
+    }
 
     public function like(Request $request)
     {

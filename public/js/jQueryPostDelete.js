@@ -81,41 +81,18 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/jQueryCommentLike.js":
-/*!*******************************************!*\
-  !*** ./resources/js/jQueryCommentLike.js ***!
-  \*******************************************/
+/***/ "./resources/js/jQueryPostDelete.js":
+/*!******************************************!*\
+  !*** ./resources/js/jQueryPostDelete.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-$(function () {
-  var like = $('.like-toggle');
-  var likeCommentId;
-  like.on('click', function () {
-    var $this = $(this);
-    likeCommentId = $this.data('comment-id');
-    $.ajax({
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      },
-      url: '/comments/like',
-      type: 'POST',
-      data: {
-        'comment_id': likeCommentId
-      }
-    }).done(function (data) {
-      $this.toggleClass('liked');
-      $this.next('.like-counter').html(data.comment_likes_count);
-    }).fail(function () {
-      alert('fail');
-    });
-  });
-});
 $(function () {
   $('.delete').click(function () {
     if (confirm('削除すると復元できません。\n 本当に削除しますか？')) {
@@ -128,14 +105,14 @@ $(function () {
 
 /***/ }),
 
-/***/ 6:
-/*!*************************************************!*\
-  !*** multi ./resources/js/jQueryCommentLike.js ***!
-  \*************************************************/
+/***/ 9:
+/*!************************************************!*\
+  !*** multi ./resources/js/jQueryPostDelete.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/ec2-user/environment/maur/resources/js/jQueryCommentLike.js */"./resources/js/jQueryCommentLike.js");
+module.exports = __webpack_require__(/*! /home/ec2-user/environment/maur/resources/js/jQueryPostDelete.js */"./resources/js/jQueryPostDelete.js");
 
 
 /***/ })

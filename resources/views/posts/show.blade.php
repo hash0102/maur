@@ -6,6 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src = "{{ mix('js/jQueryPostDelete.js') }}" defer></script>
         <title>Posts</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -28,13 +29,13 @@
         
         <div class="footer">
             <button><a href="/"><i class="fa-solid fa-arrow-right-to-bracket"></i>    戻る</a></button>
-                        <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
-                    @csrf
-                    @method('DELETE')
-                    @if($post->user_id === \Auth::user()->id)
-                    <input type ="submit" style = "display:none">
-                    <button class = 'delete'><span onclick = "return deletePost(this);">削除</span></button>
-                    @endif
+            <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+                @csrf
+                @method('DELETE')
+                @if($post->user_id === \Auth::user()->id)
+                <input type ="submit" style = "display:none">
+                <button class = 'delete'>削除</span></button>
+                @endif
             </form>
             <hr>
             <h3>コメント</h3>
@@ -47,14 +48,6 @@
             @endforeach
             <button><a href = '/posts/{{$post->id}}/comments'><i class="fa-solid fa-comments"></i>コメントを全て見る</a></button>
         </div>
-        <script>
-        function deletePost(e) {
-                 "use strict";
-                 if(confirm('削除すると復元できません。\n 本当に削除しますか？')) {
-                     document.getElementById('form_delete').submit();
-                 }
-        </script>
-        
     </body>
 </html>
 @endsection

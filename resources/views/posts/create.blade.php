@@ -23,20 +23,11 @@
                 </select>
                 </div>
                 
-                <div class = "player_name">
-                <h2>選手</h2>
-                <select name="post[player_id]">
-                    @foreach($players as $player)
-                    <option value="{{ $player->id }}">{{ $player->first_name ." ". $player->last_name}}</option>
-                    @endforeach
-                </select>
-                </div>
-                
                 <div class = "player_name2">
                 <h2>選手</h2>
                   <select name="post[player_id]" class = "player_team3" >
                   </select>
-                  </div>
+              　</div>
             
             <input type="hidden" name="post[user_id]" value="{{Auth::user()->id}}">
                

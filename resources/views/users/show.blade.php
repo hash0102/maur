@@ -6,6 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src = "{{ mix('js/jQueryPostDelete.js') }}" defer></script>
         <title>Posts</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -23,6 +24,12 @@
         </div>
         <div class="footer">
             <button><a href="/users">戻る</a></button>
+            <form action="/users/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+                @csrf
+                @method('DELETE')
+                <input type ="submit" style = "display:none">
+                <button class = 'delete'>削除</span></button>
+            </form>
             <button><a href = '/users/{{$post->id}}/comments'>コメント一覧</a></button>
         </div>
     </body>
