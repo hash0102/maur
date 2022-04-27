@@ -17,9 +17,6 @@
         <div class = 'footer'>
             <div class = 'button'>
                 <button><a href='/users'><i class="fa-solid fa-user-pen"></i>   自分の投稿</a></button>
-                @if(Auth::user()->id === 1)
-                <button class = 'player_create'><a href = '/players/create'>選手登録</a></button>
-                @endif
                 <button><a href = '/'><i class="fa-solid fa-house"></i>    HOME</a></button>
                 <button><a href = '/ranking'><i class="fa-solid fa-ranking-star"></i>  ランキング</a></button>
             </div>
