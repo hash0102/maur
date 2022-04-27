@@ -23,8 +23,8 @@ $("#teams").on('change',function () {
               <p><img src = "${value.image}" width = 10%><p>
               <p>チーム：<img src = ${value.team.image} width = 1.25% height= 10%>  ${value.team.state_name} ${value.team.name } </p>
               <p>No.： ${value.jersey}</p>
-            <p>身長：${value.height} cm</p>
-            <p>体重：${value.weight} kg</p>
+            <p>身長：${Math.round(value.height*10)/10} cm</p>
+            <p>体重：${Math.round(value.weight*10)/10} kg</p>
             <p>ポジション：${value.position}</p>
             <p>誕生日：${value.birthday}</p>
             <p>出身国：${value.birthcountry}</p>
