@@ -15,7 +15,7 @@
     <body>
         <h1>今シーズンのMy 1stチーム</h1>
         
-        <button><a href = "/ranking/create"> <i class="fa-solid fa-crown"></i>   ランキング作成</a></button>
+        <button><a href = "/ranking/create"> <i class="fa-solid fa-crown"></i>   My1stチーム作成</a></button>
         <button><a href='/users'><i class="fa-solid fa-user-pen"></i>    自分の投稿</a></button>
         <button><a href='/players'><i class="fa-solid fa-people-group"></i>    選手詳細</a></button>
         <button><a href = '/'><i class="fa-solid fa-house"></i>    HOME</a></button>

@@ -26,18 +26,6 @@ class PlayerController extends Controller
     {
         return view('players/show')->with(['player' => $player]);
     }
-
-    public function create(Team $team , Position $position)
-    {
-        return view('players/create')->with(['teams' => $team->get(), 'positions' => $position->get()]);
-    }
-    
-    public function store(Request $request, Player $player)
-    {
-        $input = $request['player'];
-        $player->fill($input)->save();
-        return redirect('/players');
-    }   
     
     public function basketapi(Player $player)
     {

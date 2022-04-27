@@ -7,10 +7,10 @@
         <meta charset="utf-8">
         <script src = "{{ mix('js/jQueryCreateRanking.js') }}" defer></script>
         <link rel="stylesheet" href="{{ asset('css/rankingCreate.css') }}">
-        <title>ランキング登録</title>
+        <title>My1stチーム登録</title>
     </head>
     <body>
-        <h1>ランキング登録</h1>
+        <h1>My1stチーム登録</h1>
         <form action="/ranking" method="POST">
             @csrf
                 <div class = "pg_player_name">

@@ -24,8 +24,6 @@ Route::get('/posts/comments/create/{post}', 'CommentController@postCreate');
 
 Route::get('/players', 'PlayerController@index');
 Route::get('/players/{player}', 'PlayerController@show');
-Route::get('/players/create', 'PlayerController@create');
-Route::post('/players', 'PlayerController@store');
 Route::get('/players/teams/{team_id}', 'PlayerController@PlayerInfo');
 Route::get('/players/search/{firstName}', 'PlayerController@getPlayersBySearchName');
 
