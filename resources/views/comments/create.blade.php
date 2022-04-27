@@ -19,7 +19,7 @@
            <p id="count">あと<span id="num"></span>文字</p>
             <input type="submit" value="保存"/>
         </form>
-        <div class="back">[<a href="/users">戻る</a>]</div>
+        <button><a href="/"><i class="fa-solid fa-arrow-right-to-bracket"></i>  最新の投稿に戻る</a></button>
     </body>
 </html>
 @endsection

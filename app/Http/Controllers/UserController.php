@@ -13,7 +13,7 @@ class UserController extends Controller
 {
     public function index(Post $post, Team $team, Comment $Comment)
     {
-      $post =  $post->getUserPaginateByLimit();
+        $post =  $post->getUserPaginateByLimit();
         return view('users/index')->with(['posts' => $post, 'teams' => $team->get()]);
     }
     

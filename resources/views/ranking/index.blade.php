@@ -55,20 +55,24 @@
                         <i class="fa-solid fa-crown like-toggle" data-ranking-id="{{ $ranking->id }}"></i>
                       <span class="like-counter">{{$ranking->rankinglikes_count}}</span>
                     </span>
+              </p>
                @else
+               <p>Favorite :
                 <span class="likes">
                     <i class="fa-solid fa-crown like-toggle liked" data-ranking-id="{{ $ranking->id }}"></i>
                     <span class="like-counter">{{$ranking->rankinglikes_count}}</span>
                 </span>
+                </p>
                @endif
                @endauth
                @guest
+               <p>Favorite :
                 <span class="likes">
                     <i class="fa-solid fa-crown"></i>
                     <span class="like-counter">{{$ranking->rankinglikes_count}}</span>
                 </span>
+                </p>
                @endguest
-               </p>
                <hr>
         @endforeach
         @endif

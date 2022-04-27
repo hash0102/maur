@@ -16,12 +16,12 @@ class Team extends Model
 
     public function players()   
     {
-    return $this->hasMany('App\Player');
+        return $this->hasMany('App\Player');
     }
     
-        public function playerapis()   
+    public function playerapis()   
     {
-    return $this->hasMany('App\Playerapi');
+        return $this->hasMany('App\Playerapi');
     }
 
     public function Posts()
@@ -29,7 +29,8 @@ class Team extends Model
         return $this->hasMany('App\Post');
     }
     
-     public function teamapi(){
+    public function teamapi()
+    {
         
         $curl = curl_init();
         
@@ -78,6 +79,6 @@ class Team extends Model
             $team->save();
             
             }
-      }
+        }
     }
 }

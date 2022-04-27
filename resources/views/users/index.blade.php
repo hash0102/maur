@@ -59,20 +59,24 @@
                     <i class="fa-solid fa-basketball like-toggle" data-post-id="{{ $post->id }}"></i>
                   <span class="like-counter">{{$post->likes_count}}</span>
                 </span>
+            </p>
             @else
+            <p>Favorite :
             <span class="likes">
                 <i class="fa-solid fa-basketball like-toggle liked" data-post-id="{{ $post->id }}"></i>
                 <span class="like-counter">{{$post->likes_count}}</span>
             </span>
+            </p>
             @endif
             @endauth
             @guest
+            <p>Favorite :
             <span class="likes">
                 <i class="fa-solid fa-basketball"></i>
                 <span class="like-counter">{{$post->likes_count}}</span>
             </span>
-            @endguest
             </p>
+            @endguest
             </div>
             <button><a href="/users/{{ $post->id }}">投稿詳細</a></button>
             <button><a href="/players/{{ $post->player_id }}"><i class="fa-solid fa-angles-right"></i>    選手詳細</a></button>

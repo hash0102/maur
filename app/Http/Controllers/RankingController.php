@@ -13,8 +13,6 @@ class RankingController extends Controller
 {
     public function index(Ranking $ranking)
     {
-        // $pg_ranking_count = Ranking::withCount('players');
-        // dd($pg_ranking_count);
         $ranking = Ranking::withCount('rankinglikes')->orderBy('id', 'desc')->paginate(3);
         return view('ranking/index')->with(['rankings' => $ranking]);
     }
