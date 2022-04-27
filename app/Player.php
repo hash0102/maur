@@ -130,8 +130,8 @@ class Player extends Model
                 $player->first_name=$firstName;
                 $player->last_name=$lastName;
                 $player->jersey=$jersey;
-                $player->height=$height;
-                $player->weight=$weight;
+                $player->height=round($height,1);
+                $player->weight=round($weight,1);
                 $player->position=$position;
                 $player->birthday=$birthday;
                 $player->birthcity=$birthcity;

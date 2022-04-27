@@ -49,8 +49,8 @@
             <img class="player_image" src = "{{$player->image}}" width = 10%>
             <p>チーム：<img src = "{{$player->team->image}}" width = 1.25% height= 10%>    {{$player->team->state_name }} {{$player->team->name }}</p>
             <p>No.： {{ $player->jersey }}</p>
-            <p>身長：{{$player->height}} cm</p>
-            <p>体重：{{$player->weight}} kg</p>
+            <p>身長：{{round($player->height,1)}} cm</p>
+            <p>体重：{{round($player->weight,1)}} kg</p>
             <p>ポジション：{{$player->position}}</p>
             <p>誕生日：{{$player->birthday}}</p>
             <p>出身国：{{$player->birthcountry}}</p>

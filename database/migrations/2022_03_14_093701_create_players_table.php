@@ -19,8 +19,8 @@ class CreatePlayersTable extends Migration
             $table->string('first_name', 50);
             $table->string('last_name', 50);
             $table->integer('jersey');
-            $table->double('height', 4, 1);
-            $table->double('weight', 4, 1);
+            $table->decimal('height', $precision=4, $scale=1);
+            $table->decimal('weight', 4, 1);
             $table->string('position', 10);
             $table->string('birthday',100);
             $table->string('birthcity',100);
