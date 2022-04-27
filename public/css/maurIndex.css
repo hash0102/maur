@@ -19,3 +19,11 @@
 .name {
     font-size:40px;
 }
+
+h1 {
+    text-align:center;
+}
+
+#team {
+    display:flex;
+}

@@ -8,6 +8,7 @@
     "/js/jQueryCreateRanking.js": "/js/jQueryCreateRanking.js",
     "/js/jQueryLike.js": "/js/jQueryLike.js",
     "/js/jQueryPlayer.js": "/js/jQueryPlayer.js",
+    "/js/jQueryPlayerSearch.js": "/js/jQueryPlayerSearch.js",
     "/js/jQueryPostDelete.js": "/js/jQueryPostDelete.js",
     "/js/jQueryRankingLike.js": "/js/jQueryRankingLike.js",
     "/js/jQueryUser.js": "/js/jQueryUser.js"

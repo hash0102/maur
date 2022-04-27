@@ -13,14 +13,8 @@ class RankingController extends Controller
 {
     public function index(Ranking $ranking)
     {
-        //dd($pg_players_ranking);
-        // $ranking = Ranking::find(1);
-        // dd($ranking->players()->get());
-        // $pg_ranking = Ranking::with('players')->where('position', 'PG')->get();
-        // $sg_ranking = Ranking::with('players')->where('position', 'SG')->get();
-        // $sf_ranking = Ranking::with('players')->where('position', 'SF')->get();
-        // $pf_ranking = Ranking::with('players')->where('position', 'PF')->get();
-        // $c_ranking = Ranking::with('players')->where('position', 'C')->get();
+        // $pg_ranking_count = Ranking::withCount('players');
+        // dd($pg_ranking_count);
         $ranking = Ranking::withCount('rankinglikes')->orderBy('id', 'desc')->paginate(3);
         return view('ranking/index')->with(['rankings' => $ranking]);
     }

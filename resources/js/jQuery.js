@@ -11,7 +11,7 @@ $("#team").on('change',function () {
     $('.posts').show();
     $.ajax({
       type: "get",       
-      url: "teams/" + teamId,
+      url: "/posts/teams/" + teamId,
       dataType: "json",
       })
       .done(function(res)  {
@@ -19,6 +19,7 @@ $("#team").on('change',function () {
         if(res.player_info.data.length !== 0){
           
         $.each(res.player_info.data, function (index, value) {
+          conole.log(res.player_info.data);
           let user = `
               <p>投稿者：${value.user.name} </p>
               <p>選手名： ${value.player.first_name} ${value.player.last_name}</p>

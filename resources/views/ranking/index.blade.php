@@ -26,13 +26,14 @@
             @else
         @foreach($rankings as $ranking)
             <p>投稿者名：{{$ranking->user->name}}</p>
-        @foreach($ranking->players as $player)
-            <p>{{$player->position}}：{{$player->first_name}} {{$player->last_name}}</p>
-            <img src = "{{$player->image}}">
-            <p>所属チーム：<img src = "{{$player->team->image}}" width = 1.25% height= 10%> {{$player->team->state_name }}  {{$player->team->name}}</p>
-            <button><a href="/players/{{ $player->id }}"><i class="fa-solid fa-user"></i>   選手詳細</a></button>
-        @endforeach
-        
+            @foreach($ranking->players as $player)
+             <div class = 'player_name'>
+                <p>{{$player->position}}：{{$player->first_name}} {{$player->last_name}}</p>
+                <img src = "{{$player->image}}">
+                <p>所属チーム：<img src = "{{$player->team->image}}" width = 1.25% height= 10%> {{$player->team->state_name }}  {{$player->team->name}}</p>
+                <button><a href="/players/{{ $player->id }}"><i class="fa-solid fa-user"></i>   選手詳細</a></button>
+            </div>
+            @endforeach
         <div class = "reason">
         <p>ランキング理由：{{$ranking->contents}}</p>
         </div>
@@ -46,9 +47,10 @@
             <button class = 'delete'>削除</span></button>
             @endif
         </form>
-        
+    </div>    
         @auth
               @if (!$ranking->isRankingLikedBy(Auth::user()))
+              <p>Favorite :
                      <span class="likes">
                         <i class="fa-solid fa-crown like-toggle" data-ranking-id="{{ $ranking->id }}"></i>
                       <span class="like-counter">{{$ranking->rankinglikes_count}}</span>
@@ -66,11 +68,11 @@
                     <span class="like-counter">{{$ranking->rankinglikes_count}}</span>
                 </span>
                @endguest
+               </p>
                <hr>
         @endforeach
         @endif
         
-    </div>
             <div class='paginate'>
             {{ $rankings->links() }}
         </div>

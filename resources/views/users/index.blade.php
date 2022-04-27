@@ -12,6 +12,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <body>
+            <h1>自分の投稿</h1>
     <fotter>
         <div class = 'footer'>
             <div class = 'button'>
@@ -31,7 +32,6 @@
             </div>
         </div>
     </fotter>
-        <h1>自分の投稿</h1>
         <hr>
         <div class='posts'>
         </div>
@@ -41,33 +41,39 @@
             <p>現在投稿はございません。</p>
             @else
             @foreach ($posts as $post)
-            <p>投稿者名：{{ $post->user->name}}</p>
-            <p>選手名：{{ $post->player->first_name }} {{ $post->player->last_name}}</p>
+            <p class="name">選手名：{{ $post->player->first_name }} {{ $post->player->last_name}}</p>
+             <p><img src = "{{$post->player->image }}"></p>
             <p>チーム：<img src = "{{$post->player->team->image}}" width = 1.25% height= 10%>   {{$post->player->team->state_name }} {{$post->player->team->name }}</p>
             <p>ポシション： {{ $post->player->position }}</p>
+            <h3>投稿者名：{{ $post->user->name}}</h3>
             <p>オフェンス評価：{{ $post->offense_review }}</p>
             <p>ディフェンス評価：{{ $post->defense_review }}</p>
+            <div class = "reason">
             <p>評価理由：{{$post->content}}</p>
-            <p><img src = "{{$post->player->image }}"></p>
+            </div>
+            <div class =  "like">
             @auth
-              @if (!$post->isLikedBy(Auth::user()))
-                    <span class="likes">
-                        <i class="fa-solid fa-basketball like-toggle" data-post-id="{{ $post->id }}"></i>
-                      <span class="like-counter">{{$post->likes_count}}</span>
-                    </span>
-               @else
+            @if (!$post->isLikedBy(Auth::user()))
+            <p>Favorite :
                 <span class="likes">
-                    <i class="fa-solid fa-basketball like-toggle liked" data-post-id="{{ $post->id }}"></i>
-                    <span class="like-counter">{{$post->likes_count}}</span>
+                    <i class="fa-solid fa-basketball like-toggle" data-post-id="{{ $post->id }}"></i>
+                  <span class="like-counter">{{$post->likes_count}}</span>
                 </span>
-               @endif
-               @endauth
-               @guest
-                <span class="likes">
-                    <i class="fa-solid fa-basketball"></i>
-                    <span class="like-counter">{{$post->likes_count}}</span>
-                </span>
-               @endguest
+            @else
+            <span class="likes">
+                <i class="fa-solid fa-basketball like-toggle liked" data-post-id="{{ $post->id }}"></i>
+                <span class="like-counter">{{$post->likes_count}}</span>
+            </span>
+            @endif
+            @endauth
+            @guest
+            <span class="likes">
+                <i class="fa-solid fa-basketball"></i>
+                <span class="like-counter">{{$post->likes_count}}</span>
+            </span>
+            @endguest
+            </p>
+            </div>
             <button><a href="/users/{{ $post->id }}">投稿詳細</a></button>
             <button><a href="/players/{{ $post->player_id }}"><i class="fa-solid fa-angles-right"></i>    選手詳細</a></button>
             <hr>

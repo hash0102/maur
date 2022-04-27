@@ -14,6 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
+        <h1>最新の投稿</h1>
     <fotter>
         <div class='footer'>
             <div class='button'>
@@ -25,7 +26,6 @@
         </div>
         </div>
     </fotter>
-        <h1>最新の投稿</h1>
         <div class ="team_Name">
             <p>チーム名</p>
             <select id = "team">
@@ -58,8 +58,10 @@
             </div>
             <p>投稿者：{{$post->user->name }}</p>
             <p>投稿日付：{{$post->created_at}}</p>
+            <div class = 'like'>
               @auth
               @if (!$post->isLikedBy(Auth::user()))
+              <p>Favorite : 
                      <span class="likes">
                         <i class="fa-solid fa-basketball like-toggle" data-post-id="{{ $post->id }}"></i>
                       <span class="like-counter">{{$post->likes_count}}</span>
@@ -77,6 +79,8 @@
                     <span class="like-counter">{{$post->likes_count}}</span>
                 </span>
                @endguest
+               </p>
+            </div>
             <button><a href="/posts/{{ $post->id }}"><i class="fa-solid fa-angles-right"></i>    投稿詳細</a></button>
             <button><a href="/players/{{ $post->player_id }}"><i class="fa-solid fa-user"></i>   選手詳細</a></button>
             <hr>

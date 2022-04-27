@@ -43,5 +43,12 @@ class PlayerController extends Controller
     {
         $player_api = $player->basketapi();
     }
+    
+    public function getPlayersBySearchName($playerName , Player $player)
+    {
+        $players_search = Player::with('team')->where('first_name', $playerName)->orWhere('last_name' , $playerName)->get();
+        return response()->json(['players_search' => $players_search]);
+    }
+
 
 }

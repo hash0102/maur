@@ -22,6 +22,7 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/jQueryRankingLike.js', 'public/js')
     .js('resources/js/jQueryPostDelete.js', 'public/js')
     .js('resources/js/jQueryCreateComment.js', 'public/js')
+    .js('resources/js/jQueryPlayerSearch.js', 'public/js')
     
     
    .sass('resources/sass/app.scss', 'public/css');
