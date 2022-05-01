@@ -14,11 +14,13 @@
     </head>
     <body>
         <h1>今シーズンのMy 1stチーム</h1>
-        
-        <button><a href = "/ranking/create"> <i class="fa-solid fa-crown"></i>   My1stチーム作成</a></button>
-        <button><a href='/users'><i class="fa-solid fa-user-pen"></i>    自分の投稿</a></button>
-        <button><a href='/players'><i class="fa-solid fa-people-group"></i>    選手詳細</a></button>
-        <button><a href = '/'><i class="fa-solid fa-house"></i>    HOME</a></button>
+        <div class="button">
+        <a href = "/ranking/create" class="ranking-create"> <i class="fa-solid fa-crown"></i></a>
+        <a href='/users'class="my-page"><i class="fa-solid fa-user-pen"></i></a>
+        <a href='/players'class="players"><i class="fa-solid fa-people-group"></i></a>
+        <a href = '/'class="home"><i class="fa-solid fa-house"></i></a>
+        <a href = "/users/profile/mypage" class='my-account'><i class="fa-solid fa-circle-user"></i></a>
+        </div>
     <hr>
     <div class = 'contents'>
         @if($rankings->isEmpty())

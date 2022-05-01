@@ -1,36 +1,51 @@
 
 
 .liked {
-  color: #FFD700;
+  color: #D2691E;
 }
-
 
 .reason {
     padding: 0.5em 1em;
     margin: 2em 0;
     font-weight: bold;
-    border: solid 3px #000000;
+    border: double 4px #000000;
+    display: inline-block;
+      width: 70%;
+  word-wrap: break-word;
+    text-align: left;
+    font-size:20px;
 }
 .reason p {
     margin: 0; 
     padding: 0;
 }
 
-h1 {
-    text-align: center;
-}
-.contents{
-    padding-bottom: 20px;
+.name {
+    font-size:40px;
 }
 
-.player_name{
-    padding-bottom: 20px;
+h1 {
+    text-align:center;
+}
+
+#team {
+    display:flex;
 }
 
 .button 
 {
     text-align: right;
 }
+
+body 
+{
+    text-align: center;
+}
+
+.team_Name{
+    text-align:left;
+}
+
 
 .my-page {
    display: inline-block;
@@ -60,7 +75,7 @@ h1 {
   border-bottom: none;
 }
 
-.create{
+.edit-profile{
   display: inline-block;
   text-decoration: none;
   color: rgba(152, 152, 152, 0.43);/*アイコン色*/
@@ -78,10 +93,10 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   border-bottom: solid 2px #b5b5b5;
 }
 
-.create i {
+.edit-profile i {
   line-height: 40px;
 }
-.create:active {
+.edit-profile:active {
   /*押したとき*/
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: none;
@@ -116,7 +131,7 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
 }
 
 
-.ranking-create{
+.ranking{
   display: inline-block;
   text-decoration: none;
   color: rgba(152, 152, 152, 0.43);/*アイコン色*/
@@ -134,11 +149,11 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   border-bottom: solid 2px #b5b5b5;
 }
 
-.ranking-create i {
+.ranking i {
   line-height: 40px;
 }
 
-.ranking-create:active {
+.ranking:active {
   /*押したとき*/
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: none;
@@ -172,7 +187,7 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   border-bottom: none;
 }
 
-.my-account{
+.players{
   display: inline-block;
   text-decoration: none;
   color: rgba(152, 152, 152, 0.43);/*アイコン色*/
@@ -190,12 +205,76 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   border-bottom: solid 2px #b5b5b5;
 }
 
-.my-account i {
+.players i {
   line-height: 40px;
 }
 
-.my-account:active {
+.players:active {
   /*押したとき*/
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: none;
+}
+
+.user-image{
+    width:2%;
+    border:solid 1px black;
+}
+
+.player-image{
+    width:10%;
+    text-align:center;
+    display:inline-block;
+}
+
+.player-image:hover{
+    width:50%;
+    text-align:center;
+    display:inline-block;
+}
+
+.posts_info {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #00BCD4;
+  transition: .4s;
+  border: solid 2px #00bcd4;
+}
+
+.posts_info:hover {
+  background: #00bcd4;
+  color: white;
+}
+
+.players_info {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #00BCD4;
+  transition: .4s;
+  border: solid 2px #00bcd4;
+}
+
+.players_info:hover {
+  background: #00bcd4;
+  color: white;
+}
+ 
+.reviews{
+  font-size: 30px;
+  border:double 4px #000000;
+  display:inline-block;
+  padding:0px 10px;
+}
+
+.of-review{
+  padding-top: 5px;
+}
+
+.review-point{
+  font-weight: bold;
 }

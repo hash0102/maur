@@ -17,9 +17,9 @@ Route::post('/posts', 'PostController@store');
 Route::get('/posts/create', 'PostController@create');
 Route::get('/posts/{post}', 'PostController@show');
 Route::delete('/posts/{post}', 'PostController@delete');
-Route::get('/posts/{post}/comments/', 'CommentController@postIndex');
 Route::get('/posts/create/teams/{team_id}', 'PostController@TeamSelectAjax');
 Route::get('/posts/teams/{team_id}', 'PostController@latestPostAjax');
+Route::get('/posts/{post}/comments/', 'CommentController@postIndex');
 Route::get('/posts/comments/create/{post}', 'CommentController@postCreate');
 
 Route::get('/players', 'PlayerController@index');
@@ -27,16 +27,19 @@ Route::get('/players/{player}', 'PlayerController@show');
 Route::get('/players/teams/{team_id}', 'PlayerController@PlayerInfo');
 Route::get('/players/search/{firstName}', 'PlayerController@getPlayersBySearchName');
 
-Route::get('/users/teams/{team_id}/', 'PostController@userPost');
+
+Route::get('/users/edit/{id}', 'UserController@getEdit')->name('users.edit');
+Route::post('/users/edit/{id}', 'UserController@postEdit')->name('users.postEdit');
+Route::get('/users/teams/{team_id}/', 'UserController@userPost');
 Route::get('/users', 'UserController@index');
 Route::get('/users/create', 'UserController@create');
 Route::post('/users', 'UserController@store');
 Route::get('/users/{post}', 'UserController@show');
 Route::delete('/users/{post}', 'UserController@delete');
 Route::get('/users/{post}/comments/', 'CommentController@userIndex');
+Route::get('/users/profile/mypage', 'UserController@profile')->name('profile');
 
-
-Route::post('/comments', 'CommentController@store');
+Route::post('/posts/comments/{post}', 'CommentController@store');
 Route::post('/comments/like', 'CommentController@like')->name('comments.like');
 Route::delete('/comments/{comment}', 'CommentController@delete');
 
@@ -57,5 +60,3 @@ Route::post('/ranking/like', 'RankingController@like')->name('rankings.like');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/nbaapi', 'PlayerController@basketapi');
-Route::get('/teamapi', 'TeamController@teamapi');

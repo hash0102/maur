@@ -31,17 +31,10 @@ class PostController extends Controller
     {
         return view('users/index')->with(['posts' => $post->get(), 'teams' => $team->get()]);
     }
-
-    public function userPost(Post $post, $teamId, User $user, Team $team)
-    {
-        $user_id_auth = \Auth::user()->id;
-        $player_infom_by_team = Post::with('player', 'team', 'user')->where([['team_id' , $teamId],['user_id', $user_id_auth]])->withCount('likes')->orderBy('id', 'desc')->paginate();
-        return response()->json(['player_infom' => $player_infom_by_team]);
-    }
     
     public function latestPostAjax(Post $post, $teamId, User $user , Team $team)
     { 
-        $player_info_by_team = Post::with('player', 'team', 'user')->where('team_id' , $teamId)->withCount('likes')->orderBy('id', 'desc')->paginate();
+        $player_info_by_team = Post::with('player', 'team', 'user','user.team')->where('team_id' , $teamId)->withCount('likes')->orderBy('id', 'desc')->paginate();
         return response()->json(['player_info' => $player_info_by_team]);
     }
 
@@ -53,7 +46,9 @@ class PostController extends Controller
       
     public function show(Post $post, Comment $comment)
     {
-        return view('posts/show')->with(['post' => $post , 'comments' => $comment->orderBy('created_at', 'asc')->limit(1)->get()]);
+        
+        $comment=Post::where('id', $post->id)->withCount('comments')->orderBy('id', 'desc')->paginate(5);
+        return view('posts/show')->with(['post' => $post , 'comments' => $comment]);
     }
         
     public function create(Player $player, User $user, Team $team)

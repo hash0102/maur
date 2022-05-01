@@ -34,19 +34,15 @@
                 @method('DELETE')
                 @if($post->user_id === \Auth::user()->id)
                 <input type ="submit" style = "display:none">
-                <button class = 'delete'>削除</span></button>
+                <button class = 'delete'><i class="fa-solid fa-trash-can"></i></button>
                 @endif
             </form>
             <hr>
             <h3>コメント</h3>
             @foreach($comments as $comment)
-            @if($comment->post_id === $post->id)
-            <hr>
-                <p>コメント投稿者：{{$comment->user->name }}</p>
-                <p>コメント内容：{{$comment->contents}}</p>
-            @endif
-            @endforeach
-            <button><a href = '/posts/{{$post->id}}/comments'><i class="fa-solid fa-comments"></i>コメントを全て見る</a></button>
+           <p>コメント数：{{$comment->comments_count}}</p>
+           @endforeach
+        <a href = '/posts/{{$post->id}}/comments'><i class="fa-solid fa-comments"></i></a>
         </div>
     </body>
 </html>

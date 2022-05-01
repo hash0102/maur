@@ -16,9 +16,10 @@
         <h1>選手一覧</h1>
         <div class = 'footer'>
             <div class = 'button'>
-                <button><a href='/users'><i class="fa-solid fa-user-pen"></i>   自分の投稿</a></button>
-                <button><a href = '/'><i class="fa-solid fa-house"></i>    HOME</a></button>
-                <button><a href = '/ranking'><i class="fa-solid fa-ranking-star"></i>  ランキング</a></button>
+                <a href='/users' class='my-page'><i class="fa-solid fa-user-pen"></i></a>
+                <a href = '/'class="home"><i class="fa-solid fa-house"></i></a>
+                <a href = '/ranking'class="ranking"><i class="fa-solid fa-ranking-star"></i></a>
+                <a href = "/users/profile/mypage" class='my-account'><i class="fa-solid fa-circle-user"></i></a>
             </div>
         </div>
          <div class ="team_Name">

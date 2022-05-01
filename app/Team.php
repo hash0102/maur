@@ -19,6 +19,11 @@ class Team extends Model
         return $this->hasMany('App\Player');
     }
     
+      public function users()   
+    {
+        return $this->hasMany('App\User');
+    }
+    
     public function playerapis()   
     {
         return $this->hasMany('App\Playerapi');

@@ -38,6 +38,6 @@ class PlayerApiCommand extends Command
      */
     public function handle(Player $player)
     {
-        $player_api = $player->basketapi();
+        $player_api = $player->playerapi();
     }
 }

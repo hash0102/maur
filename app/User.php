@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-       'name', 'email', 'password',
+       'name', 'email', 'password','team_id','image',
     ];
 
     /**
@@ -61,6 +61,49 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\RankingLike');
     }
+    
+    public function team()
+    {
+        return $this->belongsTo('App\Team');  
+    }
+    
+    public function selectUserFindById($id)
+    {
+        // 「SELECT id, name, email WHERE id = ?」を発行する
+        $query = $this->select([
+            'id',
+            'name',
+            'email',
+            'team_id',
+            'image',
+        ])->where([
+            'id' => $id
+        ]);
+        // first()は1件のみ取得する関数
+        return $query->first();
+    }
+    
+    public function updateUserFindById($user)
+    {
+        return $this->where([
+            'id' => $user['id']
+        ])->update([
+            'name' => $user['name'],
+            'email' => $user['email'],
+            'team_id' => $user['team_id'],
+        ]);
+    }
+    
+        public function updateUserImage($user)
+    {
+        return $this->where([
+            'id' => $user['id']
+        ])->update([
+            'image' => $user['image']
+        ]);
+    }
+    
+    
 }
 
 

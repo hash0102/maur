@@ -50,7 +50,7 @@ class Player extends Model
         return $this->belongsToMany('App\Ranking');
     }
     
-    public function basketapi()
+    public function playerapi()
     {
        $teamName = array('WAS','CHA','ATL','MIA','ORL','NY','PHI','BKN','BOS','TOR',
        'CHI','CLE','IND','DET','MIL','MIN','UTA','OKC','POR','DEN',

@@ -9,7 +9,7 @@
     </head>
     <body>
         <h1>コメント登録</h1>
-        <form action="/comments" method="POST">
+        <form action="/posts/comments/{{$post->id}}" method="POST">
             @csrf
             <div class = "comment">
             <textarea name = "comment[contents]" placeholder = "暴言厳禁"></textarea>

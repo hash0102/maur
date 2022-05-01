@@ -8,6 +8,8 @@ use App\User;
 use App\Player;
 use App\Team;
 use App\Comment;
+use Storage;
+
 
 class UserController extends Controller
 {
@@ -40,5 +42,52 @@ class UserController extends Controller
         return redirect('/users');
     }
     
+    public function userPost(Post $post, $teamId, User $user, Team $team)
+    {
+        $user_id_auth = \Auth::user()->id;
+        $player_infom_by_team = Post::with('player', 'team', 'user')->where([['team_id' , $teamId],['user_id', $user_id_auth]])->withCount('likes')->orderBy('id', 'desc')->paginate();
+        return response()->json(['player_infom' => $player_infom_by_team]);
+    }
+    
+    public function profile(User $user)
+    {
+        $user_id_auth = \Auth::user()->id;
+        $auth_user_info=User::where('id',$user_id_auth)->first();
+        return view('users/profile')->with(['user' => $auth_user_info, 'team']);
+    }
+    
+    public function __construct(User $user)
+    {
+        $this->user = $user;
+    }
 
+    public function getEdit($id, Team $team)
+    {
+        $user = $this->user->selectUserFindById($id);
+        return view('users.edit', compact('user'))->with(['teams' => $team->get()]);
+    }
+    
+    public function postEdit($id, Request $request)
+    {
+         $user = User::where('id', $id)->first();
+        $all_request = $request->all();
+        
+        if (isset($all_request['image'])) 
+        {
+            $profile_image = $request->file('image');
+            $upload_info = Storage::disk('s3')->putFile('users-image', $profile_image, 'public');
+            $all_request['image'] = Storage::disk('s3')->url($upload_info);
+        }
+            $user->fill($all_request)->save();
+             return redirect('users/profile/mypage');
+        
+        // // フォームから渡されたデータの取得
+        // $user = $request->post();
+        // // DBへ更新依頼
+        // $this->user->updateUserFindById($user);
+      
+        // // 再度編集画面へリダイレクト
+        // return redirect('users/profile/mypage');
+    }
 }
+

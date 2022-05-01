@@ -16,18 +16,18 @@
     <body>
         <h1>最新の投稿</h1>
     <fotter>
-        <div class='footer'>
             <div class='button'>
-                <button><a href='/users'><i class="fa-solid fa-user-pen"></i>    自分の投稿</a></button>
-                <button><a href='/players'><i class="fa-solid fa-people-group"></i>    選手詳細</a></button>
-                <button><a href='posts/create'><i class="fa-solid fa-circle-plus"></i>    投稿登録</a></button>
-                <button><a href = '/ranking'><i class="fa-solid fa-ranking-star"></i>  ランキング</a></button>
+                <a href='/users' class='my-page'><i class="fa-solid fa-user-pen"></i></a>
+                <a href='/players' class='players'><i class="fa-solid fa-people-group"></i></a>
+                <a href='posts/create'class='create'><i class="fa-solid fa-circle-plus"></i></a>
+                <a href = '/ranking'class='ranking'><i class="fa-solid fa-ranking-star"></i></a>
+                <a href = "/users/profile/mypage" class='my-account'><i class="fa-solid fa-circle-user"></i></a>
             </div>
         </div>
         </div>
     </fotter>
         <div class ="team_Name">
-            <p>チーム名</p>
+            <p>チーム名：</p>
             <select id = "team">
                 <option value = "" class = 'option'>チームを選択する</option>
                 @foreach($teams as $team)
@@ -48,15 +48,24 @@
             @else
         @foreach ($posts as $post)
             <p class="name">選手名：{{ $post->player->first_name }} {{ $post->player->last_name}}</p>
-            <p class = 'image'><img src = '{{ $post->player->image }}'></p>
+            <p class = 'player-image'><img src = '{{ $post->player->image }}'></p>
+            <div class = "contents">
             <p>チーム：<img src = "{{$post->player->team->image}}" width = 1.25% height= 10%>  {{$post->player->team->state_name }} {{$post->player->team->name }}</p>
             <p>ポシション： {{ $post->player->position }}</p>
-            <p>オフェンス評価：{{ $post->offense_review }}</p>
-            <p>ディフェンス評価：{{ $post->defense_review }}</p>
+            <div class="reviews">
+            <p class="of-review">オフェンス評価：<span class="review-point">{{ $post->offense_review }}</span></p>
+            <p class="df-review">ディフェンス評価：<span class="review-point">{{ $post->defense_review }}</span></p>
+            </div>
+            </div>
             <div class = "reason">
             <p>評価理由：{{$post->content}}</p>
             </div>
-            <p>投稿者：{{$post->user->name }}</p>
+            <p>投稿者：<img src = "{{$post->user->image}}" width=1.5% class="user-image">   {{$post->user->name }}</p>
+            @if($post->user->team_id == NULL)
+            <p>投稿者のお気に入りのチーム：未設定</p>
+            @else
+            <p>投稿者のお気に入りのチーム：<img src="{{$post->user->team->image}}" width = 1.25% height= 10%> {{$post->user->team->state_name }} {{$post->user->team->name}}</p>
+            @endif
             <p>投稿日付：{{$post->created_at}}</p>
             <div class = 'like'>
               @auth
@@ -85,8 +94,8 @@
                 </p>
                @endguest
             </div>
-            <button><a href="/posts/{{ $post->id }}"><i class="fa-solid fa-angles-right"></i>    投稿詳細</a></button>
-            <button><a href="/players/{{ $post->player_id }}"><i class="fa-solid fa-user"></i>   選手詳細</a></button>
+            <a href="/posts/{{ $post->id }}" class="posts_info"><i class="fa-solid fa-angles-right"></i>    投稿詳細</a>
+            <a href="/players/{{ $post->player_id }}"class="players_info"><i class="fa-solid fa-user"></i>   選手詳細</a>
             <hr>
         @endforeach
         @endif

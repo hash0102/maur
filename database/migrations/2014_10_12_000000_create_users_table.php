@@ -19,6 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->integer('team_id')->unsigned()->nullable();
+            $table->string('image',1000)->default('https://users-image.s3.amazonaws.com/users-image/user_default.jpg');
             $table->rememberToken();
             $table->timestamps();
         });

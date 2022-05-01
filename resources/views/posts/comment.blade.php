@@ -21,9 +21,14 @@
             @else
         @foreach($comments as $comment)
         
-          <p>投稿内容：{{$comment->post->content}}</p>
+          <h2>投稿内容：{{$comment->post->content}}</h2>
           <p>投稿者名：{{$comment->post->user->name}}</p>
           <p>ユーザー名：{{$comment->user->name}}</p>
+          @if($comment->user->team_id == NULL)
+            <p>ユーザーのお気に入りのチーム：未設定</p>
+            @else
+            <p>ユーザーのお気に入りのチーム：<img src="{{$comment->user->team->image}}" width = 1.25% height= 10%> {{$comment->user->team->state_name }} {{$comment->user->team->name}}</p>
+            @endif
           <p>コメント内容：{{$comment->contents}}</p>
           <p>コメント日付：{{$comment->created_at}}</p>
            @auth

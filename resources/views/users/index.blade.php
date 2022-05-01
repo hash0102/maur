@@ -16,13 +16,14 @@
     <fotter>
         <div class = 'footer'>
             <div class = 'button'>
-                <button><a href = '/'><i class="fa-solid fa-house"></i>    HOME</a></button>
-                <button><a href = '/players'><i class="fa-solid fa-people-group"></i>    選手詳細</a></button>
-                <button><a href = '/posts/create'><i class="fa-solid fa-circle-plus"></i>    投稿登録</a></button>
-                <button><a href = '/ranking'><i class="fa-solid fa-ranking-star"></i>  ランキング</a></button>
+<a href = '/' class="home"><i class="fa-solid fa-house"></i></a>
+<a href = '/players'class='players'><i class="fa-solid fa-people-group"></i></a>
+<a href = '/posts/create' class='create'><i class="fa-solid fa-circle-plus"></i></a>
+<a href = '/ranking' class='ranking'><i class="fa-solid fa-ranking-star"></i></a>
+<a href = "/users/profile/mypage" class='my-account'><i class="fa-solid fa-circle-user"></i></a>
             </div>
             <div class ="team_Name"></div>
-            <p>チーム名</p>
+            <p>チーム名:</p>
             <select id = "team">
                 <option value = "" class = 'option'>チームを選択してください</option>
                 @foreach($teams as $team)

@@ -103,7 +103,13 @@
                
             <div class="reason">
                 <h2>理由</h2>
-                <textarea name="ranking[contents]" placeholder="PG・・・&#10;SG・・・&#10;SF・・・&#10;PF・・・&#10;C・・・&#10;" maxlength="500"></textarea>
+                <textarea name="ranking[contents]"maxlength="500">
+PG・・・
+SG・・・
+SF・・・
+PF・・・
+C・・・
+                </textarea>
                  <p id="count">あと<span id="num"></span>文字</p>
             </div>
            
