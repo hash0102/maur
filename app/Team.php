@@ -64,25 +64,21 @@ class Team extends Model
         	echo "cURL Error #:" . $err;
         } else {
             
-        $team_content_api=json_decode($response, true);
-        for ($i=0; $i<30; $i++)
+            $team_content_api=json_decode($response, true);
+            for ($i=0; $i<30; $i++)
             {
-            $team = new Self;
-            
-            $teamAbName=$team_content_api[$i]['Key'];
-            $city=$team_content_api[$i]['City'];
-            $teamName=$team_content_api[$i]['Name'];
-            $image=$team_content_api[$i]['WikipediaLogoUrl'];
-            $conference=$team_content_api[$i]['Conference'];
-            
-            $team->name = $teamName;
-            $team->abname = $teamAbName;
-            $team->state_name = $city;
-            $team->image = $image;
-            $team->conference = $conference;
-            
-            $team->save();
-            
+                $team = new Self;
+                $teamAbName=$team_content_api[$i]['Key'];
+                $city=$team_content_api[$i]['City'];
+                $teamName=$team_content_api[$i]['Name'];
+                $image=$team_content_api[$i]['WikipediaLogoUrl'];
+                $conference=$team_content_api[$i]['Conference'];
+                $team->name = $teamName;
+                $team->abname = $teamAbName;
+                $team->state_name = $city;
+                $team->image = $image;
+                $team->conference = $conference;
+                $team->save();
             }
         }
     }

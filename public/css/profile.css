@@ -1,56 +1,88 @@
 
 
-.liked {
+.liked
+{
   color: #D2691E;
 }
 
-.reason {
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    font-weight: bold;
-    border: double 4px #000000;
-    display: inline-block;
-      width: 70%;
+.reason
+{
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  border: double 4px #000000;
+  display: inline-block;
+  width: 70%;
   word-wrap: break-word;
-    text-align: left;
-    font-size:20px;
-}
-.reason p {
-    margin: 0; 
-    padding: 0;
+  text-align: left;
+  font-size:20px;
 }
 
-.name {
-    font-size:40px;
-}
-
-h1 {
-    text-align:center;
-}
-
-#team {
-    display:flex;
-}
-
-.button 
+.reason p
 {
-    text-align: right;
+  margin: 0;
+  padding: 0;
 }
 
-body 
+.name
 {
-    text-align: center;
+  font-size:40px;
 }
 
-.team_Name{
-    text-align:left;
+h1
+{
+  position: relative;
+  display:inline-block;
+  text-align: center;
+  overflow: hidden;
+  padding: 1.5rem 2rem 1.5rem 70px;
+  border: 2px solid #000;
+  border-radius: 100vh;
+  width:50%;
+}
+
+h1 span
+{
+  font-size: 15px;
+  font-size: 2.0rem;
+  line-height:50px;
+  position: absolute;
+  top: calc(50% - 25px);
+  left: 10px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  border-radius: 50%;
+  background: #000;
+}
+
+#team
+{
+  display:flex;
+}
+
+.button
+{
+  text-align: right;
+}
+
+body
+{
+  text-align: center;
+}
+
+.team_Name
+{
+  text-align:left;
 }
 
 
-.my-page {
-   display: inline-block;
+.my-page
+{
+  display: inline-block;
   text-decoration: none;
-  color: rgba(152, 152, 152, 0.43);/*アイコン色*/
+  color: rgba(152, 152, 152, 0.43);
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -59,26 +91,87 @@ body
   text-align: center;
   overflow: hidden;
   font-weight: bold;
-    background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+  background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: solid 2px #b5b5b5;
 }
 
-.my-page i {
+.my-page i
+{
   line-height: 40px;
 }
 
-.my-page:active {
-  /*押したとき*/
+.my-page:active
+{
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: none;
 }
 
-.edit-profile{
+.edit-profile
+{
   display: inline-block;
   text-decoration: none;
-  color: rgba(152, 152, 152, 0.43);/*アイコン色*/
+  color: rgba(152, 152, 152, 0.43);
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 24px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  font-weight: bold;
+  background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+  border-bottom: solid 2px #b5b5b5;
+}
+
+.edit-profile i
+{
+  line-height: 40px;
+}
+.edit-profile:active
+{
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+  border-bottom: none;
+}
+
+.players
+{
+  display: inline-block;
+  text-decoration: none;
+  color: rgba(152, 152, 152, 0.43);
+  height: 40px;
+  line-height: 40px;
+  font-size: 24px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  font-weight: bold;
+  background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+  border-bottom: solid 2px #b5b5b5;
+}
+
+.players i
+{
+  line-height: 40px;
+}
+
+.players:active
+{
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+  border-bottom: none;
+}
+
+
+.ranking
+{
+  display: inline-block;
+  text-decoration: none;
+  color: rgba(152, 152, 152, 0.43);
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -93,19 +186,22 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   border-bottom: solid 2px #b5b5b5;
 }
 
-.edit-profile i {
+.ranking i
+{
   line-height: 40px;
 }
-.edit-profile:active {
-  /*押したとき*/
+
+.ranking:active
+{
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: none;
 }
 
-.players{
+.home
+{
   display: inline-block;
   text-decoration: none;
-  color: rgba(152, 152, 152, 0.43);/*アイコン色*/
+  color: rgba(152, 152, 152, 0.43);
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -120,21 +216,22 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   border-bottom: solid 2px #b5b5b5;
 }
 
-.players i {
+.home i
+{
   line-height: 40px;
 }
 
-.players:active {
-  /*押したとき*/
+.home:active
+{
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: none;
 }
 
-
-.ranking{
+.players
+{
   display: inline-block;
   text-decoration: none;
-  color: rgba(152, 152, 152, 0.43);/*アイコン色*/
+  color: rgba(152, 152, 152, 0.43);
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -143,96 +240,45 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   text-align: center;
   overflow: hidden;
   font-weight: bold;
-background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+  background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: solid 2px #b5b5b5;
 }
 
-.ranking i {
+.players i
+{
   line-height: 40px;
 }
 
-.ranking:active {
-  /*押したとき*/
+.players:active
+{
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: none;
 }
 
-.home{
-  display: inline-block;
-  text-decoration: none;
-  color: rgba(152, 152, 152, 0.43);/*アイコン色*/
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  font-size: 24px;
-  border-radius: 50%;
-  text-align: center;
-  overflow: hidden;
-  font-weight: bold;
-background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
-  box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
-  border-bottom: solid 2px #b5b5b5;
+.user-image
+{
+  width:2%;
+  border:solid 1px black;
 }
 
-.home i {
-  line-height: 40px;
+.player-image
+{
+  width:10%;
+  text-align:center;
+  display:inline-block;
 }
 
-.home:active {
-  /*押したとき*/
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
-  border-bottom: none;
+.player-image:hover
+{
+  width:50%;
+  text-align:center;
+  display:inline-block;
 }
 
-.players{
-  display: inline-block;
-  text-decoration: none;
-  color: rgba(152, 152, 152, 0.43);/*アイコン色*/
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  font-size: 24px;
-  border-radius: 50%;
-  text-align: center;
-  overflow: hidden;
-  font-weight: bold;
-background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
-  box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
-  border-bottom: solid 2px #b5b5b5;
-}
-
-.players i {
-  line-height: 40px;
-}
-
-.players:active {
-  /*押したとき*/
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
-  border-bottom: none;
-}
-
-.user-image{
-    width:2%;
-    border:solid 1px black;
-}
-
-.player-image{
-    width:10%;
-    text-align:center;
-    display:inline-block;
-}
-
-.player-image:hover{
-    width:50%;
-    text-align:center;
-    display:inline-block;
-}
-
-.posts_info {
+.posts_info
+{
   position: relative;
   display: inline-block;
   font-weight: bold;
@@ -243,12 +289,14 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   border: solid 2px #00bcd4;
 }
 
-.posts_info:hover {
+.posts_info:hover
+{
   background: #00bcd4;
   color: white;
 }
 
-.players_info {
+.players_info
+{
   position: relative;
   display: inline-block;
   font-weight: bold;
@@ -259,22 +307,30 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   border: solid 2px #00bcd4;
 }
 
-.players_info:hover {
+.players_info:hover
+{
   background: #00bcd4;
   color: white;
 }
  
-.reviews{
+.my_info
+{
+  margin-top:20px;
   font-size: 30px;
-  border:double 4px #000000;
-  display:inline-block;
-  padding:0px 10px;
 }
 
-.of-review{
-  padding-top: 5px;
+.name
+{
+  font-size:40px;
 }
 
-.review-point{
-  font-weight: bold;
+.image
+{
+  width:30%;
+  border:solid 2px black;
+}
+
+.my_image
+{
+  margin-bottom:30px;
 }

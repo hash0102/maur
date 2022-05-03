@@ -98,11 +98,9 @@ $("#team_select").on('change', function () {
   var teamSelectId = $("#team_select").val();
 
   if (teamSelectId == "") {
-    $('.player_name').show();
     $('.player_name2').hide();
     $("input[type='submit']").prop('disabled', true).addClass('disabled');
   } else {
-    $('.player_name').hide();
     $('.player_name2').show();
     $("input[type='submit']").prop('disabled', false).removeClass('disabled');
     $.ajax({
@@ -110,13 +108,13 @@ $("#team_select").on('change', function () {
       url: "/posts/create/teams/" + teamSelectId,
       dataType: "json"
     }).done(function (res) {
-      //console.log(res);
       $('.player_team3').empty();
       $.each(res.player_select, function (index, value) {
-        var player_by_team = "\n         \n         <option value=\"".concat(value.id, "\">").concat(value.first_name, " ").concat(value.last_name, "</option>\n         ");
+        var player_by_team = "\n          <option value=\"".concat(value.id, "\">").concat(value.first_name, " ").concat(value.last_name, "</option>\n          ");
         $(".player_team3").append(player_by_team);
       });
-    }).fail(function (error) {// alert(error.statusText);
+    }).fail(function (error) {
+      alert(error.statusText);
     });
   }
 });

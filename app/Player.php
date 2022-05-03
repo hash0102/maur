@@ -55,7 +55,7 @@ class Player extends Model
        $teamName = array('WAS','CHA','ATL','MIA','ORL','NY','PHI','BKN','BOS','TOR',
        'CHI','CLE','IND','DET','MIL','MIN','UTA','OKC','POR','DEN',
        'MEM','HOU','NO','SA','DAL','GS','LAL','LAC','PHO','SAC');
-       for($a=0;$a<30;$a++){
+        for($a=0;$a<30;$a++){
            $team_name= $teamName[$a];
 
         $curl = curl_init();
@@ -144,6 +144,6 @@ class Player extends Model
                 $player->save();
             }
         }
-       }
+        }
     }
 }

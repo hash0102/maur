@@ -31,9 +31,10 @@ class UserController extends Controller
         return redirect('/users');
     }
     
-    public function show(Post $post)
+    public function show(Post $post, Comment $comment)
     {
-        return view('users/show')->with(['post' => $post]);
+        $comment=Post::where('id', $post->id)->withCount('comments')->orderBy('id', 'desc')->paginate(5);
+        return view('users/show')->with(['post' => $post , 'comments' => $comment]);
     }
     
     public function delete(Post $post)
@@ -69,7 +70,7 @@ class UserController extends Controller
     
     public function postEdit($id, Request $request)
     {
-         $user = User::where('id', $id)->first();
+        $user = User::where('id', $id)->first();
         $all_request = $request->all();
         
         if (isset($all_request['image'])) 
@@ -79,15 +80,7 @@ class UserController extends Controller
             $all_request['image'] = Storage::disk('s3')->url($upload_info);
         }
             $user->fill($all_request)->save();
-             return redirect('users/profile/mypage');
-        
-        // // フォームから渡されたデータの取得
-        // $user = $request->post();
-        // // DBへ更新依頼
-        // $this->user->updateUserFindById($user);
-      
-        // // 再度編集画面へリダイレクト
-        // return redirect('users/profile/mypage');
+            return redirect('users/profile/mypage');
     }
 }
 

@@ -1,0 +1,83 @@
+body
+{
+  text-align: center;
+}
+
+.team_Name
+{
+  display:flex;
+  font-size:20px;
+  text-align:center;
+}
+
+.player-name
+{
+  font-size:30px;
+}
+
+.player-image
+{
+  width:15%;
+  margin-bottom:20px;
+}
+
+.weight
+{
+  margin-left:20px;
+}
+
+.city
+{
+  margin-left:20px;
+}
+
+.team-image
+{
+  width:5%;
+  height:10%;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.back-ranking
+{
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #00BCD4;
+  transition: .4s;
+  border: solid 2px #00bcd4;
+}
+
+.back-ranking:hover
+{
+  background: #00bcd4;
+  color: white;
+}
+
+.back-latest
+{
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #00BCD4;
+  transition: .4s;
+  border: solid 2px #00bcd4;
+}
+
+.back-latest:hover
+{
+  background: #00bcd4;
+  color: white;
+}
+
+.content
+{
+  border:double 3px black;
+  text-align: center;
+  margin:0 500px;
+}

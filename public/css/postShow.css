@@ -1,0 +1,74 @@
+.back
+{
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #00BCD4;
+  background: #ECECEC;
+  transition: .4s;
+  border:double 3px #00BCD4;
+}
+
+.back:hover
+{
+  background: #00bcd4;
+  color: white;
+}
+
+.comments
+{
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #00BCD4;
+  background: #ECECEC;
+  transition: .4s;
+  border:double 3px #00BCD4;
+}
+
+.comments:hover
+{
+  background: #00bcd4;
+  color: white;
+}
+
+.reason
+{
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  border: double 4px #000000;
+  display: inline-block;
+    width: 70%;
+  word-wrap: break-word;
+  text-align: left;
+  font-size:20px;
+}
+
+.content
+{
+  text-align:center;
+}
+
+.reviews
+{
+  width: 30%;
+  border:double 3px black;
+  display:inline-block;
+  font-size: 30px
+}
+
+.user-image
+{
+  width:2%;
+  border:solid 1px black;
+}
+
+.player-image
+{
+  width: 12%;
+}

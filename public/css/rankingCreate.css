@@ -1,28 +1,153 @@
+body
+{
+  text-align:center;
+}
+
 .pg_player2
 {
-display:none;
+  display:none;
+  font-size:20px;
+
 }
 
 .sg_player2
 {
-display:none;
+  display:none;
+  font-size:20px;
 }
 
 .sf_player2
 {
-display:none;
+  display:none;
+  font-size:20px;
 }
 
 .pf_player2
 {
-display:none;
+  display:none;
+  font-size:20px;
 }
 
 .c_player2
 {
-display:none;
+  display:none;
+  font-size:20px;
 }
-.reason textarea {
-    height:140px;
-    width:800px
+
+.reason textarea
+{
+  height:140px;
+  width:800px
+}
+
+.pg_teams
+{
+  display:flex;
+  margin:0 auto;
+  font-size:20px;
+}
+
+.sg_teams
+{
+  display:flex;
+  margin:0 auto;
+  font-size:20px;
+}
+
+.sf_teams
+{
+  display:flex;
+  margin:0 auto;
+  font-size:20px;
+}
+
+.pf_teams
+{
+  display:flex;
+  margin:0 auto;
+  font-size:20px;
+}
+
+.c_teams
+{
+  display:flex;
+  margin:0 auto;
+  font-size:20px;
+}
+
+h1
+{
+  position: relative;
+  display:inline-block;
+  text-align: center;
+  overflow: hidden;
+  padding: 1.5rem 2rem 1.5rem 70px;
+  border: 2px solid #000;
+  border-radius: 100vh;
+  width:50%;
+}
+
+h1 span
+{
+  font-size: 15px;
+  font-size: 2.0rem;
+  line-height:50px;
+  position: absolute;
+  top: calc(50% - 25px);
+  left: 10px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  border-radius: 50%;
+  background: #000;
+}
+
+.pg_player_name
+{
+  display:flex;
+  flex-direction:column;
+}
+
+.sg_player_name
+{
+  display:flex;
+  flex-direction:column;
+}
+
+.sf_player_name
+{
+  display:flex;
+  flex-direction:column;
+}
+
+.pf_player_name
+{
+  display:flex;
+  flex-direction:column;
+}
+
+.c_player_name
+{
+  display:flex;
+  flex-direction:column;
+}
+
+.back
+{
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #00BCD4;
+  background: #ECECEC;
+  transition: .4s;
+  border:double 3px #00BCD4;
+}
+
+.back:hover
+{
+  background: #00bcd4;
+  color: white;
 }

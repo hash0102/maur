@@ -105,13 +105,13 @@ $("#pg_team_select").on('change', function () {
       url: "/ranking/create/pg/teams/" + pgTeamSelectId,
       dataType: "json"
     }).done(function (res) {
-      //console.log(res);
       $('.pg_player_team3').empty();
       $.each(res.pg_player_select, function (index, value) {
-        var pg_player_by_team = "\n         <option value=\"".concat(value.id, "\">").concat(value.first_name, " ").concat(value.last_name, "</option>\n         ");
+        var pg_player_by_team = "\n       <option value=\"".concat(value.id, "\">").concat(value.first_name, " ").concat(value.last_name, "</option>\n       ");
         $(".pg_player_team3").append(pg_player_by_team);
       });
-    }).fail(function (error) {// alert(error.statusText);
+    }).fail(function (error) {
+      alert(error.statusText);
     });
   }
 });
@@ -129,10 +129,11 @@ $("#sg_team_select").on('change', function () {
     }).done(function (res) {
       $('.sg_player_team3').empty();
       $.each(res.sg_player_select, function (index, value) {
-        var sg_player_by_team = "\n         \n         <option value=\"".concat(value.id, "\">").concat(value.first_name, " ").concat(value.last_name, "</option>\n         ");
+        var sg_player_by_team = "\n       <option value=\"".concat(value.id, "\">").concat(value.first_name, " ").concat(value.last_name, "</option>\n       ");
         $(".sg_player_team3").append(sg_player_by_team);
       });
-    }).fail(function (error) {// alert(error.statusText);
+    }).fail(function (error) {
+      alert(error.statusText);
     });
   }
 });
@@ -150,10 +151,11 @@ $("#sf_team_select").on('change', function () {
     }).done(function (res) {
       $('.sf_player_team3').empty();
       $.each(res.sf_player_select, function (index, value) {
-        var sf_player_by_team = "\n         \n         <option value=\"".concat(value.id, "\">").concat(value.first_name, " ").concat(value.last_name, "</option>\n         ");
+        var sf_player_by_team = "\n       <option value=\"".concat(value.id, "\">").concat(value.first_name, " ").concat(value.last_name, "</option>\n       ");
         $(".sf_player_team3").append(sf_player_by_team);
       });
-    }).fail(function (error) {// alert(error.statusText);
+    }).fail(function (error) {
+      alert(error.statusText);
     });
   }
 });
@@ -171,10 +173,11 @@ $("#pf_team_select").on('change', function () {
     }).done(function (res) {
       $('.pf_player_team3').empty();
       $.each(res.pf_player_select, function (index, value) {
-        var pf_player_by_team = "\n         \n         <option value=\"".concat(value.id, "\">").concat(value.first_name, " ").concat(value.last_name, "</option>\n         ");
+        var pf_player_by_team = "\n         <option value=\"".concat(value.id, "\">").concat(value.first_name, " ").concat(value.last_name, "</option>\n         ");
         $(".pf_player_team3").append(pf_player_by_team);
       });
-    }).fail(function (error) {// alert(error.statusText);
+    }).fail(function (error) {
+      alert(error.statusText);
     });
   }
 });
@@ -192,10 +195,11 @@ $("#c_team_select").on('change', function () {
     }).done(function (res) {
       $('.c_player_team3').empty();
       $.each(res.c_player_select, function (index, value) {
-        var c_player_by_team = "\n         \n         <option value=\"".concat(value.id, "\">").concat(value.first_name, " ").concat(value.last_name, "</option>\n         ");
+        var c_player_by_team = "\n        <option value=\"".concat(value.id, "\">").concat(value.first_name, " ").concat(value.last_name, "</option>\n        ");
         $(".c_player_team3").append(c_player_by_team);
       });
-    }).fail(function (error) {// alert(error.statusText);
+    }).fail(function (error) {
+      alert(error.statusText);
     });
   }
 });

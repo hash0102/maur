@@ -1,7 +1,9 @@
-$(function () {
+$(function ()
+{
   let like = $('.like-toggle');
   let likeRankingId;
-  like.on('click', function () {
+  like.on('click', function ()
+  {
     let $this = $(this);
     likeRankingId = $this.data('ranking-id');
     $.ajax({
@@ -14,19 +16,22 @@ $(function () {
         'ranking_id': likeRankingId
       },
     })
-    .done(function (data) {
+    .done(function (data)
+    {
       $this.toggleClass('liked');
       $this.next('.like-counter').html(data.ranking_likes_count);
     })
-    .fail(function () {
+    .fail(function ()
+    {
       alert('fail'); 
     });
   });
 });
 
-$(function() {
-  
-  $('.delete').click(function(){
+$(function()
+{
+  $('.delete').click(function()
+  {
     if(confirm('削除すると復元できません。\n 本当に削除しますか？'))
     {
       document.getElementById('form_delete').submit();

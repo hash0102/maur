@@ -26,7 +26,7 @@ class PlayerController extends Controller
     {
         return view('players/show')->with(['player' => $player]);
     }
-    
+
     public function basketapi(Player $player)
     {
         $player_api = $player->basketapi();

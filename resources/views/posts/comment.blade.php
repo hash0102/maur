@@ -12,73 +12,76 @@
         <title>コメント一覧</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link rel="stylesheet"href="/css/app.css">
     </head>
     <body>
-        <div class = 'comment_contents'>
-            @if($comments->isEmpty())
+        <h1><span><i class="fa-solid fa-comments"></i></span>コメント一覧</h1>
+        <h2  class= "post-content">投稿内容：{{$post->content}}</h2>
+        <p class= "poster">投稿者名：<img src = "{{$post->user->image}}" width=1.5% class="user-image">{{$post->user->name}}</p>
+        <hr>
+        @if($comments->isEmpty())
             <p>現在コメントはございません。</p>
-            @else
+        @else
         @foreach($comments as $comment)
-        
-          <h2>投稿内容：{{$comment->post->content}}</h2>
-          <p>投稿者名：{{$comment->post->user->name}}</p>
-          <p>ユーザー名：{{$comment->user->name}}</p>
-          @if($comment->user->team_id == NULL)
-            <p>ユーザーのお気に入りのチーム：未設定</p>
+            <div class="comment-contents">
+                <p>コメント内容：{{$comment->contents}}</p>
+            </div>
+            <div class="commenter">
+                <p class="comment-user">ユーザー名：<img src ="{{$comment->user->image}}" class="user-image">{{$comment->user->name}}</p>
+                <p>コメント日付：{{$comment->created_at}}</p>
+            @if($comment->user->team_id == NULL)
+                <p>ユーザーのお気に入りのチーム：未設定</p>
             @else
-            <p>ユーザーのお気に入りのチーム：<img src="{{$comment->user->team->image}}" width = 1.25% height= 10%> {{$comment->user->team->state_name }} {{$comment->user->team->name}}</p>
+                <p>ユーザーのお気に入りのチーム：<img src="{{$comment->user->team->image}}" width = 1.25% height= 10%> {{$comment->user->team->state_name }} {{$comment->user->team->name}}</p>
             @endif
-          <p>コメント内容：{{$comment->contents}}</p>
-          <p>コメント日付：{{$comment->created_at}}</p>
-           @auth
-              @if (!$comment->isCommentLikedBy(Auth::user()))
-                     <span class="likes">
-                        <i class="fa-solid fa-thumbs-up like-toggle" data-comment-id="{{ $comment->id }}"></i>
-                      <span class="like-counter">{{$comment->commentlikes_count}}</span>
-                    </span>
-               @else
+            </div>
+        <div id="likes">
+            @auth
+            @if (!$comment->isCommentLikedBy(Auth::user()))
+            <p>いいね：
+                <span class="likes">
+                    <i class="fa-solid fa-thumbs-up like-toggle" data-comment-id="{{ $comment->id }}"></i>
+                    <span class="like-counter">{{$comment->commentlikes_count}}</span>
+                </span>
+            </p>
+            @else
+            <p>いいね：
                 <span class="likes">
                     <i class="fa-solid fa-thumbs-up like-toggle liked" data-comment-id="{{ $comment->id }}"></i>
                     <span class="like-counter">{{$comment->commentlikes_count}}</span>
                 </span>
-               @endif
-               @endauth
-               @guest
+            </p>
+            @endif
+            @endauth
+            @guest
+            <p>いいね：
                 <span class="likes">
                     <i class="fa-solid fa-thumbs-up"></i>
                     <span class="like-counter">{{$comment->commentlikes_count}}</span>
                 </span>
-               @endguest
-               
-           <form action="/comments/{{ $comment->id }}" id="form_{{ $comment->id }}" method="post" style="display:inline">
+            </p>
+            @endguest
+        </div>
+        <div class= "delete">
+            <form action="/comments/{{ $comment->id }}" id="form_{{ $comment->id }}" method="post" style="display:inline" class="delete">
                 @csrf
                 @method('DELETE')
                 @if($comment->user_id === \Auth::user()->id)
-                <input type ="submit" style = "display:none">
-                <button class = 'delete'>削除</span></button>
+                    <input type ="submit" style = "display:none">
+                    <button class = 'delete'><i class="fa-solid fa-trash-can"></i></button>
                 @endif
             </form>
-            <hr>
+        </div>
+        <hr>
         @endforeach
         @endif
-        </div>
-         <div class='paginate'>
+        <div class='paginate'>
             {{ $comments->links() }}
         </div>
-        <div class = "comment_create">
+        <div class = "footer">
             @if(\Auth::user()->id != $post->user_id)
-         <button><a href='/posts/comments/create/{{$post->id}}'><i class="fa-solid fa-comment"></i>コメントを書く</a></button>
-        </div>
+                <a href='/posts/comments/create/{{$post->id}}'class="write-comment"><i class="fa-solid fa-comment"></i>コメントを書く</a>
             @endif
-        <div class="footer">
-         <button><a href="/posts/{{$post->id}}"><i class="fa-solid fa-arrow-right-to-bracket"></i>   戻る</a></button>
-            <!--<form action = "/posts/" id= "form_delete" method= "POST">-->
-            <!--    @csrf-->
-            <!--    @method('DELETE')-->
-            <!--    <input type ="submit" style = "display:none">-->
-            <!--    <button class = 'delete'><span onclick = "return deletePost(this);">削除</span></button>-->
-            <!--</form>-->
+            <a href="/posts/{{$post->id}}"class='back'><i class="fa-solid fa-arrow-right-to-bracket"></i>   戻る</a>
         </div>
     </body>
 </html>

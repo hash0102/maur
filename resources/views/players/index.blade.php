@@ -8,12 +8,12 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src = "{{ mix('js/jQueryPlayer.js') }}" defer></script>
         <script src = "{{ mix('js/jQueryPlayerSearch.js') }}" defer></script>
-               <link rel="stylesheet" href="{{ asset('css/playerIndex.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/playerIndex.css') }}">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>選手一覧</h1>
+        <h1><span><i class="fa-solid fa-people-group"></i></span>選手一覧</h1>
         <div class = 'footer'>
             <div class = 'button'>
                 <a href='/users' class='my-page'><i class="fa-solid fa-user-pen"></i></a>
@@ -22,8 +22,9 @@
                 <a href = "/users/profile/mypage" class='my-account'><i class="fa-solid fa-circle-user"></i></a>
             </div>
         </div>
-         <div class ="team_Name">
-                <p>チーム名</p>
+        <div class ="team_Name">
+            <p>チーム名：</p>　　　
+            <div>
                 <select id = "teams">
                     <option value = "">チームを選択する</option>
                     @foreach($teams as $team)
@@ -31,44 +32,44 @@
                     @endforeach
                 </select>
             </div>
-            
-            
-    <div class="search-wrapper">
-      <div class="user-search-form">
-          <p>選手名<span>(※苗字または名前のみで検索ください。)</span></p>
-        <input type = "text" id = 'search_name'  placeholder="選手を検索する">
-        <button class = 'search-icon'><i class="fa fa-search" aria-hidden="true"></i></button>
-      </div>
-    </div>
-<hr>
+        </div>
+        <div class="search-wrapper">
+            <p>選手名：</p>
+            <div class="user-search-form">
+                <input type = "text" id = 'search_name'  placeholder="選手を検索する">
+                <button class = 'search-icon'><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+            <p>(※苗字または名前のみで検索ください。)</p>
+        </div>
+        <hr>
         <div class='posts'>
         </div>
-
         <div class='posts2'>
             @foreach ($players as $player)
-            <p>選手名：{{ $player->first_name }} {{ $player->last_name}}</p>
-            <img class="player_image" src = "{{$player->image}}" width = 10%>
-            <p>チーム：<img src = "{{$player->team->image}}" width = 1.25% height= 10%>    {{$player->team->state_name }} {{$player->team->name }}</p>
-            <p>No.： {{ $player->jersey }}</p>
-            <p>身長：{{round($player->height,1)}} cm</p>
-            <p>体重：{{round($player->weight,1)}} kg</p>
-            <p>ポジション：{{$player->position}}</p>
-            <p>誕生日：{{$player->birthday}}</p>
-            <p>出身国：{{$player->birthcountry}}</p>
-            <p>出身：{{$player->birthcity}}</p>
-            @if($player->highschool == 'No Data')
-            <p>大学：{{$player->college}} 大学</p>
-            @else
-            <p>高校：{{$player->highschool}}　高校</p>
-            @endif
-            <p>プロ歴：{{$player->experience}} 年</p>
-            <p>年俸：{{$player->salary}} ドル</p>
-            <hr>
+                <div class="player-image-content">
+                    <p class="player-name">選手名：{{ $player->first_name }} {{ $player->last_name}}</p>
+                    <img class="player-image" src = "{{$player->image}}">
+                </div>
+                <div class="player-contents">
+                    <p>チーム：<span class="team_image"><img class="team-image" src = "{{$player->team->image}}"></span>    {{$player->team->state_name }} {{$player->team->name }}</p>
+                    <p>背番号： {{ $player->jersey }}</p>
+                    <p>身長：{{round($player->height,1)}} cm  <span class='weight'>体重：{{round($player->weight,1)}} kg</span></p>
+                    <p>ポジション：{{$player->position}}</p>
+                    <p>誕生日：{{$player->birthday}}</p>
+                    <p>出身国：{{$player->birthcountry}}<span class="city">出身：{{$player->birthcity}}</span></p>
+                    @if($player->highschool == 'No Data')
+                        <p>大学：{{$player->college}} 大学</p>
+                    @else
+                        <p>高校：{{$player->highschool}}　高校</p>
+                    @endif
+                    <p>プロ歴：{{$player->experience}} 年</p>
+                    <p>年俸：{{$player->salary}} ドル</p>
+                </div>
+                <hr>
             @endforeach
         </div>
         <div class='paginate'>
             {{ $players->links() }}
-        </div>
         </div>
     </body>
 </html>

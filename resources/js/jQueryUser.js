@@ -1,7 +1,9 @@
 
-$("#team").on('change',function () {
+$("#team").on('change',function ()
+{
   let teamId  = $("#team").val();
-  if(teamId == "") {
+  if(teamId == "") 
+  {
     $('.posts2').show();
     $('.paginate').show();
     $('.posts').hide();
@@ -13,12 +15,14 @@ $("#team").on('change',function () {
       type: "get",       
       url: "/users/teams/" + teamId,
       dataType: "json",
-      })
-      .done(function(res)  {
-        $(".posts").empty();
-        if(res.player_infom.data.length !== 0){
-        $.each(res.player_infom.data, function (index, value) {
-          console.log(value);
+    })
+    .done(function(res)
+    {
+      $(".posts").empty();
+      if(res.player_infom.data.length !== 0)
+      {
+        $.each(res.player_infom.data, function (index, value)
+        {
           var user = `
               <p>投稿者：${value.user.name} </p>
               <p>選手名： ${value.player.first_name} ${value.player.last_name}</p>
@@ -34,13 +38,13 @@ $("#team").on('change',function () {
               <button><a href="/players/${ value.player_id }"><i class="fa-solid fa-angles-right"></i>    選手詳細</a></button>
                   <hr>`;
           $(".posts").append(user);
-      });
-        } else {
+        });
+      } else {
           let notUser = `
-          <p>現在投稿はございません</p>
-          `;
+            <p>現在投稿はございません</p>
+            `;
           $(".posts").append(notUser);
-        }
+      }
     })
     .fail((error) => {
       alert(error.statusText);

@@ -1,7 +1,8 @@
-
-$("#teams").on('change',function () {
+$("#teams").on('change',function ()
+{
   let teamId  = $("#teams").val();
-  if(teamId == "") {
+  if(teamId == "") 
+  {
     $('.posts2').show();
     $('.paginate').show();
     $('.posts').hide();
@@ -14,33 +15,36 @@ $("#teams").on('change',function () {
       url: "players/teams/"+teamId,
       dataType: "json",
       })
-      .done(function(res)  {
+      .done(function(res)
+      {
         $('.posts').empty();
-        $.each(res.players_info.data, function (index, value) {
-          console.log(value)
+        $.each(res.players_info.data, function (index, value)
+        {
           var players_content = `
-              <p> 選手名：${ value.first_name } ${value.last_name} </p>
-              <p><img src = "${value.image}" width = 10%><p>
-              <p>チーム：<img src = ${value.team.image} width = 1.25% height= 10%>  ${value.team.state_name} ${value.team.name } </p>
-              <p>No.： ${value.jersey}</p>
-            <p>身長：${Math.round(value.height*10)/10} cm</p>
-            <p>体重：${Math.round(value.weight*10)/10} kg</p>
-            <p>ポジション：${value.position}</p>
-            <p>誕生日：${value.birthday}</p>
-            <p>出身国：${value.birthcountry}</p>
-            <p>出身：${value.birthcity}</p>
-            <p>大学：${value.college} 大学</p>
-            <p>高校：${value.highschool} 高校</p>
-            <p>プロ歴：${value.experience} 年</p>
-            <p>年俸：${value.salary} ドル</p>
-              <hr>
+            <div class="player-image-content">
+              <p class="player-name"> 選手名：${ value.first_name } ${value.last_name} </p>
+              <img class="player-image" src = "${value.image}">
+            </div>
+            <div class="player-contents">
+              <p>チーム：<span class="team_image"><img  class="team-image" src = "${value.team.image}"></span>  ${value.team.state_name} ${value.team.name } </p>
+              <p>背番号： ${value.jersey}</p>
+              <p>身長：${Math.round(value.height*10)/10} cm <span class='weight'>体重：${Math.round(value.weight*10)/10} kg</span></p>
+              <p>ポジション：${value.position}</p>
+              <p>誕生日：${value.birthday}</p>
+              <p>出身国：${value.birthcountry}<span class="city">出身：${value.birthcity}</span></p>
+              <p>大学：${value.college} 大学</p>
+              <p>高校：${value.highschool} 高校</p>
+              <p>プロ歴：${value.experience} 年</p>
+              <p>年俸：${value.salary} ドル</p>
+            </div>
+            <hr>
               `;
-               $('.posts').append(players_content);
+          $('.posts').append(players_content);
+        });
+      })
+      .fail((error) => {
+        alert(error.statusText);
       });
-    })
-    .fail((error) => {
-      alert(error.statusText);
-    });
   }
 });
 

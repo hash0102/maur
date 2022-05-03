@@ -69,7 +69,6 @@ class User extends Authenticatable
     
     public function selectUserFindById($id)
     {
-        // 「SELECT id, name, email WHERE id = ?」を発行する
         $query = $this->select([
             'id',
             'name',
@@ -79,31 +78,8 @@ class User extends Authenticatable
         ])->where([
             'id' => $id
         ]);
-        // first()は1件のみ取得する関数
         return $query->first();
     }
-    
-    public function updateUserFindById($user)
-    {
-        return $this->where([
-            'id' => $user['id']
-        ])->update([
-            'name' => $user['name'],
-            'email' => $user['email'],
-            'team_id' => $user['team_id'],
-        ]);
-    }
-    
-        public function updateUserImage($user)
-    {
-        return $this->where([
-            'id' => $user['id']
-        ])->update([
-            'image' => $user['image']
-        ]);
-    }
-    
-    
 }
 
 

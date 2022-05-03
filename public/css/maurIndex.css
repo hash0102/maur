@@ -1,56 +1,100 @@
+#likes
+{
+  font-size:20px;
+  text-align:right;
+  margin-right:50px;
+}
 
-
-.liked {
+.liked
+{
   color: #D2691E;
 }
 
-.reason {
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    font-weight: bold;
-    border: double 4px #000000;
-    display: inline-block;
-      width: 70%;
-  word-wrap: break-word;
-    text-align: left;
-    font-size:20px;
+.team_Name
+{
+  display:flex;
+  font-size:20px;
+  text-align:center;
+  margin-left:20px;
 }
-.reason p {
-    margin: 0; 
+
+.reason
+{
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  border: double 4px #000000;
+  display: inline-block;
+    width: 70%;
+  word-wrap: break-word;
+  text-align: left;
+  font-size:20px;
+}
+
+.reason p
+{
+    margin: 0;
     padding: 0;
 }
 
-.name {
-    font-size:40px;
-}
-
-h1 {
-    text-align:center;
-}
-
-#team {
-    display:flex;
-}
-
-.button 
+.name
 {
-    text-align: right;
+  font-size:40px;
 }
 
-body 
+h1
 {
-    text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem 2rem 1.5rem 70px;
+  border: 2px solid #000;
+  border-radius: 100vh;
+  width:50%;
+  display:inline-block;
+  text-align: center;
 }
 
-.team_Name{
-    text-align:left;
+h1 span
+{
+  font-size: 15px;
+  font-size: 2.0rem;
+  line-height:50px;
+  position: absolute;
+  top: calc(50% - 25px);
+  left: 10px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  border-radius: 50%;
+  background: #000;
 }
 
+#team
+{
+  display:flex;
+}
 
-.my-page {
+.button
+{
+  text-align: right;
+}
+
+body
+{
+  text-align: center;
+}
+
+.team_Name
+{
+  text-align:left;
+}
+
+.my-page
+{
    display: inline-block;
   text-decoration: none;
-  color: rgba(152, 152, 152, 0.43);/*アイコン色*/
+  color: rgba(152, 152, 152, 0.43);
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -65,20 +109,22 @@ body
   border-bottom: solid 2px #b5b5b5;
 }
 
-.my-page i {
+.my-page i
+{
   line-height: 40px;
 }
 
-.my-page:active {
-  /*押したとき*/
+.my-page:active
+{
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: none;
 }
 
-.create{
+.create
+{
   display: inline-block;
   text-decoration: none;
-  color: rgba(152, 152, 152, 0.43);/*アイコン色*/
+  color: rgba(152, 152, 152, 0.43);
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -93,19 +139,21 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   border-bottom: solid 2px #b5b5b5;
 }
 
-.create i {
+.create i
+{
   line-height: 40px;
 }
-.create:active {
-  /*押したとき*/
+.create:active
+{
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: none;
 }
 
-.players{
+.players
+{
   display: inline-block;
   text-decoration: none;
-  color: rgba(152, 152, 152, 0.43);/*アイコン色*/
+  color: rgba(152, 152, 152, 0.43);
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -120,21 +168,23 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   border-bottom: solid 2px #b5b5b5;
 }
 
-.players i {
+.players i
+{
   line-height: 40px;
 }
 
-.players:active {
-  /*押したとき*/
+.players:active
+{
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: none;
 }
 
 
-.ranking{
+.ranking
+{
   display: inline-block;
   text-decoration: none;
-  color: rgba(152, 152, 152, 0.43);/*アイコン色*/
+  color: rgba(152, 152, 152, 0.43);
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -149,20 +199,22 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   border-bottom: solid 2px #b5b5b5;
 }
 
-.ranking i {
+.ranking i
+{
   line-height: 40px;
 }
 
-.ranking:active {
-  /*押したとき*/
+.ranking:active
+{
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: none;
 }
 
-.home{
+.home
+{
   display: inline-block;
   text-decoration: none;
-  color: rgba(152, 152, 152, 0.43);/*アイコン色*/
+  color: rgba(152, 152, 152, 0.43);
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -177,20 +229,22 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   border-bottom: solid 2px #b5b5b5;
 }
 
-.home i {
+.home i
+{
   line-height: 40px;
 }
 
-.home:active {
-  /*押したとき*/
+.home:active
+{
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: none;
 }
 
-.my-account{
+.my-account
+{
   display: inline-block;
   text-decoration: none;
-  color: rgba(152, 152, 152, 0.43);/*アイコン色*/
+  color: rgba(152, 152, 152, 0.43);
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -205,34 +259,32 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   border-bottom: solid 2px #b5b5b5;
 }
 
-.my-account i {
+.my-account i
+{
   line-height: 40px;
 }
 
-.my-account:active {
-  /*押したとき*/
+.my-account:active
+{
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: none;
 }
 
-.user-image{
-    width:2%;
-    border:solid 1px black;
+.user-image
+{
+  width:2%;
+  border:solid 1px black;
 }
 
-.player-image{
-    width:10%;
-    text-align:center;
-    display:inline-block;
+.player-image
+{
+  width:15%;
+  padding-bottom:20px;
+  display:inline-block;
 }
 
-.player-image:hover{
-    width:50%;
-    text-align:center;
-    display:inline-block;
-}
-
-.posts_info {
+.posts_info
+{
   position: relative;
   display: inline-block;
   font-weight: bold;
@@ -243,12 +295,14 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   border: solid 2px #00bcd4;
 }
 
-.posts_info:hover {
+.posts_info:hover
+{
   background: #00bcd4;
   color: white;
 }
 
-.players_info {
+.players_info
+{
   position: relative;
   display: inline-block;
   font-weight: bold;
@@ -259,22 +313,59 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   border: solid 2px #00bcd4;
 }
 
-.players_info:hover {
+.players_info:hover
+{
   background: #00bcd4;
   color: white;
 }
  
-.reviews{
+.reviews
+{
   font-size: 30px;
   border:double 4px #000000;
   display:inline-block;
   padding:0px 10px;
 }
 
-.of-review{
+.of-review
+{
   padding-top: 5px;
 }
 
-.review-point{
+.review-point
+{
   font-weight: bold;
+}
+
+.poster
+{
+  font-size:40px;
+}
+
+.poster-content
+{
+  text-align:left;
+  margin-left:30px;
+}
+
+.team-image
+{
+  width:1.25%;
+  height:10%;
+}
+
+.paginate
+{
+ text-align:center;
+ display:inline-block;
+}
+
+#player-team
+{
+  font-size:30px;
+}
+
+#player-position
+{
+  font-size:30px;
 }

@@ -9,13 +9,11 @@
         <script src = "{{ mix('js/jQuery.js') }}" defer></script>
         <script src = "{{ mix('js/jQueryLike.js') }}" defer></script>
         <link rel="stylesheet" href="{{ asset('css/maurIndex.css') }}">
-
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>最新の投稿</h1>
-    <fotter>
+        <h1><span><i class="fa-solid fa-house"></i></span>最新の投稿</h1>
             <div class='button'>
                 <a href='/users' class='my-page'><i class="fa-solid fa-user-pen"></i></a>
                 <a href='/players' class='players'><i class="fa-solid fa-people-group"></i></a>
@@ -23,88 +21,84 @@
                 <a href = '/ranking'class='ranking'><i class="fa-solid fa-ranking-star"></i></a>
                 <a href = "/users/profile/mypage" class='my-account'><i class="fa-solid fa-circle-user"></i></a>
             </div>
-        </div>
-        </div>
-    </fotter>
         <div class ="team_Name">
             <p>チーム名：</p>
-            <select id = "team">
-                <option value = "" class = 'option'>チームを選択する</option>
+            <div>
+                <select id = "team">
+                    <option value = "" class = 'option'>チームを選択する</option>
                 @foreach($teams as $team)
                     <option  class = 'team_name' value="{{ $team->id }}">{{ $team->abname }} ({{$team->name}})</option>
                 @endforeach
-            </select>
+                </select>
             </div>
+        </div>
         <hr>
         <div class='posts'>
         </div>
-        
-        <div class='paginate2'>
-        </div>
-            
         <div class = 'posts2'>
             @if($posts->isEmpty())
-            <p>現在投稿はございません。</p>
+                <p>現在投稿はございません。</p>
             @else
-        @foreach ($posts as $post)
-            <p class="name">選手名：{{ $post->player->first_name }} {{ $post->player->last_name}}</p>
-            <p class = 'player-image'><img src = '{{ $post->player->image }}'></p>
-            <div class = "contents">
-            <p>チーム：<img src = "{{$post->player->team->image}}" width = 1.25% height= 10%>  {{$post->player->team->state_name }} {{$post->player->team->name }}</p>
-            <p>ポシション： {{ $post->player->position }}</p>
-            <div class="reviews">
-            <p class="of-review">オフェンス評価：<span class="review-point">{{ $post->offense_review }}</span></p>
-            <p class="df-review">ディフェンス評価：<span class="review-point">{{ $post->defense_review }}</span></p>
-            </div>
-            </div>
-            <div class = "reason">
-            <p>評価理由：{{$post->content}}</p>
-            </div>
-            <p>投稿者：<img src = "{{$post->user->image}}" width=1.5% class="user-image">   {{$post->user->name }}</p>
-            @if($post->user->team_id == NULL)
-            <p>投稿者のお気に入りのチーム：未設定</p>
-            @else
-            <p>投稿者のお気に入りのチーム：<img src="{{$post->user->team->image}}" width = 1.25% height= 10%> {{$post->user->team->state_name }} {{$post->user->team->name}}</p>
-            @endif
-            <p>投稿日付：{{$post->created_at}}</p>
-            <div class = 'like'>
-              @auth
-              @if (!$post->isLikedBy(Auth::user()))
-              <p>Favorite : 
-                     <span class="likes">
+            @foreach ($posts as $post)
+                <p class="name">選手名：{{ $post->player->first_name }} {{ $post->player->last_name}}</p>
+                <img src = '{{ $post->player->image }}' class = "player-image">
+                <div class = "contents">
+                    <p id="player-team">チーム：<img src = "{{$post->player->team->image}}" class="team-image">  {{$post->player->team->state_name }} {{$post->player->team->name }}</p>
+                    <p id="player-position">ポシション： {{ $post->player->position }}</p>
+                    <div class="reviews">
+                        <p class="of-review">オフェンス評価：<span class="review-point">{{ $post->offense_review }}</span></p>
+                        <p class="df-review">ディフェンス評価：<span class="review-point">{{ $post->defense_review }}</span></p>
+                    </div>
+                </div>
+                <div class = "reason">
+                    <p>評価理由：{{$post->content}}</p>
+                </div>
+                <div id = 'likes'>
+                @auth
+                @if (!$post->isLikedBy(Auth::user()))
+                <p>Favorite : 
+                    <span class="likes">
                         <i class="fa-solid fa-basketball like-toggle" data-post-id="{{ $post->id }}"></i>
-                      <span class="like-counter">{{$post->likes_count}}</span>
+                        <span class="like-counter">{{$post->likes_count}}</span>
                     </span>
-              </p>
-               @else
-               <p>Favorite :
+                </p>
+                @else
+                <p>Favorite :
                 <span class="likes">
                     <i class="fa-solid fa-basketball like-toggle liked" data-post-id="{{ $post->id }}"></i>
                     <span class="like-counter">{{$post->likes_count}}</span>
                 </span>
                 </p>
-               @endif
-               @endauth
-               @guest
-               <p>Favorite :
+                @endif
+                @endauth
+                @guest
+                <p>Favorite :
                 <span class="likes">
                     <i class="fa-solid fa-basketball"></i>
                     <span class="like-counter">{{$post->likes_count}}</span>
                 </span>
                 </p>
-               @endguest
+                @endguest
             </div>
-            <a href="/posts/{{ $post->id }}" class="posts_info"><i class="fa-solid fa-angles-right"></i>    投稿詳細</a>
-            <a href="/players/{{ $post->player_id }}"class="players_info"><i class="fa-solid fa-user"></i>   選手詳細</a>
             <hr>
-        @endforeach
-        @endif
+            <div class="poster-content">
+                <p class="poster">投稿者：<img src = "{{$post->user->image}}" class="user-image">   {{$post->user->name }}</p>
+                @if($post->user->team_id == NULL)
+                    <p>投稿者のお気に入りのチーム：未設定</p>
+                @else
+                    <p>投稿者のお気に入りのチーム：<img src="{{$post->user->team->image}}" class="team-image"> {{$post->user->team->state_name }} {{$post->user->team->name}}</p>
+                @endif
+                <p>投稿日付：{{$post->created_at}}</p>
+                <a href="/posts/{{ $post->id }}" class="posts_info"><i class="fa-solid fa-angles-right"></i>    投稿詳細</a>
+                <a href="/players/{{ $post->player_id }}"class="players_info"><i class="fa-solid fa-user"></i>   選手詳細</a>
+            </div>
+            <hr>
+            @endforeach
+            @endif
         </div>
-        
         <div class='paginate'>
             {{ $posts->links() }}
         </div>
-    
     </body>
 </html>
 @endsection

@@ -1,6 +1,8 @@
-$("#pg_team_select").on('change',function () {
-  let pgTeamSelectId  = $("#pg_team_select").val();
-  if(pgTeamSelectId == "") {
+$("#pg_team_select").on('change',function ()
+{
+  let pgTeamSelectId = $("#pg_team_select").val();
+  if(pgTeamSelectId == "")
+  {
     $('.pg_player2').hide();
   } else {
     $('.pg_player2').show();
@@ -8,28 +10,29 @@ $("#pg_team_select").on('change',function () {
       type: "get",       
       url: "/ranking/create/pg/teams/" + pgTeamSelectId,
       dataType: "json",
-      })
-      .done(function(res)  {
-        //console.log(res);
-        $('.pg_player_team3').empty();
-        $.each(res.pg_player_select, function (index, value) {
-         
-         var pg_player_by_team = `
-         <option value="${value.id}">${value.first_name} ${value.last_name}</option>
-         `;
-         $(".pg_player_team3").append(pg_player_by_team);
-         
-        });
+    })
+    .done(function(res)
+    {
+      $('.pg_player_team3').empty();
+      $.each(res.pg_player_select, function (index, value)
+      {
+       var pg_player_by_team = `
+       <option value="${value.id}">${value.first_name} ${value.last_name}</option>
+       `;
+       $(".pg_player_team3").append(pg_player_by_team);
+      });
     })
     .fail((error) => {
-     // alert(error.statusText);
+      alert(error.statusText);
     });
   }
 });
 
-$("#sg_team_select").on('change',function () {
+$("#sg_team_select").on('change',function ()
+{
   let sgTeamSelectId  = $("#sg_team_select").val();
-  if(sgTeamSelectId == "") {
+  if(sgTeamSelectId == "")
+  {
     $('.sg_player2').hide();
   } else {
     $('.sg_player2').show();
@@ -37,28 +40,29 @@ $("#sg_team_select").on('change',function () {
       type: "get",       
       url: "/ranking/create/sg/teams/" + sgTeamSelectId,
       dataType: "json",
-      })
-      .done(function(res)  {
-          $('.sg_player_team3').empty();
-        $.each(res.sg_player_select, function (index, value) {
-         var sg_player_by_team = `
-         
-         <option value="${value.id}">${value.first_name} ${value.last_name}</option>
-         `;
-         $(".sg_player_team3").append(sg_player_by_team);
-          
-          
-        });
+    })
+    .done(function(res)
+    {
+      $('.sg_player_team3').empty();
+      $.each(res.sg_player_select, function (index, value)
+      {
+       var sg_player_by_team = `
+       <option value="${value.id}">${value.first_name} ${value.last_name}</option>
+       `;
+       $(".sg_player_team3").append(sg_player_by_team);
+      });
     })
     .fail((error) => {
-     // alert(error.statusText);
+      alert(error.statusText);
     });
   }
 });
 
-$("#sf_team_select").on('change',function () {
+$("#sf_team_select").on('change',function ()
+{
   let sfTeamSelectId  = $("#sf_team_select").val();
-  if(sfTeamSelectId == "") {
+  if(sfTeamSelectId == "")
+  {
     $('.sf_player2').hide();
   } else {
     $('.sf_player2').show();
@@ -67,27 +71,28 @@ $("#sf_team_select").on('change',function () {
       url: "/ranking/create/sf/teams/" + sfTeamSelectId,
       dataType: "json",
       })
-      .done(function(res)  {
-        $('.sf_player_team3').empty();
-        $.each(res.sf_player_select, function (index, value) {
-         var sf_player_by_team = `
-         
-         <option value="${value.id}">${value.first_name} ${value.last_name}</option>
-         `;
-         $(".sf_player_team3").append(sf_player_by_team);
-          
-          
-        });
+    .done(function(res)
+    {
+      $('.sf_player_team3').empty();
+      $.each(res.sf_player_select, function (index, value)
+      {
+       var sf_player_by_team = `
+       <option value="${value.id}">${value.first_name} ${value.last_name}</option>
+       `;
+       $(".sf_player_team3").append(sf_player_by_team);
+      });
     })
     .fail((error) => {
-     // alert(error.statusText);
+      alert(error.statusText);
     });
   }
 });
 
-$("#pf_team_select").on('change',function () {
+$("#pf_team_select").on('change',function ()
+{
   let pfTeamSelectId  = $("#pf_team_select").val();
-  if(pfTeamSelectId == "") {
+  if(pfTeamSelectId == "")
+  {
     $('.pf_player2').hide();
   } else {
     $('.pf_player2').show();
@@ -96,27 +101,28 @@ $("#pf_team_select").on('change',function () {
       url: "/ranking/create/pf/teams/" +pfTeamSelectId,
       dataType: "json",
       })
-      .done(function(res)  {
-        $('.pf_player_team3').empty();
-        $.each(res.pf_player_select, function (index, value) {
-         var pf_player_by_team = `
-         
+    .done(function(res)
+    {
+      $('.pf_player_team3').empty();
+      $.each(res.pf_player_select, function (index, value)
+      {
+        var pf_player_by_team = `
          <option value="${value.id}">${value.first_name} ${value.last_name}</option>
          `;
          $(".pf_player_team3").append(pf_player_by_team);
-          
-          
-        });
+      });
     })
     .fail((error) => {
-     // alert(error.statusText);
+      alert(error.statusText);
     });
   }
 });
 
-$("#c_team_select").on('change',function () {
+$("#c_team_select").on('change',function ()
+{
   let pfTeamSelectId  = $("#c_team_select").val();
-  if(pfTeamSelectId == "") {
+  if(pfTeamSelectId == "")
+  {
     $('.c_player2').hide();
   } else {
     $('.c_player2').show();
@@ -125,33 +131,36 @@ $("#c_team_select").on('change',function () {
       url: "/ranking/create/c/teams/" +pfTeamSelectId,
       dataType: "json",
       })
-      .done(function(res)  {
-        $('.c_player_team3').empty();
-        $.each(res.c_player_select, function (index, value) {
-         var c_player_by_team = `
-         
-         <option value="${value.id}">${value.first_name} ${value.last_name}</option>
-         `;
-         $(".c_player_team3").append(c_player_by_team);
-          
-          
-        });
+    .done(function(res)
+    {
+      $('.c_player_team3').empty();
+      $.each(res.c_player_select, function (index, value) 
+      {
+        var c_player_by_team = `
+        <option value="${value.id}">${value.first_name} ${value.last_name}</option>
+        `;
+        $(".c_player_team3").append(c_player_by_team);
+      });
     })
     .fail((error) => {
-     // alert(error.statusText);
+      alert(error.statusText);
     });
   }
 });
 
 
-$(function () {
-  $("textarea").on('keydown keyup keypress change', function () {
+$(function ()
+{
+  $("textarea").on('keydown keyup keypress change', function ()
+  {
     let count = $(this).val().length;
     let limit = 500 - count;
-    if (limit <= 500) {
+    if (limit <= 500)
+    {
       $("#num").text(limit);
       $("input[type='submit']").prop('disabled', false).removeClass('disabled');
-      if (limit <= 0) {
+      if (limit <= 0)
+      {
         $("#num").text('0');
         $("input[type='submit']").prop('disabled', true).addClass('disabled');
       }

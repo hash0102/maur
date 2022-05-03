@@ -8,29 +8,49 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/profileEdit.css') }}">
     <body>
-       <form action="/users/edit/{{$user->id}}"method="post" enctype="multipart/form-data">
-            @csrf
-            <input type="hidden" name="id" value="{{ $user->id }}" />
-            <p>名前</p>
-            <input type="text" name="name" value="{{ $user->name }}" />
-            <p>メール</p>
-            <input type="text" name="email" value="{{ $user->email }}" /><br/>
-            <p>イメージ</p>
-            <input type="file" name="image" value="{{$user->image}}">
-            <div class ="favorite_team">
-            <p>お気に入りチームを選択する</p>
-            <select name="team_id">
-                @foreach($teams as $team)
-                <option value ="{{$team->id}}">{{$team->name}}</option>
-                @endforeach
-            </select>
+        <h1><span><i class="fa-solid fa-address-card"></i></span>アカウント編集</h1>
+        <hr>
+        <form action="/users/edit/{{$user->id}}"method="post" enctype="multipart/form-data">
+            <div class="edit-content">
+                @csrf
+                <input type="hidden" name="id" value="{{ $user->id }}" />
+                <div class= "edit-name">
+                    <p>名前：</p>
+                    <div>
+                        <input type="text" name="name" value="{{ $user->name }}">
+                    </div>
+                </div>
+                <div class= "edit-mail">
+                    <p>メール：</p>
+                    <div>
+                        <input type="text" name="email" value="{{ $user->email }}">
+                    </div>
+                </div>
+                <div class= "edit-image">
+                    <p>イメージ：</p>
+                    <div>
+                        <input type="file" name="image" value="{{$user->image}}">
+                    </div>
+                </div>
+                <div class ="favorite_team">
+                    <p>お気に入りチームを選択する：</p>
+                    <div>
+                        <select name="team_id">
+                            @foreach($teams as $team)
+                                <option value ="{{$team->id}}">{{$team->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
             </div>
-            <div class ="submit">
-            <input type="submit" value="更新" />
+            <hr>
+            <div class ="button">
+                <input type="submit" value="変更する" />
+                <a href = "/users/profile/mypage"　class="back">マイページに戻る</a>
             </div>
-          </form>
-          <button><a href = "/users/profile/mypage">マイページに戻る</a></button>
+        </form>
     </body>
 </html>
 @endsection

@@ -1,7 +1,9 @@
-$(function () {
+$(function ()
+{
   let like = $('.like-toggle');
   let likePostId;
-  like.on('click', function () {
+  like.on('click', function ()
+  {
     let $this = $(this);
     likePostId = $this.data('post-id');
     $.ajax({
@@ -14,11 +16,13 @@ $(function () {
         'post_id': likePostId
       },
     })
-    .done(function (data) {
+    .done(function (data)
+    {
       $this.toggleClass('liked');
       $this.next('.like-counter').html(data.post_likes_count);
     })
-    .fail(function () {
+    .fail(function ()
+    {
       alert('fail'); 
     });
   });

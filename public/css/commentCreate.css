@@ -1,12 +1,9 @@
-.player_name2
+body 
 {
-  display:none;
-  font-size:20px;
-  margin: 0 auto;
-  padding-top:20px;
+  text-align: center;
 }
 
-h1
+h1 
 {
   position: relative;
   display:inline-block;
@@ -18,7 +15,7 @@ h1
   width:50%;
 }
 
-h1 span
+h1  span
 {
   font-size: 15px;
   font-size: 2.0rem;
@@ -34,12 +31,7 @@ h1 span
   background: #000;
 }
 
-body
-{
-  text-align:center;
-}
-
-.submit
+.write-comment 
 {
   position: relative;
   display: inline-block;
@@ -52,13 +44,13 @@ body
   border:double 3px #00BCD4;
 }
 
-.submit:hover
+.write-comment:hover 
 {
   background: #00bcd4;
   color: white;
 }
 
-.back
+.back 
 {
   position: relative;
   display: inline-block;
@@ -69,52 +61,29 @@ body
   background: #ECECEC;
   transition: .4s;
   border:double 3px #00BCD4;
-  margin: 0 20px;
 }
 
-.back:hover
+.back:hover 
 {
   background: #00bcd4;
   color: white;
 }
 
-.reviews
+.comment-contents 
 {
-  font-size:20px;
-  text-align:center;
-  display:inline-block;
-  vertical-align: top;
-  margin:20px 0;
-}
-
-.teams
-{
-  display:flex;
-  margin:0 auto;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  border: double 4px #000000;
+  display: inline-block;
+    width: 30%;
+  word-wrap: break-word;
+  text-align: left;
   font-size:20px;
 }
 
-.team_select
+.comment-contents p 
 {
-  display:flex;
-  margin-top:20;
-  flex-direction:column;
-}
-
-
-.player_name
-{
-  display:flex;
-  flex-direction:column;
-}
-
-.df-review
-{
-  margin-top: 20px;
-}
-
-.reason-content
-{
-  width:40%;
-  height: 200px;
+  margin: 0; 
+  padding: 0;
 }

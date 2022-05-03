@@ -27,7 +27,6 @@ Route::get('/players/{player}', 'PlayerController@show');
 Route::get('/players/teams/{team_id}', 'PlayerController@PlayerInfo');
 Route::get('/players/search/{firstName}', 'PlayerController@getPlayersBySearchName');
 
-
 Route::get('/users/edit/{id}', 'UserController@getEdit')->name('users.edit');
 Route::post('/users/edit/{id}', 'UserController@postEdit')->name('users.postEdit');
 Route::get('/users/teams/{team_id}/', 'UserController@userPost');
@@ -56,7 +55,5 @@ Route::post('/ranking', 'RankingController@store');
 Route::delete('/ranking/{ranking}', 'RankingController@delete');
 Route::post('/ranking/like', 'RankingController@like')->name('rankings.like');
 });
-
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
