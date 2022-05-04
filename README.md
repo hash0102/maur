@@ -12,7 +12,18 @@ PHP 8.0.15
 MySQL  Ver 15.1 Distrib 10.2.38-MariaDB
 
 ## 注力した機能
-jQueryを使用し、チームごとの投稿のみを非同期通信で画面に反映させる機能
+・jQueryを使用し、チームごとの投稿のみを非同期通信で画面に反映させる機能
 ![画面収録 2022-05-04 16 21 01 2](https://user-images.githubusercontent.com/98683921/166640231-7ba6aaee-e47a-41e6-bf15-5c4b4f5f4d67.gif)
+
+・jQueryを使用し、選手名を検索した際に、その選手の情報のみを非同期通信で反映させる機能
+![画面収録 2022-05-04 16 44 36](https://user-images.githubusercontent.com/98683921/166643183-4743fcb0-ef65-46dc-b91b-9df312ce5394.gif)
+
+・jQueryを使用し、いいねを非同期通信で反映させる機能
+![画面収録 2022-05-04 17 09 48](https://user-images.githubusercontent.com/98683921/166644346-7ae0c84e-1ac1-46c7-8946-2d452af6c1c9.gif)
+
+・選手個人の評価だけでなく今季の１番優秀だと思う選手を各ポジションごとに選出し投稿する機能。
+![画面収録 2022-05-04 17 05 06](https://user-images.githubusercontent.com/98683921/166643894-350b4781-511a-4d25-95f6-3828a31b9fb3.gif)
+・各投稿に対し、コメントができる機能
+![画面収録 2022-05-04 17 09 48 1](https://user-images.githubusercontent.com/98683921/166645641-86814754-830a-473c-82ff-a0114f04c9a1.gif)
 
 ## データ設計

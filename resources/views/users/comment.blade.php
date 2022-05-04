@@ -61,14 +61,6 @@
                     </p>
                 @endguest
             </div>
-        <form action="/comments/{{ $comment->id }}" id="form_{{ $comment->id }}" method="post" style="display:inline" class="delete">
-            @csrf
-            @method('DELETE')
-            @if($comment->user_id === \Auth::user()->id)
-                <input type ="submit" style = "display:none">
-                <button class = 'delete'>削除</span></button>
-            @endif
-        </form>
         <hr>
         @endforeach
         @endif
