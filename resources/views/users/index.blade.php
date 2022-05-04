@@ -46,8 +46,8 @@
                     <p>チーム：<img src = "{{$post->player->team->image}}" width = 1.25% height= 10%>   {{$post->player->team->state_name }} {{$post->player->team->name }}</p>
                     <p>ポシション： {{ $post->player->position }}</p>
                     <div class="reviews">
-                    <p>オフェンス評価：{{ $post->offense_review }}</p>
-                    <p>ディフェンス評価：{{ $post->defense_review }}</p>
+                    <p class="of-review">オフェンス評価：{{ $post->offense_review }}</p>
+                    <p class="df-review">ディフェンス評価：{{ $post->defense_review }}</p>
                     </div>
                 </div>
                 <div class = "reason">

@@ -19,7 +19,7 @@
             </div>   
             <p id="count">あと<span id="num"></span>文字</p>
             <div class="button">
-                <input type="submit" value="保存"/>
+                <input type="submit" value="保存" class="submit">
                 <a href="/posts/{{$post->id}}/comments" class="back"><i class="fa-solid fa-arrow-right-to-bracket"></i>  戻る</a>
             </div>
         </form>

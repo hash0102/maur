@@ -61,8 +61,8 @@
             </p>
             @endguest
         </div>
-        <div class= "delete">
-            <form action="/comments/{{ $comment->id }}" id="form_{{ $comment->id }}" method="post" style="display:inline" class="delete">
+        <div class= "delete-button">
+            <form action="/comments/{{ $comment->id }}" id="form_{{ $comment->id }}" method="post" style="display:inline">
                 @csrf
                 @method('DELETE')
                 @if($comment->user_id === \Auth::user()->id)

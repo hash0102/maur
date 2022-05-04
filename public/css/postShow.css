@@ -72,3 +72,22 @@
 {
   width: 12%;
 }
+
+.delete
+{
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: red;
+  background: #ECECEC;
+  transition: .4s;
+  border:double 3px red;
+}
+
+.delete:hover
+{
+  background: red;
+  color: white;
+}

@@ -151,3 +151,22 @@ h1 span
   background: #00bcd4;
   color: white;
 }
+
+.submit
+{
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #00BCD4;
+  background: #ECECEC;
+  transition: .4s;
+  border:double 3px #00BCD4;
+}
+
+.submit:hover
+{
+  background: #00bcd4;
+  color: white;
+}

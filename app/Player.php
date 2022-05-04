@@ -61,7 +61,7 @@ class Player extends Model
         $curl = curl_init();
         
         curl_setopt_array($curl, [
-        	CURLOPT_URL => "https://api.sportsdata.io/v3/nba/scores/json/Players/$team_name?key=6a29d7bfa4364c1b9546b3c736a07556",
+        	CURLOPT_URL => "https://api.sportsdata.io/v3/nba/scores/json/Players/$team_name?key=6a95fe096b624968bd33620f83c32082",
         	CURLOPT_RETURNTRANSFER => true,
         	CURLOPT_FOLLOWLOCATION => true,
         	CURLOPT_ENCODING => "",
@@ -69,7 +69,7 @@ class Player extends Model
         	CURLOPT_TIMEOUT => 30,
         	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         	CURLOPT_CUSTOMREQUEST => "GET",
-            CURLOPT_HTTPHEADER => ["Ocp-Apim-Subscription-Key: 6a29d7bfa4364c1b9546b3c736a07556 "],
+            CURLOPT_HTTPHEADER => ["Ocp-Apim-Subscription-Key: 6a95fe096b624968bd33620f83c32082"],
         ]);
 
         $response = curl_exec($curl);

@@ -69,14 +69,18 @@
                 <hr>
                 <div class= "user-contents">
                     <p class="poster">投稿者名：<img src= "{{$ranking->user->image}}" class="user-image">{{$ranking->user->name}}</p>
-                    <p>投稿者のお気に入りチーム：<img src="{{$ranking->user->team->image}}" class="team-image2">{{$ranking->user->team->state_name}} {{$ranking->user->team->name}}</p>
+                    @if($ranking->user->team_id == NULL)
+                        <p>投稿者のお気に入りのチーム：未設定</p>
+                    @else
+                        <p>投稿者のお気に入りチーム：<img src="{{$ranking->user->team->image}}" class="team-image2">{{$ranking->user->team->state_name}} {{$ranking->user->team->name}}</p>
+                    @endif
                     <p>投稿日付：{{$ranking->created_at}}</p>
                     <form action="/ranking/{{ $ranking->id }}" id="form_{{ $ranking->id }}" method="post" style="display:inline">
                     @csrf
                     @method('DELETE')
                     @if($ranking->user_id === \Auth::user()->id)
                         <input type ="submit" style = "display:none">
-                        <button class = 'delete'>削除</span></button>
+                        <button class = 'delete'><i class="fa-solid fa-trash-can"></i></button>
                     @endif
                     </form>
                 </div>

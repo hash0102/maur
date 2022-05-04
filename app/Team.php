@@ -40,7 +40,7 @@ class Team extends Model
         $curl = curl_init();
         
         curl_setopt_array($curl, [
-        	CURLOPT_URL => "https://api.sportsdata.io/v3/nba/scores/json/AllTeams?key=6a29d7bfa4364c1b9546b3c736a07556",
+        	CURLOPT_URL => "https://api.sportsdata.io/v3/nba/scores/json/AllTeams?key=6a95fe096b624968bd33620f83c32082",
         	CURLOPT_RETURNTRANSFER => true,
         	CURLOPT_FOLLOWLOCATION => true,
         	CURLOPT_ENCODING => "",
@@ -50,7 +50,7 @@ class Team extends Model
         	CURLOPT_CUSTOMREQUEST => "GET",
         	CURLOPT_HTTPHEADER => [
     	        "Ocp-Apim-Subscription-Host: https://api.sportsdata.io/v3/nba/scores/json/teams",
-        		"Ocp-Apim-Subscription-Key: 6a29d7bfa4364c1b9546b3c736a07556 "
+        		"Ocp-Apim-Subscription-Key: 6a95fe096b624968bd33620f83c32082 "
         	],
         ]);
         

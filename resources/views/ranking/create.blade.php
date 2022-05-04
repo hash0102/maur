@@ -116,7 +116,7 @@
                 <p id="count">あと<span id="num"></span>文字</p>
             </div>
             <div class="button">
-                <input type="submit" value="投稿する">
+                <input type="submit" value="投稿する" class="submit">
                 <a href="/ranking" class="back"><i class="fa-solid fa-arrow-right-to-bracket"></i>  戻る</a>
             </div>
         </form>
