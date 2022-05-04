@@ -56,7 +56,6 @@ AWS Cloud9
 ・commentsテーブルはpostsテーブルと１対多いの関係（1つの投稿が複数のコメントを持ち、1つのコメントが1つの投稿を持つ。）
 
 :::note info
-使用したAPI
 本アプリケーションでは選手の情報とチームの情報をすべて正確に取得するために外部のAPIを利用してデータを取得致しました。
-[使用させていただいたAPIのURL](https://sportsdata.io/nba-api)
+使用させていただいたAPI：[sportsdata io NBA Data Feed API](https://sportsdata.io/nba-api)
 :::
