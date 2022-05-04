@@ -11,7 +11,9 @@ Laravel Framework 6.20.44
 PHP 8.0.15
 MySQL  Ver 15.1 Distrib 10.2.38-MariaDB
 
-##注力した機能
+## 注力した機能
 jQueryを使用し、チームごとの投稿のみを非同期通信で画面に反映させる機能
 ![スクリーンショット 2022-05-04 16 30 08 2](https://user-images.githubusercontent.com/98683921/166639059-295b1a9f-3bd8-452b-ac54-854f5b6d8492.png)
-##データ設計
+https://user-images.githubusercontent.com/98683921/166639462-55655834-0f52-4668-a97a-e6184afeccd7.mov
+
+## データ設計
