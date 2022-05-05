@@ -57,14 +57,6 @@
                         </p>
                     @endif
                     @endauth
-                    @guest
-                    <p>Favorite :
-                        <span class="likes">
-                            <i class="fa-solid fa-crown"></i>
-                            <span class="like-counter">{{$ranking->rankinglikes_count}}</span>
-                        </span>
-                    </p>
-                    @endguest
                 </div>
                 <hr>
                 <div class= "user-contents">

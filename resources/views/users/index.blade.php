@@ -71,14 +71,6 @@
                         </p>
                     @endif
                     @endauth
-                    @guest
-                        <p>Favorite :
-                            <span class="likes">
-                                <i class="fa-solid fa-basketball"></i>
-                                <span class="like-counter">{{$post->likes_count}}</span>
-                            </span>
-                        </p>
-                    @endguest
                 </div>
                 <div class="footer">
                     <a href="/users/{{ $post->id }}"class="posts_info"><i class="fa-solid fa-angles-right"></i>投稿詳細</a>

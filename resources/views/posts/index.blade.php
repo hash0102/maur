@@ -71,14 +71,6 @@
                 </p>
                 @endif
                 @endauth
-                @guest
-                <p>Favorite :
-                <span class="likes">
-                    <i class="fa-solid fa-basketball"></i>
-                    <span class="like-counter">{{$post->likes_count}}</span>
-                </span>
-                </p>
-                @endguest
             </div>
             <hr>
             <div class="poster-content">

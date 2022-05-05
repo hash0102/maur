@@ -37,14 +37,14 @@
         <div id="likes">
             @auth
             @if (!$comment->isCommentLikedBy(Auth::user()))
-            <p>いいね：
+            <p>Favorite：
                 <span class="likes">
                     <i class="fa-solid fa-thumbs-up like-toggle" data-comment-id="{{ $comment->id }}"></i>
                     <span class="like-counter">{{$comment->commentlikes_count}}</span>
                 </span>
             </p>
             @else
-            <p>いいね：
+            <p>Favorite：
                 <span class="likes">
                     <i class="fa-solid fa-thumbs-up like-toggle liked" data-comment-id="{{ $comment->id }}"></i>
                     <span class="like-counter">{{$comment->commentlikes_count}}</span>
@@ -52,14 +52,6 @@
             </p>
             @endif
             @endauth
-            @guest
-            <p>いいね：
-                <span class="likes">
-                    <i class="fa-solid fa-thumbs-up"></i>
-                    <span class="like-counter">{{$comment->commentlikes_count}}</span>
-                </span>
-            </p>
-            @endguest
         </div>
         <div class= "delete-button">
             <form action="/comments/{{ $comment->id }}" id="form_{{ $comment->id }}" method="post" style="display:inline">
