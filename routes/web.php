@@ -20,7 +20,7 @@ Route::delete('/posts/{post}', 'PostController@delete');
 Route::get('/posts/create/teams/{team_id}', 'PostController@TeamSelectAjax');
 Route::get('/posts/teams/{team_id}', 'PostController@latestPostAjax');
 Route::get('/posts/{post}/comments/', 'CommentController@postIndex');
-Route::get('/posts/comments/create/{post}', 'CommentController@postCreate');
+Route::get('/posts/comments/create/{post}', 'CommentController@create');
 
 Route::get('/players', 'PlayerController@index');
 Route::get('/players/{player}', 'PlayerController@show');

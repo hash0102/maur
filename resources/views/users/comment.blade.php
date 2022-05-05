@@ -16,7 +16,7 @@
     <body>
         <h1><span><i class="fa-solid fa-comments"></i></span>コメント一覧</h1>
         <h2  class= "post-content">投稿内容：{{$post->content}}</h2>
-        <p class= "poster">投稿者名：<img src = "{{$post->user->image}}" width=1.5% class="user-image">{{$post->user->name}}</p>
+        <p class= "poster">投稿者名：<img src = "{{$post->user->image}}" class="user-image">{{$post->user->name}}</p>
         <hr>
         @if($comments->isEmpty())
             <p>現在コメントはございません。</p>
@@ -61,10 +61,21 @@
                     </p>
                 @endguest
             </div>
+            <div class= "delete-button">
+                <form action="/comments/{{ $comment->id }}" id="form_{{ $comment->id }}" method="post" style="display:inline">
+                    @csrf
+                    @method('DELETE')
+                    @if($comment->user_id === \Auth::user()->id)
+                        <input type ="submit" style = "display:none">
+                        <button class = 'delete'><i class="fa-solid fa-trash-can"></i></button>
+                    @endif
+                </form>
+            </div>
         <hr>
         @endforeach
         @endif
         <div class = "footer">
+            <a href='/posts/comments/create/{{$post->id}}'class="write-comment"><i class="fa-solid fa-comment"></i>コメントを書く</a>
             <a href="/users/{{$post->id}}"class='back'><i class="fa-solid fa-arrow-right-to-bracket"></i>   戻る</a>
         </div>
         <hr>

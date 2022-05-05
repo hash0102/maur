@@ -27,7 +27,7 @@ class CommentController extends Controller
         return view('users/comment')->with(['post' => $post, 'comments' => $comment]);
     }
     
-    public function postCreate(Post $post , Comment $comment)
+    public function create(Post $post , Comment $comment)
     {
         return view('comments/create')->with(['post' => $post, 'comments' => $comment->get()]);
     }
@@ -39,7 +39,7 @@ class CommentController extends Controller
         $comment->fill($input)->save();
         return redirect('/posts/'.$post_id.'/comments/');
     }
-    
+
     public function delete(Comment $comment)
     {
         $comment->delete();

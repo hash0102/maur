@@ -16,7 +16,7 @@
     <body>
         <h1><span><i class="fa-solid fa-comments"></i></span>コメント一覧</h1>
         <h2  class= "post-content">投稿内容：{{$post->content}}</h2>
-        <p class= "poster">投稿者名：<img src = "{{$post->user->image}}" width=1.5% class="user-image">{{$post->user->name}}</p>
+        <p class= "poster">投稿者名：<img src = "{{$post->user->image}}"  class="user-image">{{$post->user->name}}</p>
         <hr>
         @if($comments->isEmpty())
             <p>現在コメントはございません。</p>
@@ -78,9 +78,7 @@
             {{ $comments->links() }}
         </div>
         <div class = "footer">
-            @if(\Auth::user()->id != $post->user_id)
-                <a href='/posts/comments/create/{{$post->id}}'class="write-comment"><i class="fa-solid fa-comment"></i>コメントを書く</a>
-            @endif
+            <a href='/posts/comments/create/{{$post->id}}'class="write-comment"><i class="fa-solid fa-comment"></i>コメントを書く</a>
             <a href="/posts/{{$post->id}}"class='back'><i class="fa-solid fa-arrow-right-to-bracket"></i>   戻る</a>
         </div>
     </body>
