@@ -32,11 +32,11 @@
             </div>
             <input type="hidden" name="post[user_id]" value="{{Auth::user()->id}}">
             <div class="reviews">
-                <p class=of-review>オフェンス評価</p>
+                <p class="of-review">オフェンス評価</p>
                 <div>
                     <input type="number" name="post[offense_review]" min="0" max="100" class="point"></input>
                 </div>
-                <p class=df-review>ディフェンス評価</p>
+                <p class="df-review">ディフェンス評価</p>
                 <div>
                     <input type="number" name="post[defense_review]" min="0" max="100"class="point"></input>
                 </div>
@@ -46,7 +46,7 @@
                 <textarea name="post[content]" placeholder="評価理由" class="reason-content"></textarea>
             </div>
             <p id="count">あと<span id="num"></span>文字</p>
-           <div class="button">
+            <div class="button">
                 <input type="submit" value="投稿する"class="submit">
                 <a href="/" class="back"><i class="fa-solid fa-arrow-right-to-bracket"></i>  戻る</a>
             </div>

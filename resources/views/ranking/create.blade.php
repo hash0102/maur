@@ -19,7 +19,7 @@
                         <p>チーム：</p>
                         <div>
                             <select id = "pg_team_select">
-                            <option value = "" class = 'option'>PGの選手の所属するチームを選択してください</option>
+                                <option value = "" class = 'option'>PGの選手の所属するチームを選択してください</option>
                             @foreach($teams as $team)
                                 <option  class = 'team_name' value="{{ $team->id }}">{{ $team->abname }} ({{$team->name}})</option>
                             @endforeach
@@ -38,7 +38,7 @@
                     <p>チーム：</p>
                     <div>
                         <select id = "sg_team_select">
-                        <option value = "" class = 'option'>SGの選手の所属するチームを選択してください</option>
+                            <option value = "" class = 'option'>SGの選手の所属するチームを選択してください</option>
                         @foreach($teams as $team)
                             <option  class = 'team_name' value="{{ $team->id }}">{{ $team->abname }} ({{$team->name}})</option>
                         @endforeach
@@ -57,7 +57,7 @@
                     <p>チーム：</p>
                     <div>
                         <select id = "sf_team_select">
-                        <option value = "" class = 'option'>SFの選手の所属するチームを選択してください</option>
+                            <option value = "" class = 'option'>SFの選手の所属するチームを選択してください</option>
                         @foreach($teams as $team)
                             <option  class = 'team_name' value="{{ $team->id }}">{{ $team->abname }} ({{$team->name}})</option>
                         @endforeach
@@ -76,7 +76,7 @@
                     <p>チーム：</p>
                     <div>
                         <select id = "pf_team_select">
-                        <option value = "" class = 'option'>PFの選手の所属するチームを選択してください</option>
+                            <option value = "" class = 'option'>PFの選手の所属するチームを選択してください</option>
                         @foreach($teams as $team)
                             <option  class = 'team_name' value="{{ $team->id }}">{{ $team->abname }} ({{$team->name}})</option>
                         @endforeach
@@ -95,7 +95,7 @@
                     <p>チーム：</p>
                     <div>
                         <select id = "c_team_select">
-                        <option value = "" class = 'option'>Cの選手の所属するチームを選択してください</option>
+                            <option value = "" class = 'option'>Cの選手の所属するチームを選択してください</option>
                         @foreach($teams as $team)
                             <option  class = 'team_name' value="{{ $team->id }}">{{ $team->abname }} ({{$team->name}})</option>
                         @endforeach

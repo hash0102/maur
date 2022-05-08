@@ -374,3 +374,14 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
 {
   margin:0 10px;
 }
+
+@media screen and (max-width:480px) {
+  body
+  {
+   width:50%;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  
+}
