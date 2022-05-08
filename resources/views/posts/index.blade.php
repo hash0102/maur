@@ -3,12 +3,13 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <meta charset="utf-8">
         <title>NBA MAUR</title>
-         <meta name="viewport" content="width=device-width,initial-scale=1" charset="utf-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src = "{{ mix('js/jQuery.js') }}" defer></script>
         <script src = "{{ mix('js/jQueryLike.js') }}" defer></script>
         <link rel="stylesheet" href="{{ asset('css/maurIndex.css') }}">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
