@@ -9,6 +9,7 @@
         <script src = "{{ mix('js/jQueryUser.js') }}" defer></script>
         <script src = "{{ mix('js/jQueryLike.js') }}" defer></script>
         <link rel="stylesheet" href="{{ asset('css/maurIndex.css') }}">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
@@ -43,7 +44,7 @@
                 <p class="name">選手名：{{ $post->player->first_name }} {{ $post->player->last_name}}</p>
                 <img src = "{{$post->player->image }}" class = "player-image">
                 <div class = "contents">
-                    <p>チーム：<img src = "{{$post->player->team->image}}" width = 1.25% height= 10%>   {{$post->player->team->state_name }} {{$post->player->team->name }}</p>
+                    <p>チーム：<img src = "{{$post->player->team->image}}" class="team-image">   {{$post->player->team->state_name }} {{$post->player->team->name }}</p>
                     <p>ポシション： {{ $post->player->position }}</p>
                     <div class="reviews">
                     <p class="of-review">オフェンス評価：{{ $post->offense_review }}</p>
