@@ -79,5 +79,48 @@ body
 {
   border:double 3px black;
   text-align: center;
-  margin:0 500px;
+  width:50%;
+  display:inline-block;
+  
+}
+
+@media screen and (max-width: 959px)
+{
+  
+  .content
+  {
+    border:double 3px black;
+    text-align: center;
+    font-size:19px;
+    width:70%;
+  }
+
+  .player-image
+  {
+    width:20%;
+    margin-bottom:20px;
+  }
+}
+@media screen and (max-width:480px)
+{
+  .content
+  {
+  border:double 3px black;
+  text-align: center;
+  font-size:15px;
+  width:70%;
+  }
+}
+
+@media screen and (max-width:360px)
+{
+  .player-name
+  {
+    font-size:20px;
+  }
+  
+  .content
+  {
+  font-size:13px;
+  }
 }

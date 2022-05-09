@@ -7,6 +7,7 @@
         <meta charset="utf-8">
         <script src = "{{ mix('js/jQueryCreatePost.js') }}" defer></script>
         <link rel="stylesheet" href="{{ asset('css/postCreate.css') }}">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>投稿登録</title>
     </head>
     <body>
@@ -15,7 +16,7 @@
             @csrf
             <div class="player_name">
                 <div class='teams'>
-                    <p>チーム：</p>
+                    <p class="team-select-tag">チーム：</p>
                     <div class="team_select">
                         <select id = "team_select" name="post[team_id]">
                             <option value = "" class = 'option'>選手の所属するチームを選択してください</option>

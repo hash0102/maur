@@ -16,7 +16,7 @@
     <body>
         <div class="content">
             <div class="content_post">
-                <h2>投稿者：<img src="{{$post->user->image}}"  class="user-image">  {{ $post->user->name }}</h2>
+                <h2 class="poster">投稿者：<img src="{{$post->user->image}}"  class="user-image">  {{ $post->user->name }}</h2>
                 <br>
                 <h3>選手名：{{ $post->player->first_name}} {{$post->player->last_name}}</h3>
                 <p><img src = '{{$post->player->image }}' class="player-image"></p>

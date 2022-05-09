@@ -8,12 +8,16 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src = "{{ mix('js/jQueryPlayer.js') }}" defer></script>
         <link rel="stylesheet" href="{{ asset('css/playerShow.css') }}">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
+    <div class= "players-show">
         <p class="player-name">選手名：{{ $player->first_name }} {{ $player->last_name}}</p>
+        <div>
         <img src = "{{$player->image}}" class="player-image">
+        </div>
         <div class= "content">
             <p>チーム：<img src = "{{$player->team->image}}" class="team-image">    {{$player->team->state_name }} {{$player->team->name }}</p>
             <p>背番号：{{ $player->jersey }}</p>
@@ -34,6 +38,7 @@
             <a href = "/" class="back-latest"><i class="fa-solid fa-arrow-right-to-bracket"></i>  最新の投稿に戻る</a>
             <a href = "/ranking"class="back-ranking"><i class="fa-solid fa-arrow-right-to-bracket"></i>  ランキングに戻る</a>
         </div>
+    </div>
     </body>
 </html>
 @endsection

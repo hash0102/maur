@@ -91,3 +91,68 @@
   background: red;
   color: white;
 }
+
+@media screen and (max-width: 959px)
+{
+
+  .player-image
+  {
+    width:20%;
+    margin-bottom:20px;
+  }
+  
+  .reviews
+  {
+    width:70%;
+  }
+  
+  .user-image
+  {
+  width:4%;
+  border:solid 1px black;
+  }
+
+
+  .reason
+  {
+    font-size:15px;
+  }
+}
+@media screen and (max-width:480px)
+{
+  
+  .player-image
+  {
+    width:30%;
+    margin-bottom:20px;
+  }
+  
+  .reviews
+  {
+    width:70%;
+    font-size:20px;
+  }
+  
+  .user-image
+  {
+  width:6%;
+  border:solid 1px black;
+  }
+
+
+  .reason
+  {
+    font-size:12px;
+  }
+  
+  .poster{
+    font-size:20px;
+  }
+}
+
+@media screen and (max-width:360px)
+{
+    .poster{
+    font-size:15px;
+  }
+}

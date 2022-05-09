@@ -7,6 +7,7 @@
         <meta charset="utf-8">
         <script src = "{{ mix('js/jQueryCreateRanking.js') }}" defer></script>
         <link rel="stylesheet" href="{{ asset('css/rankingCreate.css') }}">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>My1stチーム登録</title>
     </head>
     <body>

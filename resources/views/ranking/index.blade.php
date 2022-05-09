@@ -4,6 +4,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>NBA MAUR</title>
         <script src = "{{ mix('js/jQueryRankingLike.js') }}" defer></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -26,16 +27,18 @@
             @if($rankings->isEmpty())
                 <p>現在投稿はございません。</p>
             @else
+            <div class="ranking-players-content">
             @foreach($rankings as $ranking)
                 @foreach($ranking->players as $player)
                     <div class = 'player-content'>
                         <p class="player-name">{{$player->position}}：{{$player->first_name}} {{$player->last_name}}</p>
                         <img src = "{{$player->image}}" class="player-image">
-                        <p>所属チーム：<img src = "{{$player->team->image}}" class="team-image"> {{$player->team->state_name }}  {{$player->team->name}}</p>
+                        <p class="belongs-team">所属チーム：<img src = "{{$player->team->image}}" class="team-image"><span class="state_name" >{{$player->team->state_name }} </span> {{$player->team->name}}</p>
                         <button class="player-button"><a href="/players/{{ $player->id }}"><i class="fa-solid fa-user"></i>   選手詳細</a></button>
                         <br>
                     </div>
                 @endforeach
+            </div>
                 <div class = "reason">
                     <p>ランキング理由：{{$ranking->contents}}</p>
                 </div>
@@ -62,9 +65,9 @@
                 <div class= "user-contents">
                     <p class="poster">投稿者名：<img src= "{{$ranking->user->image}}" class="user-image">{{$ranking->user->name}}</p>
                     @if($ranking->user->team_id == NULL)
-                        <p>投稿者のお気に入りのチーム：未設定</p>
+                        <p class="favorite-team">投稿者のお気に入りのチーム：未設定</p>
                     @else
-                        <p>投稿者のお気に入りチーム：<img src="{{$ranking->user->team->image}}" class="team-image2">{{$ranking->user->team->state_name}} {{$ranking->user->team->name}}</p>
+                        <p class="favorite-team">投稿者のお気に入りチーム：<img src="{{$ranking->user->team->image}}" class="team-image2">{{$ranking->user->team->state_name}} {{$ranking->user->team->name}}</p>
                     @endif
                     <p>投稿日付：{{$ranking->created_at}}</p>
                     <form action="/ranking/{{ $ranking->id }}" id="form_{{ $ranking->id }}" method="post" style="display:inline">

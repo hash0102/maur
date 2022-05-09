@@ -9,6 +9,7 @@
         <script src = "{{ mix('js/jQueryPlayer.js') }}" defer></script>
         <script src = "{{ mix('js/jQueryPlayerSearch.js') }}" defer></script>
         <link rel="stylesheet" href="{{ asset('css/playerIndex.css') }}">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
@@ -34,12 +35,14 @@
             </div>
         </div>
         <div class="search-wrapper">
-            <p>選手名：</p>
+            <p class="team-select-tag">選手名：</p>
             <div class="user-search-form">
                 <input type = "text" id = 'search_name'  placeholder="選手を検索する">
                 <button class = 'search-icon'><i class="fa fa-search" aria-hidden="true"></i></button>
             </div>
-            <p>(※苗字または名前のみで検索ください。)</p>
+        </div>
+        <div>
+            <p class="attention">(※苗字または名前のみで検索ください。)</p>
         </div>
         <hr>
         <div class='posts'>
