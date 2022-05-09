@@ -24,19 +24,27 @@ $("#team").on('change',function ()
         $.each(res.player_infom.data, function (index, value)
         {
           var user = `
-              <p>投稿者：${value.user.name} </p>
-              <p>選手名： ${value.player.first_name} ${value.player.last_name}</p>
-              <p>チーム：${value.team.state_name} ${value.team.name } </p>
-              <p>ポジション: ${value.player.position } </p>
-              <p> オフェンス評価：${value.offense_review } </p>
-              <p> ディフェンス評価：${value.defense_review } </p>
-              <p> 評価理由：${value.content } </p>
-              <p><img src = ${value.player.image } ></p>
-              <p>投稿日付：${value.created_at}</p>
-              <p>いいね数：${value.likes_count} いいね</p>
-              <button><a href="/posts/${value.id}">投稿詳細</a></button>
-              <button><a href="/players/${ value.player_id }"><i class="fa-solid fa-angles-right"></i>    選手詳細</a></button>
-                  <hr>`;
+                <p class="name">選手名： ${value.player.first_name} ${value.player.last_name}</p>
+                <img src = ${value.player.image } class = 'player-image'>
+                <div class = "contents">
+                <p>チーム：<img src="${value.team.image}" class="team-image"> ${value.team.state_name} ${value.team.name } </p>
+                <p>ポジション: ${value.player.position } </p>
+                <div class="reviews">
+                <p class="of-review"> オフェンス評価：${value.offense_review } </p>
+                <p class="df-review"> ディフェンス評価：${value.defense_review } </p>
+                </div>
+                </div>
+                <div class = "reason">
+                <p>評価理由：${value.content}</p>
+                </div>
+                <hr>
+                <div class="poster-content">
+                <p>いいね数：${value.likes_count} いいね</p>
+                <p>投稿日付：${value.created_at}</p>
+                <a href="/posts/${value.id}"class="posts_info"><i class="fa-solid fa-angles-right"></i>    投稿詳細</a>
+                <a href="/players/${ value.player_id }" class="players_info"><i class="fa-solid fa-user"></i>    選手詳細</a>
+                </div>
+                <hr>`;
           $(".posts").append(user);
         });
       } else {
