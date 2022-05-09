@@ -375,43 +375,373 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   margin:0 10px;
 }
 
-@media screen and (max-width:480px) {
-h1
+@media screen and (max-width: 959px)
 {
-  position: relative;
-  overflow: hidden;
-  padding: 1.5rem 2rem 1.5rem 70px;
-  border: 2px solid #000;
-  border-radius: 100vh;
-  width:50%;
-  display:inline-block;
-  text-align: center;
-}
-
-h1 span
-{
-  font-size: 15px;
-  font-size: 2.0rem;
-  line-height:50px;
-  position: absolute;
-  top: calc(50% - 25px);
-  left: 10px;
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  color: #fff;
-  border-radius: 50%;
-  background: #000;
-}
-
-.user-image
-{
-  width:50%;
-  border:solid 1px black;
-}
-
-}
-
-@media screen and (max-width: 959px) {
   
+  h1
+  {
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem 2rem 1.5rem 70px;
+    border: 2px solid #000;
+    border-radius: 100vh;
+    width:80%;
+    display:inline-block;
+    text-align: center;
+    font-size:40px;
+  }
+  
+  h1 span
+  {
+    font-size: 15px;
+    font-size: 2.0rem;
+    line-height:50px;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: 10px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    border-radius: 50%;
+    background: #000;
+  }
+  
+  .button
+  {
+    text-align: right;
+  }
+  
+  .team_Name
+  {
+    display: flex;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 10px;
+  }
+  
+  .my-account
+  {
+    margin :0 10px;
+  }
+  
+  .create
+  {
+    margin :0 10px;
+  }
+  
+  .ranking
+  {
+    margin :0 10px;
+  }
+  
+  .my-page
+  {
+    margin :0 10px;
+  }
+  
+  .players
+  {
+    margin :0 10px;
+  }
+  
+  .user-image
+  {
+    width:4%;
+    border:solid 1px black;
+    margin-right:4px;
+  }
+  
+  .team-image
+  {
+    width:3%;
+  }
+  
+  .name
+  {
+    font-size:30px;
+  }
+  
+  #player-team
+  {
+    font-size:20px;
+  }
+  
+  #player-position
+  {
+    font-size:20px;
+  }
+  
+  .player-image
+  {
+    width:30%;
+  }
+  
+  .reviews
+  {
+    font-size:20px;
+  }
+  
+  .poster
+  {
+    font-size:12px;
+  }
+  
+  
+  .favorite-team
+  {
+    font-size:10px;
+  }
+  
+  .reason
+  {
+    font-size:10px;
+    width:90%;
+  }
+}
+
+@media screen and (max-width:480px)
+{
+  h1
+  {
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem 2rem 1.5rem 70px;
+    border: 2px solid #000;
+    border-radius: 100vh;
+    width:80%;
+    display:inline-block;
+    text-align: center;
+  }
+  
+  h1 span
+  {
+    font-size: 15px;
+    font-size: 2.0rem;
+    line-height:50px;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: 10px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    border-radius: 50%;
+    background: #000;
+  }
+  
+  .user-image
+  {
+    width:5%;
+    border:solid 1px black;
+  }
+  
+  .team-image
+  {
+    width:5%;
+  }
+  
+  .button
+  {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .team_Name 
+  {
+    display: flex;
+    font-size: 13px;
+    text-align: center;
+    margin-left: 10px;
+  }
+  
+  .my-account
+  {
+    margin :0 10px;
+  }
+  
+  .create
+  {
+    margin :0 10px;
+  }
+  
+  .ranking
+  {
+    margin :0 10px;
+  }
+  
+  .my-page
+  {
+    margin :0 10px;
+  }
+  
+  .players
+  {
+    margin :0 10px;
+  }
+  
+  .name
+  {
+    font-size:20px;
+  }
+  
+  #player-team
+  {
+    font-size:20px;
+  }
+  
+  #player-position
+  {
+    font-size:20px;
+  }
+  
+  .player-image
+  {
+    width:30%;
+  }
+  
+  .reviews
+  {
+    font-size:20px;
+  }
+  
+  .poster
+  {
+    font-size:15px;
+  }
+  
+  .favorite-team
+  {
+    font-size:12px;
+  }
+  
+  .reason
+  {
+    font-size:10px;
+    width:90%;
+  }
+  
+}
+
+@media screen and (max-width:360px)
+{
+  h1
+  {
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem 2rem 1.5rem 70px;
+    border: 2px solid #000;
+    border-radius: 100vh;
+    width:80%;
+    display:inline-block;
+    text-align: center;
+    font-size:25px;
+  }
+  
+  h1 span
+  {
+    font-size: 15px;
+    font-size: 2.0rem;
+    line-height:50px;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: 10px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    border-radius: 50%;
+    background: #000;
+  }
+  
+  .button
+  {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .team_Name
+  {
+    display: flex;
+    font-size: 10px;
+    text-align: center;
+    margin-left: 10px;
+  }
+  
+  .my-account
+  {
+    margin :0 10px;
+  }
+  
+  .create
+  {
+    margin :0 10px;
+  }
+  
+  .ranking
+  {
+    margin :0 10px;
+  }
+  
+  .my-page
+  {
+    margin :0 10px;
+  }
+  
+  .players
+  {
+    margin :0 10px;
+  }
+  
+  .user-image
+  {
+    width:8%;
+    border:solid 1px black;
+    margin-right:4px;
+  }
+  
+  .team-image
+  {
+    width:5%;
+  }
+  
+  .name
+  {
+    font-size:20px;
+  }
+  
+  #player-team
+  {
+    font-size:20px;
+  }
+  
+  #player-position
+  {
+    font-size:20px;
+  }
+  
+  .player-image
+  {
+    width:30%;
+  }
+  
+  .reviews
+  {
+    font-size:20px;
+  }
+  
+  .poster
+  {
+    font-size:12px;
+  }
+  
+  .favorite-team
+  {
+    font-size:10px;
+  }
+  
+  .reason
+  {
+    font-size:10px;
+    width:90%;
+  }
 }

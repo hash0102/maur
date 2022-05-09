@@ -77,9 +77,9 @@
             <div class="poster-content">
                 <p class="poster">投稿者：<img src = "{{$post->user->image}}" class="user-image">   {{$post->user->name }}</p>
                 @if($post->user->team_id == NULL)
-                    <p>投稿者のお気に入りのチーム：未設定</p>
+                    <p class="favorite-team">投稿者のお気に入りのチーム：未設定</p>
                 @else
-                    <p>投稿者のお気に入りのチーム：<img src="{{$post->user->team->image}}" class="team-image"> {{$post->user->team->state_name }} {{$post->user->team->name}}</p>
+                    <p class="favorite-team">投稿者のお気に入りのチーム：<img src="{{$post->user->team->image}}" class="team-image"> {{$post->user->team->state_name }} {{$post->user->team->name}}</p>
                 @endif
                 <p>投稿日付：{{$post->created_at}}</p>
                 <a href="/posts/{{ $post->id }}" class="posts_info"><i class="fa-solid fa-angles-right"></i>    投稿詳細</a>

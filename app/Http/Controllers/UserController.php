@@ -8,6 +8,7 @@ use App\User;
 use App\Player;
 use App\Team;
 use App\Comment;
+use InterventionImage;
 use Storage;
 
 
