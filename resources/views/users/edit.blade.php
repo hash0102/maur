@@ -5,6 +5,7 @@
     <head>
         <meta charset="utf-8">
         <title>NBA MAUR</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -29,15 +30,15 @@
                     </div>
                 </div>
                 <div class= "edit-image">
-                    <p>イメージ：</p>
+                    <p class="image-tag">画像：</p>
                     <div>
                         <input type="file" name="image" value="{{$user->image}}">
                     </div>
                 </div>
                 <div class ="favorite_team">
-                    <p>お気に入りチームを選択する：</p>
+                    <p>お気に入りチーム：</p>
                     <div>
-                        <select name="team_id">
+                        <select name="team_id" class="favorite-team-tag">
                             @foreach($teams as $team)
                                 <option value ="{{$team->id}}">{{$team->name}}</option>
                             @endforeach

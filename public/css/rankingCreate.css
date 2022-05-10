@@ -170,3 +170,175 @@ h1 span
   background: #00bcd4;
   color: white;
 }
+
+@media screen and (max-width: 959px)
+{
+  .pg_teams{
+    font-size:15px;
+  }
+  
+    .sg_teams{
+    font-size:15px;
+  }
+  
+    .sf_teams{
+    font-size:15px;
+  }
+  
+    .pf_teams{
+    font-size:15px;
+  }
+  
+    .c_teams{
+    font-size:15px;
+  }
+  
+  .reason textarea {
+    height: 140px;
+    width: 450px;
+}
+  
+  
+  h1
+  {
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem 2rem 1.5rem 70px;
+    border: 2px solid #000;
+    border-radius: 100vh;
+    width:80%;
+    display:inline-block;
+    text-align: center;
+    font-size:23px;
+  }
+  
+  h1 span
+  {
+    font-size: 15px;
+    font-size: 2.0rem;
+    line-height:50px;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: 10px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    border-radius: 50%;
+    background: #000;
+  }
+}
+
+@media screen and (max-width:480px)
+{
+  
+    .pg_teams{
+    font-size:12px;
+  }
+  
+    .sg_teams{
+    font-size:12px;
+  }
+  
+    .sf_teams{
+    font-size:12px;
+  }
+  
+    .pf_teams{
+    font-size:12px;
+  }
+  
+    .c_teams{
+    font-size:12px;
+  }
+  
+  .reason textarea {
+    height: 140px;
+    width: 350px;
+}
+
+  h1
+  {
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem 2rem 1.5rem 70px;
+    border: 2px solid #000;
+    border-radius: 100vh;
+    width:80%;
+    display:inline-block;
+    text-align: center;
+    font-size:14px;
+  }
+  
+  h1 span
+  {
+    font-size: 15px;
+    font-size: 2.0rem;
+    line-height:50px;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: 10px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    border-radius: 50%;
+    background: #000;
+  }
+}
+
+@media screen and (max-width:360px)
+{
+  
+      .pg_teams{
+    font-size:10px;
+  }
+  
+    .sg_teams{
+    font-size:10px;
+  }
+  
+    .sf_teams{
+    font-size:10px;
+  }
+  
+    .pf_teams{
+    font-size:10px;
+  }
+  
+    .c_teams{
+    font-size:1-px;
+  }
+  
+  .reason textarea {
+    height: 140px;
+    width: 300px;
+}
+  h1
+  {
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem 2rem 1.5rem 70px;
+    border: 2px solid #000;
+    border-radius: 100vh;
+    width:80%;
+    display:inline-block;
+    text-align: center;
+  }
+  
+  h1 span
+  {
+    font-size: 15px;
+    font-size: 2.0rem;
+    line-height:50px;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: 10px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    border-radius: 50%;
+    background: #000;
+  }
+}

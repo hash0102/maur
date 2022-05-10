@@ -456,7 +456,7 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
 
   
   .belongs-team{
-    font-size:4px;
+    font-size:10px;
   }
 
 .player-name{
@@ -489,7 +489,7 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   .team-image{
     margin-right:5px;
     margin-left:0px;
-    width:4%;
+    width:10%;
   }
   .state_name
   {

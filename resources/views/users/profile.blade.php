@@ -4,6 +4,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>NBA MAUR</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!-- Fonts -->
@@ -29,7 +30,7 @@
             @if($user->team_id == NULL)
             <p>お気に入りのチーム：未設定</p>
             @else
-            <p>お気に入りのチーム：<img src="{{$user->team->image}}" width = 1.25% height= 10%> {{$user->team->state_name }} {{$user->team->name}}</p>
+            <p>お気に入りのチーム：<img src="{{$user->team->image}}" class="team-image"> {{$user->team->state_name }} {{$user->team->name}}</p>
             @endif
         </div>
     </body>
