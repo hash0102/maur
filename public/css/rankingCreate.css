@@ -173,32 +173,37 @@ h1 span
 
 @media screen and (max-width: 959px)
 {
-  .pg_teams{
+  .pg_teams
+  {
     font-size:15px;
   }
   
-    .sg_teams{
+  .sg_teams
+  {
     font-size:15px;
   }
   
-    .sf_teams{
+  .sf_teams
+  {
     font-size:15px;
   }
   
-    .pf_teams{
+  .pf_teams
+  {
     font-size:15px;
   }
   
-    .c_teams{
+  .c_teams
+  {
     font-size:15px;
   }
   
-  .reason textarea {
+  .reason textarea
+  {
     height: 140px;
     width: 450px;
-}
-  
-  
+  }
+
   h1
   {
     position: relative;
@@ -232,30 +237,36 @@ h1 span
 @media screen and (max-width:480px)
 {
   
-    .pg_teams{
+  .pg_teams
+  {
     font-size:12px;
   }
   
-    .sg_teams{
+  .sg_teams
+  {
     font-size:12px;
   }
   
-    .sf_teams{
+  .sf_teams
+  {
     font-size:12px;
   }
   
-    .pf_teams{
+  .pf_teams
+  {
     font-size:12px;
   }
   
-    .c_teams{
+  .c_teams
+  {
     font-size:12px;
   }
   
-  .reason textarea {
+  .reason textarea
+  {
     height: 140px;
     width: 350px;
-}
+  }
 
   h1
   {
@@ -290,30 +301,37 @@ h1 span
 @media screen and (max-width:360px)
 {
   
-      .pg_teams{
+  .pg_teams
+  {
     font-size:10px;
   }
   
-    .sg_teams{
+  .sg_teams
+  {
     font-size:10px;
   }
   
-    .sf_teams{
+  .sf_teams
+  {
     font-size:10px;
   }
   
-    .pf_teams{
+  .pf_teams
+  {
     font-size:10px;
   }
   
-    .c_teams{
+  .c_teams
+  {
     font-size:1-px;
   }
   
-  .reason textarea {
+  .reason textarea
+  {
     height: 140px;
     width: 300px;
-}
+  }
+  
   h1
   {
     position: relative;

@@ -369,46 +369,55 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   }
   
   .player-content
-{
-  width: 45%;
-  border :solid 2px black;
-  display:inline-block;
-  vertical-align: top;
+  {
+    width: 45%;
+    border :solid 2px black;
+    display:inline-block;
+    vertical-align: top;
+  }
+  
+  .player-name
+  {
+    font-size:15px;
+  }
+  
+  .belongs-team
+  {
+    font-size:12px;
+  }
+  
+  .player-image
+  {
+    width:30%;
+  }
+  
+  .poster
+  {
+    font-size:20px;
+  }
+  
+  .user-image
+  {
+    width:6%;
+    margin-right:10px;
+  }
+  
+  .favorite-team
+  {
+    font-size:16px;
+  }
+  
+  .team-image2
+  {
+    width:6%;
+  }
+  
+  .reason
+  {
+    font-size:15px;
+  }
 }
 
-.player-name{
-  font-size:15px;
-}
-
-.belongs-team{
-  font-size:12px;
-}
-
-.player-image{
-  width:30%;
-}
-
-.poster{
-  font-size:20px;
-}
-
-.user-image{
-  width:6%;
-  margin-right:10px;
-}
-
-.favorite-team{
-  font-size:16px;
-}
-
-.team-image2{
-  width:6%;
-}
-
-.reason{
-  font-size:15px;
-}
-}
 @media screen and (max-width:546px)
 {
 
@@ -421,7 +430,8 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
 
 @media screen and (max-width:495px)
 {
-    .state_name{
+  .state_name
+  {
     display:none;
   }
   
@@ -455,42 +465,49 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   }
 
   
-  .belongs-team{
+  .belongs-team
+  {
     font-size:10px;
   }
 
-.player-name{
-  font-size:10px;
-}
-
-      .player-content
-{
-  width: 40%;
-  border :solid 2px black;
-  display:inline-block;
-  vertical-align: top;
-}
-
-.poster{
-  font-size:15px;
-}
-
-.favorite-team{
-  font-size:10px;
-}
-
-.reason{
-  font-size:10px;
-}
+  .player-name
+  {
+    font-size:10px;
+  }
+  
+  .player-content
+  {
+    width: 40%;
+    border :solid 2px black;
+    display:inline-block;
+    vertical-align: top;
+  }
+  
+  .poster
+  {
+    font-size:15px;
+  }
+  
+  .favorite-team
+  {
+    font-size:10px;
+  }
+  
+  .reason
+  {
+    font-size:10px;
+  }
 }
 
 @media screen and (max-width:360px)
 {
-  .team-image{
+  .team-image
+  {
     margin-right:5px;
     margin-left:0px;
     width:10%;
   }
+  
   .state_name
   {
     display:none;
@@ -524,7 +541,9 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
     border-radius: 50%;
     background: #000;
   }
-.reason{
-  font-size:5px;
-}
+  
+  .reason
+  {
+    font-size:5px;
+  }
 }

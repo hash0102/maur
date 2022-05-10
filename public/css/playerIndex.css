@@ -224,7 +224,6 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
 
 @media screen and (max-width: 730px)
 {
-  
   h1
   {
     position: relative;
@@ -254,12 +253,13 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
     background: #000;
   }
   
-    .button
+  .button
   {
     text-align: right;
   }
   
-  .team_Name{
+  .team_Name
+  {
     font-size:15px;
   }
   
@@ -268,20 +268,24 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
     font-size:15px;
   }
   
-    .player-contents{
+  .player-contents
+    {
     font-size:25px;
     width:80%;
   }
   
-  .team-image{
+  .team-image
+  {
     width:4%;
   }
   
-  .player-image{
+  .player-image
+  {
     width:30%;
   }
   
-  .player-name{
+  .player-name
+  {
     font-size:30px;
   }
 }
@@ -317,27 +321,31 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
     background: #000;
   }
   
-    .button
+  .button
   {
     text-align: center;
     margin-bottom: 15px;
   }
   
     
-  .player-contents{
+  .player-contents
+  {
     font-size:20px;
     width:80%;
   }
   
-  .team-image{
+  .team-image
+  {
     width:6%;
   }
   
-  .player-image{
+  .player-image
+  {
     width:30%;
   }
   
-  .player-name{
+  .player-name
+  {
     font-size:25px;
   }
 
@@ -374,7 +382,7 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
     background: #000;
   }
   
-    .button
+  .button
   {
     text-align: center;
     margin-bottom: 15px;
@@ -390,20 +398,24 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
     font-size:17px;
   }
   
-  .player-contents{
+  .player-contents
+  {
     font-size:15px;
     width:80%;
   }
   
-  .team-image{
+  .team-image
+  {
     width:6%;
   }
   
-  .player-image{
+  .player-image
+  {
     width:30%;
   }
   
-  .player-name{
+  .player-name
+  {
     font-size:20px;
   }
   

@@ -151,7 +151,7 @@ body
     background: #000;
   }
   
-    .team-select-tag
+  .team-select-tag
   {
     font-size:15px;
   }
@@ -160,8 +160,6 @@ body
   {
     font-size:15px;
   }
-  
-
 }
 
 @media screen and (max-width:480px)
@@ -195,7 +193,7 @@ body
     background: #000;
   }
 
-    .team-select-tag
+  .team-select-tag
   {
     font-size:12px;
   }
@@ -237,7 +235,7 @@ body
     background: #000;
   }
   
-     .team-select-tag
+  .team-select-tag
   {
     font-size:10px;
   }
@@ -246,5 +244,4 @@ body
   {
     font-size:10px;
   }
-  
 }

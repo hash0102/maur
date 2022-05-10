@@ -105,21 +105,26 @@ p
 @media screen and (max-width: 959px)
 {
   
-  .edit-name{
+  .edit-name
+  {
     font-size:15px;
   }
   
-  .edit-mail{
+  .edit-mail
+  {
     font-size:15px;
   }
   
-  .edit-image{
+  .edit-image
+  {
     font-size:10px;
   }
   
-  .favorite_team{
+  .favorite_team
+  {
     font-size:10px;
   }
+  
   h1
   {
     position: relative;
@@ -154,33 +159,38 @@ p
 {
   
   .edit-content
-{
-  display:flex;
-  flex-wrap:wrap;
-  flex-direction:column;
-  align-items:center;
-  margin-left:15px;
-  width:60%;
-  font-size:5px;
-}
+  {
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:column;
+    align-items:center;
+    margin-left:15px;
+    width:60%;
+    font-size:5px;
+  }
 
   
-  .edit-name{
+  .edit-name
+  {
     font-size:12px;
   }
   
-  .edit-mail{
+  .edit-mail
+  {
     font-size:12px;
   }
   
-  .edit-image{
+  .edit-image
+  {
     font-size:6px;
   }
   
   
-  .favorite_team{
+  .favorite_team
+  {
     font-size:6px;
   }
+  
   h1
   {
     position: relative;
@@ -209,19 +219,20 @@ p
     background: #000;
   }
   
-    .button
+  .button
   {
     font-size:20px;
   }
 }
 @media screen and (max-width:395px){
   
-    .edit-image{
+  .edit-image
+  {
     font-size:6px;
     width:110%;
   }
   
-      .button
+  .button
   {
     font-size:15px;
   }
@@ -231,23 +242,28 @@ p
 {
   
     
-  .edit-name{
+  .edit-name
+  {
     font-size:10px;
   }
   
-  .edit-mail{
+  .edit-mail
+  {
     font-size:10px;
   }
   
-  .edit-image{
+  .edit-image
+  {
     font-size:5px;
     width:140%;
   }
   
-  .favorite_team{
+  .favorite_team
+  {
     font-size:5px;
     width:130%;
   }
+  
   h1
   {
     position: relative;
