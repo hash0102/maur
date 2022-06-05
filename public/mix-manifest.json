@@ -11,5 +11,6 @@
     "/js/jQueryPlayerSearch.js": "/js/jQueryPlayerSearch.js",
     "/js/jQueryPostDelete.js": "/js/jQueryPostDelete.js",
     "/js/jQueryRankingLike.js": "/js/jQueryRankingLike.js",
+    "/js/jQueryTeamConference.js": "/js/jQueryTeamConference.js",
     "/js/jQueryUser.js": "/js/jQueryUser.js"
 }

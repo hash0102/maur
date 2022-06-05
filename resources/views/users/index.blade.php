@@ -21,6 +21,7 @@
             <a href = '/posts/create' class='create'><i class="fa-solid fa-circle-plus"></i></a>
             <a href = '/ranking' class='ranking'><i class="fa-solid fa-ranking-star"></i></a>
             <a href = "/users/profile/mypage" class='my-account'><i class="fa-solid fa-circle-user"></i></a>
+            <a href='/teams' class='teams-page'><i class="fas fa-user-friends"></i></a>
         </div>
         <div class ="team_Name">
             <p>チーム名：</p>

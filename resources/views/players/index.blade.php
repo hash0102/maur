@@ -21,6 +21,7 @@
                 <a href = '/'class="home"><i class="fa-solid fa-house"></i></a>
                 <a href = '/ranking'class="ranking"><i class="fa-solid fa-ranking-star"></i></a>
                 <a href = "/users/profile/mypage" class='my-account'><i class="fa-solid fa-circle-user"></i></a>
+                <a href='/teams' class='teams-page'><i class="fas fa-user-friends"></i></a>
             </div>
         </div>
         <div class ="team_Name">
@@ -42,7 +43,7 @@
             </div>
         </div>
         <div>
-            <p class="attention">(※苗字または名前のみで検索ください。)</p>
+            <p class="attention2">(※苗字または名前のみで検索ください。)</p>
         </div>
         <hr>
         <div class='posts'>

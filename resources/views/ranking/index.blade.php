@@ -21,6 +21,7 @@
             <a href='/players'class="players"><i class="fa-solid fa-people-group"></i></a>
             <a href = '/'class="home"><i class="fa-solid fa-house"></i></a>
             <a href = "/users/profile/mypage" class='my-account'><i class="fa-solid fa-circle-user"></i></a>
+            <a href='/teams' class='teams-page'><i class="fas fa-user-friends"></i></a>
         </div>
         <hr>
         <div class = 'contents'>

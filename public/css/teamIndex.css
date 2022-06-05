@@ -1,41 +1,40 @@
-.liked
+.player-by-team
 {
-  color: #FFD700;
-}
-body
-{
-  text-align: center;
-}
-
-.reason
-{
-  padding: 0.5em 1em;
-  margin: 2em 0;
-  font-weight: bold;
-  border: double 4px #000000;
+  position: relative;
   display: inline-block;
-    width: 70%;
-  word-wrap: break-word;
-  text-align: left;
-  font-size:20px;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #00BCD4;
+  transition: .4s;
+  border: solid 2px #00bcd4;
 }
 
-.reason p
+.player-by-team:hover
 {
-  margin: 0;
-  padding: 0;
+  background: #00bcd4;
+  color: white;
+}
+
+.conference-select
+{
+  display:flex;
+  font-size:20px;
+  text-align:center;
+  margin-left: 400px;
+  margin-bottom:20px;
 }
 
 h1
 {
   position: relative;
-  display:inline-block;
-  text-align: center;
   overflow: hidden;
   padding: 1.5rem 2rem 1.5rem 70px;
   border: 2px solid #000;
   border-radius: 100vh;
   width:50%;
+  display:inline-block;
+  text-align: center;
 }
 
 h1 span
@@ -54,24 +53,20 @@ h1 span
   background: #000;
 }
 
-.contents
-{
-  padding-bottom: 20px;
-}
-
-.player_name
-{
-  padding-bottom: 20px;
-}
 
 .button
 {
   text-align: right;
 }
 
+body
+{
+  text-align: center;
+}
+
 .my-page
 {
-  display: inline-block;
+   display: inline-block;
   text-decoration: none;
   color: rgba(152, 152, 152, 0.43);
   width: 40px;
@@ -82,7 +77,7 @@ h1 span
   text-align: center;
   overflow: hidden;
   font-weight: bold;
-  background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+    background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: solid 2px #b5b5b5;
@@ -94,36 +89,6 @@ h1 span
 }
 
 .my-page:active
-{
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
-  border-bottom: none;
-}
-
-.teams-page
-{
-  display: inline-block;
-  text-decoration: none;
-  color: rgba(152, 152, 152, 0.43);
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  font-size: 24px;
-  border-radius: 50%;
-  text-align: center;
-  overflow: hidden;
-  font-weight: bold;
-background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
-  box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
-  border-bottom: solid 2px #b5b5b5;
-}
-
-.teams-page i
-{
-  line-height: 40px;
-}
-
-.teams-page:active
 {
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: none;
@@ -189,7 +154,7 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
 }
 
 
-.ranking-create
+.ranking
 {
   display: inline-block;
   text-decoration: none;
@@ -208,12 +173,12 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   border-bottom: solid 2px #b5b5b5;
 }
 
-.ranking-create i
+.ranking i
 {
   line-height: 40px;
 }
 
-.ranking-create:active
+.ranking:active
 {
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
   border-bottom: none;
@@ -279,85 +244,38 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   border-bottom: none;
 }
 
-.player-content
-{
-  width: 30%;
-  margin:10px;
-  border :solid 2px black;
-  display:inline-block;
-  vertical-align: top;
-}
-
-.player-name
-{
-  font-size:20px;
-}
-
-.player-image
-{
-  width:20%;
-  padding-bottom:20px;
-}
-
 .team-image
 {
-  width:4%;
-  margin:0 10px;
+  width:20%;
+  margin-top:20px;
+  margin-bottom:20px;
 }
 
-.team-image2
+.peformance
 {
-  width:2%;
-  margin:0 10px;
+  border:double 10px black;
+  margin-right:200px;
+  margin-left:200px;
+  font-size: 25px;
+  padding-top:10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
-.user-image
+.team-name
 {
-  width:2%;
-  border :solid 1px black;
-  margin:0 10px;
+  font-size:25px;
+  border:solid 3px black;
+  margin-right:200px;
+  margin-left:200px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding-top:10px;
 }
 
-.player-button
+.state
 {
-  margin-bottom:10px;
-}
-
-#like
-{
-  font-size:20px;
-  text-align:right;
-  margin-right:50px;
-}
-
-.user-contents
-{
-  text-align:left;
   margin-left:30px;
-}
-
-.poster
-{
-  font-size:40px;
-}
-
-.delete
-{
-  position: relative;
-  display: inline-block;
-  font-weight: bold;
-  padding: 0.25em 0.5em;
-  text-decoration: none;
-  color: red;
-  background: #ECECEC;
-  transition: .4s;
-  border:double 3px red;
-}
-
-.delete:hover
-{
-  background: red;
-  color: white;
 }
 
 @media screen and (max-width: 959px)
@@ -373,7 +291,7 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
     width:80%;
     display:inline-block;
     text-align: center;
-    font-size:23px;
+    font-size:40px;
   }
   
   h1 span
@@ -392,28 +310,69 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
     background: #000;
   }
   
+  .button
+  {
+    text-align: right;
+  }
+  
+  .team_Name
+  {
+    display: flex;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 10px;
+  }
+  
+  .my-account
+  {
+    margin :0 10px;
+  }
+  
+  .create
+  {
+    margin :0 10px;
+  }
+  
+  .ranking
+  {
+    margin :0 10px;
+  }
+  
+  .my-page
+  {
+    margin :0 10px;
+  }
+  
+  .players
+  {
+    margin :0 10px;
+  }
+  
+  .user-image
+  {
+    width:4%;
+    border:solid 1px black;
+    margin-right:4px;
+  }
+  
   .team-image
   {
-    width:8%;
-    margin:0 10px;
+    width:3%;
   }
   
-  .player-content
+  .name
   {
-    width: 45%;
-    border :solid 2px black;
-    display:inline-block;
-    vertical-align: top;
+    font-size:30px;
   }
   
-  .player-name
+  #player-team
   {
-    font-size:15px;
+    font-size:20px;
   }
   
-  .belongs-team
+  #player-position
   {
-    font-size:12px;
+    font-size:20px;
   }
   
   .player-image
@@ -421,50 +380,155 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
     width:30%;
   }
   
-  .poster
+  .reviews
   {
     font-size:20px;
   }
   
-  .user-image
+  .poster
   {
-    width:6%;
-    margin-right:10px;
+    font-size:12px;
   }
+  
   
   .favorite-team
   {
-    font-size:16px;
-  }
-  
-  .team-image2
-  {
-    width:6%;
+    font-size:10px;
   }
   
   .reason
   {
-    font-size:15px;
+    font-size:10px;
+    width:90%;
   }
 }
 
-@media screen and (max-width:546px)
+@media screen and (max-width:480px)
 {
-
+  h1
+  {
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem 2rem 1.5rem 70px;
+    border: 2px solid #000;
+    border-radius: 100vh;
+    width:80%;
+    display:inline-block;
+    text-align: center;
+    font-size:30px;
+  }
+  
+  h1 span
+  {
+    font-size: 15px;
+    font-size: 2.0rem;
+    line-height:50px;
+    position: absolute;
+    top: calc(50% - 25px);
+    left: 10px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    border-radius: 50%;
+    background: #000;
+  }
+  
+  .user-image
+  {
+    width:5%;
+    border:solid 1px black;
+  }
+  
+  .team-image
+  {
+    width:5%;
+  }
+  
   .button
   {
     text-align: center;
     margin-bottom: 15px;
   }
-}
-
-@media screen and (max-width:495px)
-{
-  .state_name
+  
+  .team_Name 
   {
-    display:none;
+    display: flex;
+    font-size: 13px;
+    text-align: center;
+    margin-left: 10px;
   }
   
+  .my-account
+  {
+    margin :0 10px;
+  }
+  
+  .create
+  {
+    margin :0 10px;
+  }
+  
+  .ranking
+  {
+    margin :0 10px;
+  }
+  
+  .my-page
+  {
+    margin :0 10px;
+  }
+  
+  .players
+  {
+    margin :0 10px;
+  }
+  
+  .name
+  {
+    font-size:20px;
+  }
+  
+  #player-team
+  {
+    font-size:20px;
+  }
+  
+  #player-position
+  {
+    font-size:20px;
+  }
+  
+  .player-image
+  {
+    width:30%;
+  }
+  
+  .reviews
+  {
+    font-size:20px;
+  }
+  
+  .poster
+  {
+    font-size:15px;
+  }
+  
+  .favorite-team
+  {
+    font-size:12px;
+  }
+  
+  .reason
+  {
+    font-size:10px;
+    width:90%;
+  }
+  
+}
+
+@media screen and (max-width:360px)
+{
   h1
   {
     position: relative;
@@ -475,7 +539,7 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
     width:80%;
     display:inline-block;
     text-align: center;
-    font-size:14px;
+    font-size:25px;
   }
   
   h1 span
@@ -493,29 +557,85 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
     border-radius: 50%;
     background: #000;
   }
-
   
-  .belongs-team
+  .button
   {
-    font-size:10px;
+    text-align: center;
+    margin-bottom: 15px;
   }
-
-  .player-name
+  .team_Name
   {
-    font-size:10px;
+    display: flex;
+    font-size: 10px;
+    text-align: center;
+    margin-left: 10px;
   }
   
-  .player-content
+  .my-account
   {
-    width: 40%;
-    border :solid 2px black;
-    display:inline-block;
-    vertical-align: top;
+    margin :0 10px;
+  }
+  
+  .create
+  {
+    margin :0 10px;
+  }
+  
+  .ranking
+  {
+    margin :0 10px;
+  }
+  
+  .my-page
+  {
+    margin :0 10px;
+  }
+  
+  .players
+  {
+    margin :0 10px;
+  }
+  
+  .user-image
+  {
+    width:8%;
+    border:solid 1px black;
+    margin-right:4px;
+  }
+  
+  .team-image
+  {
+    width:5%;
+  }
+  
+  .name
+  {
+    font-size:20px;
+  }
+  
+  #player-team
+  {
+    font-size:20px;
+  }
+  
+  #player-position
+  {
+    font-size:20px;
+  }
+  
+  .player-image
+  {
+    width:30%;
+  }
+  
+  .reviews
+  {
+    font-size:20px;
   }
   
   .poster
   {
-    font-size:15px;
+    font-size:12px;
   }
   
   .favorite-team
@@ -526,54 +646,6 @@ background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
   .reason
   {
     font-size:10px;
-  }
-}
-
-@media screen and (max-width:360px)
-{
-  .team-image
-  {
-    margin-right:5px;
-    margin-left:0px;
-    width:10%;
-  }
-  
-  .state_name
-  {
-    display:none;
-  }
-  
-  h1
-  {
-    position: relative;
-    overflow: hidden;
-    padding: 1.5rem 2rem 1.5rem 70px;
-    border: 2px solid #000;
-    border-radius: 100vh;
-    width:80%;
-    display:inline-block;
-    text-align: center;
-    font-size:10px;
-  }
-  
-  h1 span
-  {
-    font-size: 15px;
-    font-size: 2.0rem;
-    line-height:50px;
-    position: absolute;
-    top: calc(50% - 25px);
-    left: 10px;
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    color: #fff;
-    border-radius: 50%;
-    background: #000;
-  }
-  
-  .reason
-  {
-    font-size:5px;
+    width:90%;
   }
 }

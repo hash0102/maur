@@ -44,6 +44,11 @@ Route::delete('/comments/{comment}', 'CommentController@delete');
 
 Route::post('/like', 'PostController@like')->name('posts.like');
 
+Route::get('/teams','TeamController@index');
+Route::get('/teams/players/{id}','TeamController@playersByTeam');
+Route::get('/teams/conferences/{conf}','TeamController@AjaxConference');
+
+
 Route::get('/ranking','RankingController@index');
 Route::get('/ranking/create','RankingController@create');
 Route::get("/ranking/create/pg/teams/{team_id}", "RankingController@pgTeamSelectAjax");

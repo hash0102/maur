@@ -34,13 +34,23 @@ class Team extends Model
         return $this->hasMany('App\Post');
     }
     
+      Public function teamStat()
+    {
+        return $this->hasOne('App\TeamStat');
+    }
+    
+    public function getTeamPaginateByLimit(int $limit=5)
+    {
+        return $this->orderBy('name', 'DESC')->paginate($limit);
+    }
+    
     public function teamapi()
     {
         
         $curl = curl_init();
         
         curl_setopt_array($curl, [
-        	CURLOPT_URL => "https://api.sportsdata.io/v3/nba/scores/json/AllTeams?key=6a95fe096b624968bd33620f83c32082",
+        	CURLOPT_URL => "https://api.sportsdata.io/v3/nba/scores/json/AllTeams?key=6a29d7bfa4364c1b9546b3c736a07556",
         	CURLOPT_RETURNTRANSFER => true,
         	CURLOPT_FOLLOWLOCATION => true,
         	CURLOPT_ENCODING => "",
@@ -50,7 +60,7 @@ class Team extends Model
         	CURLOPT_CUSTOMREQUEST => "GET",
         	CURLOPT_HTTPHEADER => [
     	        "Ocp-Apim-Subscription-Host: https://api.sportsdata.io/v3/nba/scores/json/teams",
-        		"Ocp-Apim-Subscription-Key: 6a95fe096b624968bd33620f83c32082 "
+        		"Ocp-Apim-Subscription-Key: 6a29d7bfa4364c1b9546b3c736a07556 "
         	],
         ]);
         

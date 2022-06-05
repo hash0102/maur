@@ -17,6 +17,7 @@
             <a href = '/' class="home"><i class="fa-solid fa-house"></i></a>
             <a href = '/players' class="players"><i class="fa-solid fa-people-group"></i></a>
             <a href = '/ranking' class="ranking"><i class="fa-solid fa-ranking-star"></i></a>
+            <a href='/teams' class='teams-page'><i class="fas fa-user-friends"></i></a>
         </div>
         <hr>
         <div class = 'my_info'>
