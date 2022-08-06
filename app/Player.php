@@ -88,13 +88,30 @@ class Player extends Model
                 $teamId=$player_content_api[$i]['TeamID'];
                 $firstName=$player_content_api[$i]['FirstName'];
                 $lastName=$player_content_api[$i]['LastName'];
-                $jersey=$player_content_api[$i]['Jersey'];
+                
+                if(isset($player_content_api[$i]['Jersey'])){
+                    $jersey=$player_content_api[$i]['Jersey'];
+                }else{
+                    $jersey='000';
+                }
+    
                 $height=$player_content_api[$i]['Height'] / 0.39370;
                 $weight=$player_content_api[$i]['Weight'] /2.2046;
                 $position=$player_content_api[$i]['Position'];
-                $birthday=$player_content_api[$i]['BirthDate'];
                 $image=$player_content_api[$i]['PhotoUrl'];
-                $birthcity=$player_content_api[$i]['BirthCity'];
+                
+                if(isset($player_content_api[$i]['BirthDate'])){
+                   $birthday=$player_content_api[$i]['BirthDate']; 
+                }else{
+                    $birthday="No Data";
+                }
+                
+                if(isset($player_content_api[$i]['BirthCity'])){
+                   $birthcity=$player_content_api[$i]['BirthCity'];  
+                }else{
+                    $birthcity="No Data";
+                }
+                
 
                 if(isset($player_content_api[$i]['College'])){
                     $college=$player_content_api[$i]['College'];

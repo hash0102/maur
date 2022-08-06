@@ -25,8 +25,8 @@ class CreatePlayersTable extends Migration
             $table->string('birthday',100);
             $table->string('birthcity',100);
             $table->string('birthcountry',100);
-            $table->string('college', 100)->nullable;
-            $table->string('highschool', 100)->nullable;
+            $table->string('college', 100);
+            $table->string('highschool', 100);
             $table->string('image', 100);
             $table->integer('experience');
             $table->integer('salary');
