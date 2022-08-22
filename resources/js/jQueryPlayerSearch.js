@@ -30,8 +30,8 @@
                             <p>ポジション：${value.position}</p>
                             <p>誕生日：${value.birthday}</p>
                             <p>出身国：${value.birthcountry}<span class="city">出身：${value.birthcity}</span></p>
-                            <p>大学：${value.college} 大学</p>
-                            <p>高校：${value.highschool} 高校</p>
+                            <p>大学：${value.college} Univ.</p>
+                            <p>高校：${value.highschool} H.S.</p>
                             <p>プロ歴：${value.experience} 年</p>
                             <p>年俸：${value.salary} ドル</p>
                         </div>

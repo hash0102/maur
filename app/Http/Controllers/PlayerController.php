@@ -13,7 +13,7 @@ class PlayerController extends Controller
     
     public function PlayerInfo($teamId , Team $team , Player $player)
     {
-        $players_info = Player::with('team')->where('team_id' , $teamId)->paginate();
+        $players_info = Player::with('team')->where('team_id' , $teamId)->paginate(30);
         return response()->json(['players_info' => $players_info]);
     }
     

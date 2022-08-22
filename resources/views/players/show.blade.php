@@ -26,9 +26,9 @@
             <p>誕生日：{{$player->birthday}}</p>
             <p>出身国：{{$player->birthcountry}} <span class="city">出身：{{$player->birthcity}}</span></p>
             @if($player->highschool == 'No Data')
-                <p>大学：{{$player->college}} 大学</p>
+                <p>大学：{{$player->college}} Univ.</p>
             @else
-                <p>高校：{{$player->highschool}}　高校</p>
+                <p>高校：{{$player->highschool}}　H.S.</p>
             @endif
             <p>プロ歴：{{$player->experience}} 年</p>
             <p>年俸：{{$player->salary}} ドル</p>
